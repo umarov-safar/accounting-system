@@ -78,14 +78,3 @@ sftp-config.json
 # Project #
 ###########
 .php_cs.cache
-
-# WBP #
-#######
-html/npm-gebug.log
-html/yarn-error.log
-html/stats.json
-html/.stylelintcache
-html/.vscode
-html/dist
-html/build
-html/npm-debug
