@@ -7,6 +7,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user2', function (Request $request) {
+Route::get('/test', function (Request $request) {
     return [ "a" => "b"];
 });
