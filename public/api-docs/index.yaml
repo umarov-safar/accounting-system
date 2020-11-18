@@ -1,0 +1,21 @@
+openapi: 3.0.1
+info:
+  title: Ensi Backend Service Skeleton
+  contact:
+    url: https://ensi.tech/
+  version: 1.0.0
+servers:
+  - url: /api/
+tags:
+  - name: exampleTag1
+    description: Example tag 1
+paths:
+  /examples:
+    get:
+      tags:
+        - exampleTag1
+      operationId: exampleOperationId
+      summary: Get examples list
+      responses:
+        200:
+          description: Successfull response

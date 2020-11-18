@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52fc8cd2926b760b66d4272e35ded8a4",
+    "content-hash": "2eb92a31488e4ee43fedd6d2e329b93d",
     "packages": [
         {
             "name": "brick/math",
@@ -523,6 +523,56 @@
                 }
             ],
             "time": "2020-04-13T13:17:36+00:00"
+        },
+        {
+            "name": "greensight/laravel-serve-swagger",
+            "version": "0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greensight/laravel-serve-swagger.git",
+                "reference": "4b9b9a696919f18bb2eec72a997af7f52b02c075"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greensight/laravel-serve-swagger/zipball/4b9b9a696919f18bb2eec72a997af7f52b02c075",
+                "reference": "4b9b9a696919f18bb2eec72a997af7f52b02c075",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "swagger-api/swagger-ui": "^3.30.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^5.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Greensight\\LaravelServeSwagger\\ServeSwaggerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Greensight\\LaravelServeSwagger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Golubkova Natalia",
+                    "email": "golubkova@greensight.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/greensight/laravel-serve-swagger/issues",
+                "source": "https://github.com/greensight/laravel-serve-swagger/tree/0.1.5"
+            },
+            "time": "2020-11-18T20:00:00+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2213,6 +2263,67 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "swagger-api/swagger-ui",
+            "version": "v3.30.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swagger-api/swagger-ui.git",
+                "reference": "42dc02c6a2aefab65c7c398214d05f3c37b09f7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/42dc02c6a2aefab65c7c398214d05f3c37b09f7e",
+                "reference": "42dc02c6a2aefab65c7c398214d05f3c37b09f7e",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Anna Bodnia",
+                    "email": "anna.bodnia@gmail.com"
+                },
+                {
+                    "name": "Buu Nguyen",
+                    "email": "buunguyen@gmail.com"
+                },
+                {
+                    "name": "Josh Ponelat",
+                    "email": "jponelat@gmail.com"
+                },
+                {
+                    "name": "Kyle Shockey",
+                    "email": "kyleshockey1@gmail.com"
+                },
+                {
+                    "name": "Robert Barnwell",
+                    "email": "robert@robertismy.name"
+                },
+                {
+                    "name": "Sahar Jafari",
+                    "email": "shr.jafari@gmail.com"
+                }
+            ],
+            "description": " Swagger UI is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API.",
+            "homepage": "http://swagger.io",
+            "keywords": [
+                "api",
+                "documentation",
+                "openapi",
+                "specification",
+                "swagger",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/swagger-api/swagger-ui/issues",
+                "source": "https://github.com/swagger-api/swagger-ui/tree/v3.30.0"
+            },
+            "time": "2020-07-17T22:50:30+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
