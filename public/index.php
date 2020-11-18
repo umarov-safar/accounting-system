@@ -3,6 +3,8 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+function agag($a=2) { return 1 ;}
+
 define('LARAVEL_START', microtime(true));
 
 /*
