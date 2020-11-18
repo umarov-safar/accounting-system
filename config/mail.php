@@ -1,12 +1,4 @@
 <?php
-function fs22($a=2)
-{
-    if (1) {
-        return 2;
-    }
-
-    return 1 ;
-}
 
 return [
 
