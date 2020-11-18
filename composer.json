@@ -52,7 +52,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "cs": "php-cs-fixer fix",
+        "cs": "php-cs-fixer fix --config .php_cs",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
