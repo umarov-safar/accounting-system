@@ -78,3 +78,4 @@ sftp-config.json
 # Project #
 ###########
 .php_cs.cache
+.huskyrc.json
