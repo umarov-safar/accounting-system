@@ -526,16 +526,16 @@
         },
         {
             "name": "greensight/laravel-serve-swagger",
-            "version": "0.1.5",
+            "version": "0.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/greensight/laravel-serve-swagger.git",
-                "reference": "4b9b9a696919f18bb2eec72a997af7f52b02c075"
+                "reference": "d45169c3aa16fe3d077149aad157d617409bf96b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-serve-swagger/zipball/4b9b9a696919f18bb2eec72a997af7f52b02c075",
-                "reference": "4b9b9a696919f18bb2eec72a997af7f52b02c075",
+                "url": "https://api.github.com/repos/greensight/laravel-serve-swagger/zipball/d45169c3aa16fe3d077149aad157d617409bf96b",
+                "reference": "d45169c3aa16fe3d077149aad157d617409bf96b",
                 "shasum": ""
             },
             "require": {
@@ -546,13 +546,6 @@
                 "laravel/framework": "^5.8"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Greensight\\LaravelServeSwagger\\ServeSwaggerServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Greensight\\LaravelServeSwagger\\": "src/"
@@ -570,9 +563,9 @@
             ],
             "support": {
                 "issues": "https://github.com/greensight/laravel-serve-swagger/issues",
-                "source": "https://github.com/greensight/laravel-serve-swagger/tree/0.1.5"
+                "source": "https://github.com/greensight/laravel-serve-swagger/tree/0.1.6"
             },
-            "time": "2020-11-18T20:00:00+00:00"
+            "time": "2020-11-19T15:16:22+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

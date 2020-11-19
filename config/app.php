@@ -170,6 +170,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Greensight\LaravelServeSwagger\ServeSwaggerServiceProvider::class,
 
         /*
          * Application Service Providers...
