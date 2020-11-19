@@ -6,7 +6,7 @@
    },
    "husky": {
       "hooks": {
-        "pre-commit": "lint-staged"
+        "pre-commit": ".git_hooks/pre-commit.d/00_php-linter.sh && .git_hooks/pre-commit.d/01_composer-validate.sh"
       }
    },
    "lint-staged": {
