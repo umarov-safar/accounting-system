@@ -21,7 +21,6 @@ printf "$COL_YELLOW%s$COL_RESET\n" "Running pre-commit hook: \"php-cs-fixer\""
 locations=(
   $ROOT/bin/$EXECUTABLE_NAME
   $ROOT/vendor/bin/$EXECUTABLE_NAME
-  `which $EXECUTABLE_NAME`
 )
 
 for location in ${locations[*]}
