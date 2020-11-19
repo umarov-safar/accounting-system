@@ -5,7 +5,7 @@
    },
    "husky": {
       "hooks": {
-         "pre-commit": "echo \"this should fail\" && exit 1 && .git_hooks/pre-commit/lint-php.sh && .git_hooks/pre-commit/composer-validate.sh && .git_hooks/pre-commit/php-cs-fixer.sh && .git_hooks/pre-commit/var-dump-checker.sh && composer test"
+         "pre-commit": "echo \"this should fai2l\" && exit 1 && .git_hooks/pre-commit/lint-php.sh && .git_hooks/pre-commit/composer-validate.sh && .git_hooks/pre-commit/php-cs-fixer.sh && .git_hooks/pre-commit/var-dump-checker.sh && composer test"
       }
    }
 }
