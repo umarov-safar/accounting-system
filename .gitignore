@@ -79,3 +79,4 @@ sftp-config.json
 ###########
 .php_cs.cache
 .huskyrc.json
+.huskyrc
