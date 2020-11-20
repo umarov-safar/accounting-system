@@ -1,8 +1,7 @@
 <?php
 
 $ensiServicesCodes = [
-    env('SERVICE_CODE', ''),
-    // add other services here which file storages are needed
+    // Add this and other services codes here to gain access to their public and protected storages.
 ];
 
 $ensiDisks = [];

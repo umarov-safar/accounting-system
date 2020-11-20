@@ -16,7 +16,7 @@
 
 ## Модификации относительно чистого Laravel
 
-### Более полный .gitignore
+### Готовый .gitignore
 
 Внесены всякие pdf-ки, архивы, служебные файлы IDEшек и служебных инструментов
 
@@ -45,23 +45,46 @@ config('app.locale') = 'ru';
 
 ### Ensi Storage
 
-Для работы с файлами в Ensi добавлены app()->make('ensi.filesystem') и EnsiStorage фасад которые полностью аналогичны 
-app()->make('filesystem') и Storage, но имеют дополнительные методы `protected(?string $service = null)` и `public(?string $service = null)` которые возвращают публичный или защищенный диск для нужного (или текущего) сервиса.
+Для работы с файлами в Ensi добавлены `app()->make('ensi.filesystem')` и `EnsiStorage` фасад которые полностью аналогичны 
+`app()->make('filesystem')` и `Storage`, но имеют дополнительные методы `protected(?string $service = null)` и `public(?string $service = null)` которые возвращают публичный или защищенный диск для нужного (или текущего) сервиса.
 Например, вызовом `$content = EnsiStorage::protected('pim')->get('test.csv')` можно получить содержимое файла `test.csv`, лежащего в директории для сервиса pim в защищенном файловом хранилище.
 
 `public` - содержимое доступно всем по `https://s.project.domain/<service_code>/...`
 `protected` - доступно только самому сервису и другим сервисам ensi
 
+Для работы всего этого нужно
+1. Чтобы config/app.php был выставлен корректный код текущего сервиса
+2. В config/filesystems.php в $ensiServicesCodes нужно задать список сервисов, с чьими хранилищами будет осуществляться взаимодействие (включая текущий).
+
 ### Добавлены технические пакеты для упрощения разработки и улучшения её качества
 
 "barryvdh/laravel-ide-helper",
 "beyondcode/laravel-dump-server",
-"friendsofphp/php-cs-fixer": "^2.16",
-"php-parallel-lint/php-var-dump-check": "^0.5.0",
-"psalm/plugin-laravel": "^1.4",
-"vimeo/psalm": "^4.1"
+"friendsofphp/php-cs-fixer",
+"php-parallel-lint/php-var-dump-check",
+"psalm/plugin-laravel",
+"vimeo/psalm",
 
 Часть из них задействована в хуках
+
+### Добавлен хэлсчек
+
+GET /health возвращает ОК с кодом 200.
+
+### Установлены пакеты для работы с API
+
+"greensight/laravel-serve-swagger", // Документация достуна по /docs/swagger
+"greensight/laravel-openapi-client-generator",
+"greensight/laravel-openapi-server-generator"
+
+### Подчищено всё ненужное из Laravel для чистоты и быстродействия
+
+- встроенный в Laravel фронтэнд
+- всё что касается User Management-а и сессий
+- AWS, PUSHER и прочее в конфигах
+- Broadcasting
+- большинство middleware подлюкченных по-умолчанию
+- часть Service Provider-ов закоментирована (если из-за этого что-то сломалось - раскоментируйте)
 
 ### robots.txt
 
