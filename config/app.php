@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'service_code' => env('SERVICE_CODE', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,6 +174,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Infrastructure\EnsiFilesystem\EnsiFilesystemServiceProvider::class,
     ],
 
     /*
@@ -200,6 +202,7 @@ return [
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
+        'EnsiStorage' =>  App\Infrastructure\EnsiFilesystem\EnsiStorageFacade::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,

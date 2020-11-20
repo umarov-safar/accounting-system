@@ -1,5 +1,25 @@
 <?php
 
+$ensiServicesCodes = [
+    env('SERVICE_CODE', ''),
+    // add other services here which file storages are needed
+];
+
+$ensiDisks = [];
+foreach ($ensiServicesCodes as $serviceCode) {
+    $ensiDisks["ensi_{$serviceCode}_public"] = [
+        'driver' => 'local',
+        'root' => storage_path("ensi_public/{$serviceCode}"),
+        'url' => env('ENSI_PUBLIC_DISK_URL') . '/' . $serviceCode,
+        'visibility' => 'public',
+    ];
+
+    $ensiDisks["ensi_{$serviceCode}_protected"] = [
+        'driver' => 'local',
+        'root' => storage_path("ensi_protected/{$serviceCode}"),
+    ];
+}
+
 return [
 
     /*
@@ -41,20 +61,18 @@ return [
     |
     */
 
-    'disks' => [
-
+    'disks' => array_merge([
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-    ],
+    ], $ensiDisks),
 
     /*
     |--------------------------------------------------------------------------
