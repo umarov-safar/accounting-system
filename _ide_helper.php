@@ -27,6 +27,9 @@
          */
             public static function version()
             {
+                if (1) {
+                } else {
+                }
                 /** @var \Illuminate\Foundation\Application $instance */
                 return $instance->version();
             }

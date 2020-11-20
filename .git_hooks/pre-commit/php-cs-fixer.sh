@@ -47,12 +47,15 @@ if [[ -f $ROOT/$CONFIG_FILE ]]; then
   echo "config file located at $CONFIG loaded"
 fi
 
-git status --porcelain | grep -e '^[AM]\(.*\).php$' | cut -c 3- | while read line; do
-  if [[ -f $CONFIG ]]; then
-    $EXECUTABLE $EXECUTABLE_COMMAND $CONFIG_FILE_PARAMETER=$CONFIG $line;
-  else
-    $EXECUTABLE $EXECUTABLE_COMMAND $line;
-  fi
-
-  git add $line;
-done
+FILES=` git status --porcelain | grep -e '^[AM]\(.*\).php$' | cut -c 3- | sed -e "s/_ide_helper.php$//" | sed -e "s/_ide_helper_models.php$//" | sed -e "s/.phpstorm.meta.php$//" | tr '\n' ' '`
+if [ -z "$FILES" ]; then
+    echo "No php files found to fix."
+else
+    echo "fixing files ${FILES}";
+    if [[ -f $CONFIG ]]; then
+      $EXECUTABLE $EXECUTABLE_COMMAND $CONFIG_FILE_PARAMETER=$CONFIG ${FILES};
+    else
+      $EXECUTABLE $EXECUTABLE_COMMAND ${FILES};
+    fi
+    git add ${FILES}
+fi
