@@ -11,14 +11,14 @@ COL_YELLOW=$ESC_SEQ"0;33m"
 changed=$(git diff-index --cached --name-only --diff-filter=ACMR HEAD | grep '.php')
 
 echo
-printf "$COL_YELLOW%s$COL_RESET\n" "Running pre-commit hook: \"var-dump-checker\""
+printf "$COL_YELLOW%s$COL_RESET\n" "Running pre-push hook: \"var-dump-checker\""
 
 if [[ -z "$changed" ]]; then
     echo "Skipped"
     exit 0
 fi
 
-./vendor/bin/var-dump-check --laravel --exclude bootstrap --exclude public --exclude node_modules --exclude html --exclude vendor .
+./vendor/bin/var-dump-check --laravel --exclude bootstrap --exclude node_modules --exclude vendor .
 
 # If the grep command has no hits - echo a warning and exit with non-zero status.
 if [ $? == 1 ]; then
