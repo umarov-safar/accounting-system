@@ -79,3 +79,5 @@ sftp-config.json
 ###########
 .php_cs.cache
 .huskyrc
+clients/*
+!clients/.gitkeep 
