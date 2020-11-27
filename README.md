@@ -64,6 +64,7 @@ config('app.locale') = 'ru';
 "php-parallel-lint/php-var-dump-check",
 "psalm/plugin-laravel",
 "vimeo/psalm",
+полифилы для php7.4 и 8.0
 
 Часть из них задействована в хуках
 

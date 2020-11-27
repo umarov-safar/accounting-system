@@ -13,7 +13,9 @@
         "greensight/laravel-serve-swagger": "^0.1.2",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "symfony/polyfill-php74": "^1.20",
+        "symfony/polyfill-php80": "^1.20"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
