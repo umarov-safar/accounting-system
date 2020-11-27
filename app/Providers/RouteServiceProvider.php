@@ -15,6 +15,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->routes(function () {
+            /**
+             * @psalm-suppress PossiblyNullArgument
+             */
             Route::namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
 

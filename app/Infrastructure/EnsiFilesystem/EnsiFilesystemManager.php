@@ -12,7 +12,7 @@ class EnsiFilesystemManager extends FilesystemManager
      */
     public function protected(?string $service = null): Filesystem
     {
-        $service = $service ?? config('app.service_code');
+        $service = $service ?? config()->get('app.service_code');
 
         return $this->disk("ensi_{$service}_protected");
     }
@@ -22,7 +22,7 @@ class EnsiFilesystemManager extends FilesystemManager
      */
     public function public(?string $service = null): Filesystem
     {
-        $service = $service ?? config('app.service_code');
+        $service = $service ?? config()->get('app.service_code');
 
         return $this->disk("ensi_{$service}_public");
     }
