@@ -15,10 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
-    /**
+    /*
      * e.g "pim"
      */
-    'service_code' => "backend_service_skeleton",
+    'service_code' => 'backend_service_skeleton',
 
     /*
     |--------------------------------------------------------------------------

@@ -6,6 +6,6 @@ class HealthCheck extends Controller
 {
     public function __invoke()
     {
-        return "OK";
+        return 'OK';
     }
 }

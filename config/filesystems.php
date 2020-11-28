@@ -9,7 +9,7 @@ foreach ($ensiServicesCodes as $serviceCode) {
     $ensiDisks["ensi_{$serviceCode}_public"] = [
         'driver' => 'local',
         'root' => storage_path("ensi_public/{$serviceCode}"),
-        'url' => env('ENSI_PUBLIC_DISK_URL') . '/' . $serviceCode,
+        'url' => env('ENSI_PUBLIC_DISK_URL').'/'.$serviceCode,
         'visibility' => 'public',
     ];
 
