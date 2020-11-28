@@ -60,7 +60,7 @@ config('app.locale') = 'ru';
 
 "barryvdh/laravel-ide-helper",
 "beyondcode/laravel-dump-server",
-"friendsofphp/php-cs-fixer",
+"matt-allan/laravel-code-style" (использует "friendsofphp/php-cs-fixer" внутри),
 "php-parallel-lint/php-var-dump-check",
 "psalm/plugin-laravel",
 "vimeo/psalm",
