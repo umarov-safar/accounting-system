@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45bc0e0a9678519affc2840daad84c92",
+    "content-hash": "b95791d55706839677bc8b4a98cb760f",
     "packages": [
         {
             "name": "brick/math",
@@ -6844,6 +6844,70 @@
                 "source": "https://github.com/justinrainbow/json-schema/tree/5.2.10"
             },
             "time": "2020-05-27T16:41:55+00:00"
+        },
+        {
+            "name": "matt-allan/laravel-code-style",
+            "version": "0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matt-allan/laravel-code-style.git",
+                "reference": "7102d848fa9f6421def0869a8100171c2fad2a4a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matt-allan/laravel-code-style/zipball/7102d848fa9f6421def0869a8100171c2fad2a4a",
+                "reference": "7102d848fa9f6421def0869a8100171c2fad2a4a",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "illuminate/support": "5.7.x|5.8.x|^6.0|^7.0|^8.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "laravel/framework": "^7.0|^8.0",
+                "orchestra/testbench": "^5.0|^6.0",
+                "phpunit/phpunit": "^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "MattAllan\\LaravelCodeStyle\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MattAllan\\LaravelCodeStyle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Allan",
+                    "email": "matt@mattallan.me"
+                }
+            ],
+            "description": "Code formatting for Laravel projects",
+            "homepage": "https://github.com/matt-allan/laravel-code-style",
+            "keywords": [
+                "PSR-2",
+                "code-style",
+                "laravel",
+                "php-cs-fixer"
+            ],
+            "support": {
+                "issues": "https://github.com/matt-allan/laravel-code-style/issues",
+                "source": "https://github.com/matt-allan/laravel-code-style/tree/0.6.0"
+            },
+            "time": "2020-09-09T23:12:34+00:00"
         },
         {
             "name": "mockery/mockery",
