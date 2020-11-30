@@ -409,12 +409,12 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:greensight/ensi/packages/laravel-ensi-filesystem.git",
-                "reference": "b69f10e35f453af97e3d48b1b15f48b746de8685"
+                "reference": "924b334a174432c7d7c843c96660aad95d4467d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-ensi-filesystem/repository/archive.zip?sha=b69f10e35f453af97e3d48b1b15f48b746de8685",
-                "reference": "b69f10e35f453af97e3d48b1b15f48b746de8685",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-ensi-filesystem/repository/archive.zip?sha=924b334a174432c7d7c843c96660aad95d4467d2",
+                "reference": "924b334a174432c7d7c843c96660aad95d4467d2",
                 "shasum": ""
             },
             "require": {
@@ -455,7 +455,7 @@
             "support": {
                 "issues": "https://gitlab.com/api/v4/projects/22789984/issues"
             },
-            "time": "2020-11-30T16:15:29+00:00"
+            "time": "2020-11-30T17:49:26+00:00"
         },
         {
             "name": "fideloper/proxy",
