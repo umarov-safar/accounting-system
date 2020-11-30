@@ -1,6 +1,7 @@
 <?php
 
 $ensiServicesCodes = [
+    'backend_service_skeleton',
     // Add this and other services codes here to gain access to their public and protected storages.
 ];
 
