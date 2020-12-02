@@ -1,5 +1,7 @@
 <?php
 
+ini_set('serialize_precision', -1); // https://stackoverflow.com/questions/42981409/php7-1-json-encode-float-issue/43056278
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -15,6 +17,7 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+// load common env file
 require __DIR__.'/environment.php';
 
 /*
