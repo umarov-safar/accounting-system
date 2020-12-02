@@ -55,7 +55,7 @@ config('app.locale') = 'ru';
 
 "barryvdh/laravel-ide-helper",
 "beyondcode/laravel-dump-server",
-"matt-allan/laravel-code-style" (использует "friendsofphp/php-cs-fixer" внутри),
+"friendsofphp/php-cs-fixer",
 "php-parallel-lint/php-var-dump-check",
 "psalm/plugin-laravel",
 "vimeo/psalm",
