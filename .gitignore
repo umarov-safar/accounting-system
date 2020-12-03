@@ -76,6 +76,7 @@ yarn-error.log
 ehthumbs.db
 Thumbs.db
 sftp-config.json
+auth.json
 
 # Project #
 ###########
