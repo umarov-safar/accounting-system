@@ -84,3 +84,4 @@ auth.json
 .huskyrc
 clients/*
 !clients/.gitkeep 
+storage/ensi
