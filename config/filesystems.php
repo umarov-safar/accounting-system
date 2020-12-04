@@ -12,6 +12,16 @@ foreach ($ensiServicesCodes as $serviceCode) {
         'root' => storage_path("ensi/public/{$serviceCode}"),
         'url' => env('ENSI_PUBLIC_DISK_URL').'/'.$serviceCode,
         'visibility' => 'public',
+        'permissions' => [
+            'file' => [
+                'public' => 0664,
+                'private' => 0600,
+            ],
+            'dir' => [
+                'public' => 0775,
+                'private' => 0700,
+            ],
+        ],
     ];
 
     $ensiDisks["ensi_{$serviceCode}_protected"] = [
@@ -19,6 +29,16 @@ foreach ($ensiServicesCodes as $serviceCode) {
         'root' => storage_path("ensi/protected/{$serviceCode}"),
         'url' => env('APP_URL').'/ensi-protected-storage',
         'visibility' => 'public',
+        'permissions' => [
+            'file' => [
+                'public' => 0664,
+                'private' => 0600,
+            ],
+            'dir' => [
+                'public' => 0775,
+                'private' => 0700,
+            ],
+        ],
     ];
 }
 
