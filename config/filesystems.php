@@ -87,6 +87,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('ensi-protected-storage') => storage_path('ensi/protected/backend_service_skeleton'),
     ],
 
 ];
