@@ -17,6 +17,8 @@ foreach ($ensiServicesCodes as $serviceCode) {
     $ensiDisks["ensi_{$serviceCode}_protected"] = [
         'driver' => 'local',
         'root' => storage_path("ensi/protected/{$serviceCode}"),
+        'url' => env('APP_URL').'/ensi-protected-storage',
+        'visibility' => 'public',
     ];
 }
 
