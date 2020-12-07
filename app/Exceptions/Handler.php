@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -33,5 +34,35 @@ class Handler extends ExceptionHandler
     public function register()
     {
         //
+    }
+    
+    /**
+     * Output validation exceptions from Form Requests as json.
+     *
+     * @param  \Illuminate\Validation\ValidationException  $e
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function convertValidationExceptionToResponse(ValidationException $e, $request)
+    {
+        if ($e->response) {
+            return $e->response;
+        }
+
+        $errors = collect($e->validator->errors()->toArray())
+            ->flatten()
+            ->map(function (string $message) {
+                return [
+                    "code" => "ValidationError",
+                    "message" => $message,
+                ];
+            })
+            ->values()
+            ->toArray();
+
+        return response()->json([
+            'data' => null,
+            'errors' => $errors,
+        ], 422);
     }
 }

@@ -100,3 +100,7 @@ echo json_encode($price);
 
 Выставляется в `app/bootstrap.php`
 
+### Ошибки валидации всегда возвращаются как json в нужном формате
+
+Реализовано в `App\Exceptions\Handlers.php`
+
