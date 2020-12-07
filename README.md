@@ -13,6 +13,8 @@
 6. Указываем в .env доступы к БД
 7. composer i && npm i
 8. git add . && git commit -m "Initial commit" && git push -u origin master
+9. php artisan key:generate
+10. php artisan storage:link
 
 ## Модификации относительно чистого Laravel
 
