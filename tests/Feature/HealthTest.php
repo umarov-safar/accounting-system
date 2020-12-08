@@ -7,11 +7,11 @@ use Tests\TestCase;
 class ExampleTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Healthcheck test
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testHealthTest()
     {
         $response = $this->get('/health');
 
