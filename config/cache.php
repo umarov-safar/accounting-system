@@ -14,7 +14,7 @@ return [
     | not explicitly specified when executing a given caching function.
     |
     | Supported: "apc", "array", "database", "file",
-    |            "memcached", "redis", "dynamodb"
+    |            "memcached", "redis", "dynamodb", "null"
     |
     */
 

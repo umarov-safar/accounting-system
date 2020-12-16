@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class HealthTest extends TestCase
 {
     /**
      * Healthcheck test
