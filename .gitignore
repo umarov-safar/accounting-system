@@ -87,3 +87,4 @@ clients/*
 !clients/.gitkeep 
 storage/ensi
 public/ensi-protected-storage
+generated
