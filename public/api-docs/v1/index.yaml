@@ -5,7 +5,7 @@ info:
     url: https://ensi.tech/
   version: 1.0.0
 servers:
-  - url: /api/
+  - url: /api/v1
 tags:
   - name: exampleTag1
     description: Example tag 1

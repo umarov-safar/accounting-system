@@ -5,8 +5,8 @@ return [
 
     'urls' => [
         [
-            'url' => 'api-docs/index.yaml',
-            'name' => 'Example',
+            'url' => 'api-docs/v1/index.yaml',
+            'name' => 'API v1',
         ],
     ],
 ];

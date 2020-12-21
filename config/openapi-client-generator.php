@@ -5,7 +5,7 @@ return [
     /*
      * Path to the directory where index.yaml openapi file located
      */
-    'apidoc_dir' => public_path('api-docs'),
+    'apidoc_dir' => public_path('api-docs/v1'),
 
     /*
      * Dir template where client package will be generated
