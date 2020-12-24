@@ -2,8 +2,12 @@
 
 namespace App\Exceptions;
 
+use Arr;
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
+use ReflectionClass;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -35,7 +39,40 @@ class Handler extends ExceptionHandler
     {
         //
     }
-    
+
+    /**
+     * Convert the given exception to an array.
+     *
+     * @param  \Throwable  $e
+     * @return array
+     */
+    protected function convertExceptionToArray(Throwable $e)
+    {
+        $config = $this->container->make('config');
+        $isDebug = $config && $config->get('app.debug');
+        $code = $this->isHttpException($e) ? (new ReflectionClass($e))->getShortName() : 'UnknownError';
+        $error = [
+            'message' => $isDebug || $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
+            'code' => $code,
+        ];
+     
+        if ($isDebug) {
+            $error['meta'] = [
+                'exception' => get_class($e),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => collect($e->getTrace())->map(function ($trace) {
+                    return Arr::except($trace, ['args']);
+                })->all(),
+            ];
+        }
+        
+        return [
+            'data' => null,
+            'errors' => [ $error ],
+        ];
+    }
+        
     /**
      * Output validation exceptions from Form Requests as json.
      *
@@ -63,6 +100,6 @@ class Handler extends ExceptionHandler
         return response()->json([
             'data' => null,
             'errors' => $errors,
-        ], 422);
+        ], 400);
     }
 }
