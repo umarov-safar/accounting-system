@@ -3,7 +3,6 @@
 namespace App\Exceptions;
 
 use Arr;
-use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
 use ReflectionClass;
@@ -71,6 +70,24 @@ class Handler extends ExceptionHandler
             'data' => null,
             'errors' => [ $error ],
         ];
+    }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Throwable  $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Throwable
+     */
+    public function render($request, Throwable $e)
+    {
+        if ($request->is('api/*')) {
+            return $this->prepareJsonResponse($request, $e);
+        }
+
+        return parent::render($request, $e);
     }
         
     /**
