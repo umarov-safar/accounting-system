@@ -1,21 +1,94 @@
-openapi: 3.0.1
+openapi: 3.0.3
 info:
   title: Ensi Backend Service Skeleton
   contact:
-    url: https://ensi.tech/
+    name: API Support
+    url: https://ensi.tech/contacts
+    email: mail@greensight.ru
   version: 1.0.0
+  description: Ensi Backend Service Skeleton
 servers:
   - url: /api/v1
 tags:
-  - name: exampleTag1
-    description: Example tag 1
+  - name: examples
+    description: Tag for Examples resource
 paths:
   /examples:
+    post:
+      tags:
+        - examples
+      operationId: createExample
+      summary: Создание элемента сущности Example 
+      description: Создание элемента сущности Example
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateExampleRequest'
+      responses:
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateExampleResponse'
+        "500":
+          $ref: '#/components/responses/ServerError'
+  /examples/{id}:
     get:
       tags:
-        - exampleTag1
-      operationId: exampleOperationId
-      summary: Get examples list
+        - examples
+      operationId: getExample
+      summary: Получение элемента сущности Example 
+      description: Получение элемента сущности Example
+      parameters:
+        - $ref: '#/components/parameters/PathId'
+        - $ref: '#/components/parameters/QueryInclude'
       responses:
-        200:
-          description: Successfull response
+        "200":
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetExampleResponse'
+        "404":
+          $ref: '#/components/responses/NotFound'
+        "500":
+          $ref: '#/components/responses/ServerError'
+components:
+  parameters:
+    QueryInclude:
+      $ref: './common_parameters.yaml#/QueryInclude'
+    PathId:
+      $ref: './common_parameters.yaml#/PathId'
+  schemas:
+    CreateExampleRequest:
+      $ref: './examples.yaml#/CreateExampleRequest'
+    CreateExampleResponse:
+      $ref: './examples.yaml#/CreateExampleResponse'
+    GetExampleResponse:
+      $ref: './examples.yaml#/GetExampleResponse'
+    ErrorResponse:
+      $ref: './errors.yaml#/ErrorResponse'
+    Error:
+      $ref: './errors.yaml#/Error'
+  responses: 
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'  

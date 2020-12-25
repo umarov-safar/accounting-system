@@ -1,0 +1,48 @@
+extends: spectral:oas
+rules:
+  oas3-unused-components-schema: hint
+  components-parameters-case:
+    description: components.parameters must use Pascal case
+    type: style
+    severity: error
+    given: "$.components.parameters[*]~"
+    then:
+      function: casing
+      functionOptions:
+        type: pascal
+  components-schemas-case:
+    description: components.schemas must use Pascal case
+    type: style
+    severity: error
+    given: "$.components.schemas[*]~"
+    then:
+      function: casing
+      functionOptions:
+        type: pascal
+  components-responses-case:
+    description: components.responses must use Pascal case
+    type: style
+    severity: error
+    given: "$.components.responses[*]~"
+    then:
+      function: casing
+      functionOptions:
+        type: pascal
+  paths-case:
+    description: paths must use kebab-case
+    type: style
+    severity: error
+    given: "$.paths[*]~"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(\/[a-z0-9-{}]+)+$"
+  operation-id-case:
+    description: operationIds must use lowerCamelCase
+    type: style
+    severity: error
+    given: "$.paths[*][*][operationId]"
+    then:
+      function: casing
+      functionOptions:
+        type: camel

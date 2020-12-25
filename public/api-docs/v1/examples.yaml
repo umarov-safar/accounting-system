@@ -1,0 +1,39 @@
+Example:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: id
+    name:
+      type: string
+      description: Название
+    some_optional_property:
+      type: string
+      description: Какое-то необязательное свойство
+  required:
+    - name
+CreateExampleRequest:
+  type: object
+  properties:
+    data:
+      $ref: '#/Example'
+  required:
+      - data  
+CreateExampleResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/Example'
+    meta:
+      type: object
+  required:
+    - name
+GetExampleResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/Example'
+    meta:
+      type: object
+  required:
+      - data

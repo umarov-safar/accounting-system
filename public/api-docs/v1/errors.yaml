@@ -1,0 +1,29 @@
+Error:
+  type: object
+  properties:
+    code:
+      description: Строковый код ошибки
+      type: string
+    message:
+      description: Описание ошибки
+      type: string
+    meta: 
+      type: object
+      description: Объект с мета-информацией
+  required:
+    - code
+    - message
+
+ErrorResponse:
+  type: object
+  properties:
+    errors:
+      type: array
+      description: Массив ошибок
+      items:
+        $ref: '#/Error'
+    meta: 
+      type: object
+      description: Объект с мета-информацией
+  required:
+    - errors

@@ -2,5 +2,8 @@
    "private": true,
    "devDependencies": {
       "husky": "^4.3.0"
+   },
+   "dependencies": {
+      "@stoplight/spectral": "^5.7.2"
    }
 }
