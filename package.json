@@ -3,5 +3,8 @@
    "devDependencies": {
       "husky": "^4.3.0",
       "@stoplight/spectral": "^5.7.2"
+   },
+   "scripts": {
+      "spectral": "spectral lint ./public/api-docs/**/index.yaml"
    }
 }
