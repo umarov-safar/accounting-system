@@ -1,9 +1,7 @@
 {
    "private": true,
    "devDependencies": {
-      "husky": "^4.3.0"
-   },
-   "dependencies": {
+      "husky": "^4.3.0",
       "@stoplight/spectral": "^5.7.2"
    }
 }

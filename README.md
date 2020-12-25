@@ -55,6 +55,7 @@ config('app.locale') = 'ru';
 
 ### Добавлены технические пакеты для упрощения разработки и улучшения её качества
 
+composer.json:
 "barryvdh/laravel-ide-helper",
 "beyondcode/laravel-dump-server",
 "friendsofphp/php-cs-fixer",
@@ -62,6 +63,10 @@ config('app.locale') = 'ru';
 "psalm/plugin-laravel",
 "vimeo/psalm",
 полифилы для php7.4 и 8.0
+
+package.json:
+"husky"
+"@stoplight/spectral"
 
 Часть из них задействована в хуках
 
