@@ -36,7 +36,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^(\/[a-z0-9-{}]+)+$"
+        match: "^(\/[a-z0-9-{}:]+)+$"
   operation-id-case:
     description: operationIds must use lowerCamelCase
     type: style
