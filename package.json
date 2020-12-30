@@ -1,8 +1,9 @@
 {
    "private": true,
    "devDependencies": {
-      "husky": "^4.3.0",
-      "@stoplight/spectral": "^5.7.2"
+      "@openapitools/openapi-generator-cli": "^2.1.15",
+      "@stoplight/spectral": "^5.7.2",
+      "husky": "^4.3.0"
    },
    "scripts": {
       "spectral": "spectral lint ./public/api-docs/**/index.yaml"
