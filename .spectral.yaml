@@ -1,6 +1,6 @@
 extends: spectral:oas
 rules:
-  oas3-unused-components-schema: hint
+  oas3-unused-components-schema: off
   operation-operationId: error
   operation-tags: error
   operation-tag-defined: error
