@@ -67,6 +67,7 @@ composer.json:
 package.json:
 "husky"
 "@stoplight/spectral"
+"@openapitools/openapi-generator-cli // для ускорения openapi генераторов
 
 Часть из них задействована в хуках
 
