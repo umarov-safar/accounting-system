@@ -28,7 +28,11 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
-    protected $middlewareGroups = [];
+    protected $middlewareGroups = [
+        'api' => [
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+    ];
 
     /**
      * The application's route middleware.
