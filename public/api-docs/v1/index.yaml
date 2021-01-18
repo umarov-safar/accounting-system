@@ -1,57 +1,35 @@
 openapi: 3.0.3
 info:
-  title: Ensi Backend Service Skeleton
+  title: Ensi Backend Skeleton (Replace me)
   contact:
     name: API Support
     url: https://ensi.tech/contacts
     email: mail@greensight.ru
   version: 1.0.0
-  description: Ensi Backend Service Skeleton
+  description: Ensi Backend Skeleton Description (Replace me)
 servers:
   - url: /api/v1
 tags:
   - name: examples
-    description: Tag for Examples resource
+    description: Тэг-пример
 paths:
-  /examples:
-    post:
-      tags:
-        - examples
-      operationId: createExample
-      summary: Создание элемента сущности Example 
-      description: Создание элемента сущности Example
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateExampleRequest'
-      responses:
-        "200":
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CreateExampleResponse'
-        "500":
-          $ref: '#/components/responses/ServerError'
-  /examples/{id}:
+  /examples/{id}: 
     get:
       tags:
         - examples
       operationId: getExample
-      summary: Получение элемента сущности Example 
-      description: Получение элемента сущности Example
+      summary: Получение объекта типа Example 
+      description: Получение объекта типа Example
       parameters:
         - $ref: '#/components/parameters/PathId'
         - $ref: '#/components/parameters/QueryInclude'
       responses:
         "200":
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetExampleResponse'
+          description: Успешный ответ
+          # content:
+          #  application/json:
+          #    schema:
+          #      $ref: './customers.yaml#/CustomerResponse'
         "404":
           $ref: '#/components/responses/NotFound'
         "500":
@@ -63,32 +41,32 @@ components:
     PathId:
       $ref: './common_parameters.yaml#/PathId'
   schemas:
-    CreateExampleRequest:
-      $ref: './examples.yaml#/CreateExampleRequest'
-    CreateExampleResponse:
-      $ref: './examples.yaml#/CreateExampleResponse'
-    GetExampleResponse:
-      $ref: './examples.yaml#/GetExampleResponse'
-    ErrorResponse:
-      $ref: './errors.yaml#/ErrorResponse'
-    Error:
-      $ref: './errors.yaml#/Error'
+    EmptyDataResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          nullable: true
+        meta:
+          type: object
+      required:
+          - data
   responses: 
-    NotFound:
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
     BadRequest:
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'
+            $ref: './errors.yaml#/ErrorResponse'
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: './errors.yaml#/ErrorResponse'
     ServerError:
       description: Internal Server Error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ErrorResponse'  
+            $ref: './errors.yaml#/ErrorResponse'  

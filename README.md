@@ -81,6 +81,8 @@ GET /health возвращает ОК с кодом 200.
 "greensight/laravel-openapi-client-generator",
 "greensight/laravel-openapi-server-generator"
 
+Пример описания API при помощи спецификации openapi 3 под требования генераторов и [Ensi API Design Guide](https://docs.google.com/document/u/1/d/1Sj-G3lWzJvXmeojRv8yQb3ZSZeL3n6fa8EKN12kLvgg/edit?usp=sharing) можно найти [здесь](https://gitlab.com/greensight/ensi/templates/openapi-example)
+
 ### Подчищено всё ненужное из Laravel для чистоты и быстродействия
 
 - встроенный в Laravel фронтэнд

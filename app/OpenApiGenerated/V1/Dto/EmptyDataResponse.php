@@ -1,6 +1,6 @@
 <?php
 /**
- * GetExampleResponse
+ * EmptyDataResponse
  *
  * PHP version 5
  *
@@ -11,9 +11,9 @@
  */
 
 /**
- * Ensi Backend Service Skeleton
+ * Ensi Backend Skeleton (Replace me)
  *
- * Ensi Backend Service Skeleton
+ * Ensi Backend Skeleton Description (Replace me)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: mail@greensight.ru
@@ -29,18 +29,18 @@
 
 namespace App\OpenApiGenerated\V1\Dto;
 
-use \App\OpenApiGenerated\V1\ObjectSerializer;
 use \ArrayAccess;
+use \App\OpenApiGenerated\V1\ObjectSerializer;
 
 /**
- * GetExampleResponse Class Doc Comment
+ * EmptyDataResponse Class Doc Comment
  *
  * @category Class
  * @package  App\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetExampleResponse';
+    protected static $openAPIModelName = 'EmptyDataResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\App\OpenApiGenerated\V1\Dto\Example',
-        'meta' => 'object',
+        'data' => 'object',
+        'meta' => 'object'
     ];
 
     /**
@@ -68,7 +68,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'data' => null,
-        'meta' => null,
+        'meta' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'data' => 'data',
-        'meta' => 'meta',
+        'meta' => 'meta'
     ];
 
     /**
@@ -109,7 +109,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'data' => 'setData',
-        'meta' => 'setMeta',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -119,7 +119,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'data' => 'getData',
-        'meta' => 'getMeta',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -163,6 +163,10 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -194,7 +198,6 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         if ($this->container['data'] === null) {
             $invalidProperties[] = "'data' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -209,10 +212,11 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
      * Gets data
      *
-     * @return \App\OpenApiGenerated\V1\Dto\Example
+     * @return object
      */
     public function getData()
     {
@@ -222,7 +226,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets data
      *
-     * @param \App\OpenApiGenerated\V1\Dto\Example $data data
+     * @param object $data data
      *
      * @return $this
      */
@@ -256,13 +260,12 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -272,7 +275,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return mixed
      */
@@ -284,7 +287,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      * @param mixed   $value  Value to be set
      *
      * @return void
@@ -301,7 +304,7 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
@@ -343,3 +346,5 @@ class GetExampleResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         return ObjectSerializer::deserialize(json_encode($request->all()), static::class);
     }
 }
+
+

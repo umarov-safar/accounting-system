@@ -11,9 +11,9 @@
  */
 
 /**
- * Ensi Backend Service Skeleton
+ * Ensi Backend Skeleton (Replace me)
  *
- * Ensi Backend Service Skeleton
+ * Ensi Backend Skeleton Description (Replace me)
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: mail@greensight.ru
