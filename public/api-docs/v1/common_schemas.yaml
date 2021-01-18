@@ -1,0 +1,40 @@
+IdObject:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: id
+      example: 1
+
+RequestBodySort:
+  type: array
+  items:
+    type: string
+
+RequestBodyInclude:
+  type: array
+  items:
+    type: string
+
+RequestBodyPagination:
+  type: object
+  properties:
+    offset:
+      type: integer
+      example: 0
+    limit:
+      type: integer
+      example: 20
+
+ResponseBodyPagination:
+  type: object
+  properties:
+    offset:
+      type: integer
+      example: 0
+    limit:
+      type: integer
+      example: 20
+    total:
+      type: integer
+      example: 253
