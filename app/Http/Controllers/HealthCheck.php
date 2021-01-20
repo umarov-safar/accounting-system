@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class HealthCheck extends Controller
+class HealthCheck
 {
     public function __invoke()
     {
