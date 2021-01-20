@@ -3,9 +3,12 @@
 namespace App\Exceptions;
 
 use Arr;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 use ReflectionClass;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -40,39 +43,6 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Convert the given exception to an array.
-     *
-     * @param  \Throwable  $e
-     * @return array
-     */
-    protected function convertExceptionToArray(Throwable $e)
-    {
-        $config = $this->container->make('config');
-        $isDebug = $config && $config->get('app.debug');
-        $code = $this->isHttpException($e) ? (new ReflectionClass($e))->getShortName() : 'UnknownError';
-        $error = [
-            'message' => $isDebug || $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
-            'code' => $code,
-        ];
-     
-        if ($isDebug) {
-            $error['meta'] = [
-                'exception' => get_class($e),
-                'file' => $e->getFile(),
-                'line' => $e->getLine(),
-                'trace' => collect($e->getTrace())->map(function ($trace) {
-                    return Arr::except($trace, ['args']);
-                })->all(),
-            ];
-        }
-        
-        return [
-            'data' => null,
-            'errors' => [ $error ],
-        ];
-    }
-
-    /**
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -84,7 +54,16 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
         if ($request->is('api/*')) {
-            return $this->prepareJsonResponse($request, $e);
+            if ($e instanceof ValidationException) {
+                return $this->convertValidationExceptionToResponse($e, $request);
+            }
+
+            return new JsonResponse(
+                $this->convertExceptionToArray($e),
+                $this->getExceptionStatusCode($e),
+                $e instanceof HttpExceptionInterface ? $e->getHeaders() : [],
+                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
+            );
         }
 
         return parent::render($request, $e);
@@ -114,9 +93,57 @@ class Handler extends ExceptionHandler
             ->values()
             ->toArray();
 
-        return response()->json([
-            'data' => null,
-            'errors' => $errors,
-        ], 400);
+        return response()->json($this->formatErrorPayload($errors), 400);
+    }
+
+    /**
+     * Convert the given exception to an array.
+     *
+     * @param  \Throwable  $e
+     * @return array
+     */
+    protected function convertExceptionToArray(Throwable $e)
+    {
+        $config = $this->container->make('config');
+        $isDebug = $config && $config->get('app.debug');
+        $code = $this->isHttpException($e) ? (new ReflectionClass($e))->getShortName() : 'UnknownError';
+        $error = [
+            'message' => $isDebug || $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
+            'code' => $code,
+        ];
+     
+        if ($isDebug) {
+            $error['meta'] = [
+                'exception' => get_class($e),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => collect($e->getTrace())->map(function ($trace) {
+                    return Arr::except($trace, ['args']);
+                })->all(),
+            ];
+        }
+        
+        return $this->formatErrorPayload([ $error ]);
+    }
+
+    protected function getExceptionStatusCode(Throwable $exception): int
+    {
+        if ($exception instanceof HttpExceptionInterface) {
+            return $exception->getStatusCode();
+        }
+
+        if ($exception instanceof ModelNotFoundException) {
+            return 404;
+        }
+
+        return 500;
+    }
+
+    private function formatErrorPayload(array $errorData): array
+    {
+        return [
+            'data'   => null,
+            'errors' => $errorData,
+        ];
     }
 }
