@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  App\OpenApiGenerated\V1
+ * @package  App\Http\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace App\OpenApiGenerated\V1\Dto;
+namespace App\Http\OpenApiGenerated\V1\Dto;
 
-use \App\OpenApiGenerated\V1\ObjectSerializer;
+use \App\Http\OpenApiGenerated\V1\ObjectSerializer;
 use \ArrayAccess;
 
 /**
  * ErrorResponse Class Doc Comment
  *
  * @category Class
- * @package  App\OpenApiGenerated\V1
+ * @package  App\Http\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -57,7 +57,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\App\OpenApiGenerated\V1\Dto\Error[]',
+        'errors' => '\App\Http\OpenApiGenerated\V1\Dto\Error[]',
         'meta' => 'object',
     ];
 
@@ -212,7 +212,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets errors
      *
-     * @return \App\OpenApiGenerated\V1\Dto\Error[]
+     * @return \App\Http\OpenApiGenerated\V1\Dto\Error[]
      */
     public function getErrors()
     {
@@ -222,7 +222,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \App\OpenApiGenerated\V1\Dto\Error[] $errors Массив ошибок
+     * @param \App\Http\OpenApiGenerated\V1\Dto\Error[] $errors Массив ошибок
      *
      * @return $this
      */

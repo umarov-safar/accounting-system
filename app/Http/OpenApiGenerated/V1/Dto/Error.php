@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  App\OpenApiGenerated\V1
+ * @package  App\Http\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace App\OpenApiGenerated\V1\Dto;
+namespace App\Http\OpenApiGenerated\V1\Dto;
 
-use \App\OpenApiGenerated\V1\ObjectSerializer;
+use \App\Http\OpenApiGenerated\V1\ObjectSerializer;
 use \ArrayAccess;
 
 /**
  * Error Class Doc Comment
  *
  * @category Class
- * @package  App\OpenApiGenerated\V1
+ * @package  App\Http\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

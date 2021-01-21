@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  App\OpenApiGenerated\V1
+ * @package  App\Http\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace App\OpenApiGenerated\V1\Dto;
+namespace App\Http\OpenApiGenerated\V1\Dto;
 
+use \App\Http\OpenApiGenerated\V1\ObjectSerializer;
 use \ArrayAccess;
-use \App\OpenApiGenerated\V1\ObjectSerializer;
 
 /**
  * EmptyDataResponse Class Doc Comment
  *
  * @category Class
- * @package  App\OpenApiGenerated\V1
+ * @package  App\Http\OpenApiGenerated\V1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -58,7 +58,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'data' => 'object',
-        'meta' => 'object'
+        'meta' => 'object',
     ];
 
     /**
@@ -68,7 +68,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'data' => null,
-        'meta' => null
+        'meta' => null,
     ];
 
     /**
@@ -99,7 +99,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'data' => 'data',
-        'meta' => 'meta'
+        'meta' => 'meta',
     ];
 
     /**
@@ -109,7 +109,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'data' => 'setData',
-        'meta' => 'setMeta'
+        'meta' => 'setMeta',
     ];
 
     /**
@@ -119,7 +119,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'data' => 'getData',
-        'meta' => 'getMeta'
+        'meta' => 'getMeta',
     ];
 
     /**
@@ -163,10 +163,6 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         return self::$openAPIModelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -198,6 +194,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['data'] === null) {
             $invalidProperties[] = "'data' can't be null";
         }
+
         return $invalidProperties;
     }
 
@@ -211,7 +208,6 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
 
     /**
      * Gets data
@@ -260,12 +256,13 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
+     * @param int $offset Offset
      *
-     * @return boolean
+     * @return bool
      */
     public function offsetExists($offset)
     {
@@ -275,7 +272,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
+     * @param int $offset Offset
      *
      * @return mixed
      */
@@ -287,7 +284,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets value based on offset.
      *
-     * @param integer $offset Offset
+     * @param int $offset Offset
      * @param mixed   $value  Value to be set
      *
      * @return void
@@ -304,7 +301,7 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
+     * @param int $offset Offset
      *
      * @return void
      */
@@ -346,5 +343,3 @@ class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
         return ObjectSerializer::deserialize(json_encode($request->all()), static::class);
     }
 }
-
-
