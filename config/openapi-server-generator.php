@@ -16,5 +16,5 @@ return [
     /*
      * Path relative to the app directory where dto models will be located
      */
-    'app_dir' => 'OpenApiGenerated',
+    'app_dir' => 'Http/OpenApiGenerated',
 ];
