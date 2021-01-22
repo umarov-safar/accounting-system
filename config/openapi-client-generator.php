@@ -50,7 +50,7 @@ return [
         /**
          * Directory where you can place templates to override default ones. Used in -t
          */
-        'template_dir' => resource_path('openapi_templates' . DIRECTORY_SEPARATOR . 'js'),
+        'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'clients_tempaltes' . DIRECTORY_SEPARATOR . 'js'),
     ],
 
     /*
@@ -76,6 +76,6 @@ return [
         /**
          * Directory where you can place templates to override default ones. . Used in -t
          */
-        'template_dir' => resource_path('openapi_templates' . DIRECTORY_SEPARATOR . 'php'),
+        'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'clients_tempaltes' . DIRECTORY_SEPARATOR . 'php'),
     ],
 ];
