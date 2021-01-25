@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Web\Controllers;
 
 class HealthCheck
 {
