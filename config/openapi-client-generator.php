@@ -46,6 +46,11 @@ return [
          * Need generate nest js module, only for backend services
          */
         'generate_nestjs_module' => true,
+
+        /**
+         * Directory where you can place templates to override default ones. Used in -t
+         */
+        'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'clients_templates' . DIRECTORY_SEPARATOR . 'js'),
     ],
 
     /*
@@ -66,5 +71,11 @@ return [
             'modelPackage' => 'Dto',
             'packageName' => 'BackendServiceSkeletonClient',
         ],
+
+        
+        /**
+         * Directory where you can place templates to override default ones. . Used in -t
+         */
+        'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'clients_templates' . DIRECTORY_SEPARATOR . 'php'),
     ],
 ];
