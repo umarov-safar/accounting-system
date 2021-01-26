@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  App\Http\OpenApiGenerated\V1
+ * @package  App\Http\ApiV1\OpenApiGenerated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,14 +26,14 @@
  * Do not edit the class manually.
  */
 
-namespace App\Http\OpenApiGenerated\V1;
+namespace App\Http\ApiV1\OpenApiGenerated;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  App\Http\OpenApiGenerated\V1
+ * @package  App\Http\ApiV1\OpenApiGenerated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -130,7 +130,6 @@ class Configuration
     public function setApiKey($apiKeyIdentifier, $key)
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
-
         return $this;
     }
 
@@ -157,7 +156,6 @@ class Configuration
     public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
     {
         $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-
         return $this;
     }
 
@@ -183,7 +181,6 @@ class Configuration
     public function setAccessToken($accessToken)
     {
         $this->accessToken = $accessToken;
-
         return $this;
     }
 
@@ -207,7 +204,6 @@ class Configuration
     public function setUsername($username)
     {
         $this->username = $username;
-
         return $this;
     }
 
@@ -231,7 +227,6 @@ class Configuration
     public function setPassword($password)
     {
         $this->password = $password;
-
         return $this;
     }
 
@@ -255,7 +250,6 @@ class Configuration
     public function setHost($host)
     {
         $this->host = $host;
-
         return $this;
     }
 
@@ -284,7 +278,6 @@ class Configuration
         }
 
         $this->userAgent = $userAgent;
-
         return $this;
     }
 
@@ -308,7 +301,6 @@ class Configuration
     public function setDebug($debug)
     {
         $this->debug = $debug;
-
         return $this;
     }
 
@@ -332,7 +324,6 @@ class Configuration
     public function setDebugFile($debugFile)
     {
         $this->debugFile = $debugFile;
-
         return $this;
     }
 
@@ -356,7 +347,6 @@ class Configuration
     public function setTempFolderPath($tempFolderPath)
     {
         $this->tempFolderPath = $tempFolderPath;
-
         return $this;
     }
 
@@ -403,7 +393,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (App\Http\OpenApiGenerated\V1) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (App\Http\ApiV1\OpenApiGenerated) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 1.0.0' . PHP_EOL;
@@ -444,12 +434,12 @@ class Configuration
      */
     public function getHostSettings()
     {
-        return [
-          [
+        return array(
+          array(
             "url" => "/api/v1",
             "description" => "No description provided",
-          ],
-        ];
+          )
+        );
     }
 
     /**
@@ -462,7 +452,7 @@ class Configuration
     public function getHostFromSettings($index, $variables = null)
     {
         if (null === $variables) {
-            $variables = [];
+            $variables = array();
         }
 
         $hosts = $this->getHostSettings();

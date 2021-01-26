@@ -1,11 +1,11 @@
 <?php
 /**
- * ErrorResponse
+ * EmptyDataResponse
  *
  * PHP version 5
  *
  * @category Class
- * @package  App\Http\OpenApiGenerated\V1
+ * @package  App\Http\ApiV1\OpenApiGenerated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,20 +27,20 @@
  * Do not edit the class manually.
  */
 
-namespace App\Http\OpenApiGenerated\V1\Dto;
+namespace App\Http\ApiV1\OpenApiGenerated\Dto;
 
-use \App\Http\OpenApiGenerated\V1\ObjectSerializer;
 use \ArrayAccess;
+use \App\Http\ApiV1\OpenApiGenerated\ObjectSerializer;
 
 /**
- * ErrorResponse Class Doc Comment
+ * EmptyDataResponse Class Doc Comment
  *
  * @category Class
- * @package  App\Http\OpenApiGenerated\V1
+ * @package  App\Http\ApiV1\OpenApiGenerated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class EmptyDataResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ErrorResponse';
+    protected static $openAPIModelName = 'EmptyDataResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'errors' => '\App\Http\OpenApiGenerated\V1\Dto\Error[]',
-        'meta' => 'object',
+        'data' => 'object',
+        'meta' => 'object'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'errors' => null,
-        'meta' => null,
+        'data' => null,
+        'meta' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'errors' => 'errors',
-        'meta' => 'meta',
+        'data' => 'data',
+        'meta' => 'meta'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'errors' => 'setErrors',
-        'meta' => 'setMeta',
+        'data' => 'setData',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'errors' => 'getErrors',
-        'meta' => 'getMeta',
+        'data' => 'getData',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -163,6 +163,10 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -178,7 +182,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
         $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
     }
 
@@ -191,10 +195,9 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['errors'] === null) {
-            $invalidProperties[] = "'errors' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -209,26 +212,27 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
     /**
-     * Gets errors
+     * Gets data
      *
-     * @return \App\Http\OpenApiGenerated\V1\Dto\Error[]
+     * @return object
      */
-    public function getErrors()
+    public function getData()
     {
-        return $this->container['errors'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets errors
+     * Sets data
      *
-     * @param \App\Http\OpenApiGenerated\V1\Dto\Error[] $errors Массив ошибок
+     * @param object $data data
      *
      * @return $this
      */
-    public function setErrors($errors)
+    public function setData($data)
     {
-        $this->container['errors'] = $errors;
+        $this->container['data'] = $data;
 
         return $this;
     }
@@ -246,7 +250,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param object|null $meta Объект с мета-информацией
+     * @param object|null $meta meta
      *
      * @return $this
      */
@@ -256,13 +260,12 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -272,7 +275,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return mixed
      */
@@ -284,7 +287,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      * @param mixed   $value  Value to be set
      *
      * @return void
@@ -301,7 +304,7 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
@@ -343,3 +346,5 @@ class ErrorResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         return ObjectSerializer::deserialize(json_encode($request->all()), static::class);
     }
 }
+
+

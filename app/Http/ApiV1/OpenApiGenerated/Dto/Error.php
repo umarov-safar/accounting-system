@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  App\Http\OpenApiGenerated\V1
+ * @package  App\Http\ApiV1\OpenApiGenerated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace App\Http\OpenApiGenerated\V1\Dto;
+namespace App\Http\ApiV1\OpenApiGenerated\Dto;
 
-use \App\Http\OpenApiGenerated\V1\ObjectSerializer;
 use \ArrayAccess;
+use \App\Http\ApiV1\OpenApiGenerated\ObjectSerializer;
 
 /**
  * Error Class Doc Comment
  *
  * @category Class
- * @package  App\Http\OpenApiGenerated\V1
+ * @package  App\Http\ApiV1\OpenApiGenerated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -59,7 +59,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'code' => 'string',
         'message' => 'string',
-        'meta' => 'object',
+        'meta' => 'object'
     ];
 
     /**
@@ -70,7 +70,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'code' => null,
         'message' => null,
-        'meta' => null,
+        'meta' => null
     ];
 
     /**
@@ -102,7 +102,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'code' => 'code',
         'message' => 'message',
-        'meta' => 'meta',
+        'meta' => 'meta'
     ];
 
     /**
@@ -113,7 +113,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'code' => 'setCode',
         'message' => 'setMessage',
-        'meta' => 'setMeta',
+        'meta' => 'setMeta'
     ];
 
     /**
@@ -124,7 +124,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'code' => 'getCode',
         'message' => 'getMessage',
-        'meta' => 'getMeta',
+        'meta' => 'getMeta'
     ];
 
     /**
@@ -168,6 +168,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    
+
+    
+
     /**
      * Associative array for storing property values
      *
@@ -203,7 +207,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['message'] === null) {
             $invalidProperties[] = "'message' can't be null";
         }
-
         return $invalidProperties;
     }
 
@@ -217,6 +220,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return count($this->listInvalidProperties()) === 0;
     }
+
 
     /**
      * Gets code
@@ -289,13 +293,12 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
-     * @return bool
+     * @return boolean
      */
     public function offsetExists($offset)
     {
@@ -305,7 +308,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return mixed
      */
@@ -317,7 +320,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      * @param mixed   $value  Value to be set
      *
      * @return void
@@ -334,7 +337,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Unsets offset.
      *
-     * @param int $offset Offset
+     * @param integer $offset Offset
      *
      * @return void
      */
@@ -376,3 +379,5 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
         return ObjectSerializer::deserialize(json_encode($request->all()), static::class);
     }
 }
+
+
