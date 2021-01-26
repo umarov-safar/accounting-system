@@ -857,16 +857,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.24.0",
+            "version": "v8.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d16e9f875e4d7609a05d5007393e22ba95efd1fc"
+                "reference": "05da44d6823c2923597519ac10151f5827a24f80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d16e9f875e4d7609a05d5007393e22ba95efd1fc",
-                "reference": "d16e9f875e4d7609a05d5007393e22ba95efd1fc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/05da44d6823c2923597519ac10151f5827a24f80",
+                "reference": "05da44d6823c2923597519ac10151f5827a24f80",
                 "shasum": ""
             },
             "require": {
@@ -953,6 +953,7 @@
             },
             "suggest": {
                 "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.155).",
+                "brianium/paratest": "Required to run tests in parallel (^6.0).",
                 "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6|^3.0).",
                 "ext-ftp": "Required to use the Flysystem FTP driver.",
                 "ext-gd": "Required to use Illuminate\\Http\\Testing\\FileFactory::image().",
@@ -1020,7 +1021,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-01-21T14:19:29+00:00"
+            "time": "2021-01-26T14:40:21+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -6384,16 +6385,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.8",
+            "version": "2.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "8e907d81244649c5ea746e2ec30c32c5f59df472"
+                "reference": "66b3138ecce38024723fb3bfc66ef8852a779ea9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/8e907d81244649c5ea746e2ec30c32c5f59df472",
-                "reference": "8e907d81244649c5ea746e2ec30c32c5f59df472",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/66b3138ecce38024723fb3bfc66ef8852a779ea9",
+                "reference": "66b3138ecce38024723fb3bfc66ef8852a779ea9",
                 "shasum": ""
             },
             "require": {
@@ -6457,7 +6458,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2020-12-29T09:12:55+00:00"
+            "time": "2021-01-26T14:45:19+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -6893,16 +6894,16 @@
         },
         {
             "name": "greensight/laravel-openapi-server-generator",
-            "version": "0.8.1",
+            "version": "0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/greensight/laravel-openapi-server-generator.git",
-                "reference": "b24802e1741290314e301afa9ef5c3ae11518460"
+                "reference": "04a3cf865c3e3902558b71be98b19c960b25a7ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-openapi-server-generator/zipball/b24802e1741290314e301afa9ef5c3ae11518460",
-                "reference": "b24802e1741290314e301afa9ef5c3ae11518460",
+                "url": "https://api.github.com/repos/greensight/laravel-openapi-server-generator/zipball/04a3cf865c3e3902558b71be98b19c960b25a7ca",
+                "reference": "04a3cf865c3e3902558b71be98b19c960b25a7ca",
                 "shasum": ""
             },
             "require": {
@@ -6938,9 +6939,9 @@
             ],
             "support": {
                 "issues": "https://github.com/greensight/laravel-openapi-server-generator/issues",
-                "source": "https://github.com/greensight/laravel-openapi-server-generator/tree/0.8.1"
+                "source": "https://github.com/greensight/laravel-openapi-server-generator/tree/0.8.2"
             },
-            "time": "2021-01-26T13:10:14+00:00"
+            "time": "2021-01-26T15:52:17+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",

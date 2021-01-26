@@ -17,4 +17,14 @@ return [
      * Path relative to the app directory where dto models will be located
      */
     'destination_dir' => 'Http/Api{version}/OpenApiGenerated',
+
+    /**
+     * Directory where you can place templates to override default ones. . Used in -t
+     */
+    'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'server_templates'),
+
+    /*
+     * Preserve only enums.
+     */
+    'only_enums_mode' => true,
 ];
