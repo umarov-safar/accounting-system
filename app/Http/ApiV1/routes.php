@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+require "Foo/routes.php";
 
-Route::get('/test', function (Request $request) {
-    return ['a' => 'b'];
-});
+// some common routes can be placed here
