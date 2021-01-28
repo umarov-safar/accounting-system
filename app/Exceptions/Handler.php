@@ -105,7 +105,7 @@ class Handler extends ExceptionHandler
     protected function convertExceptionToArray(Throwable $e)
     {
         $config = $this->container->make('config');
-        $isDebug = $config && $config->get('app.debug');
+        $isDebug = $config->get('app.debug');
         $code = $this->isHttpException($e) ? (new ReflectionClass($e))->getShortName() : 'UnknownError';
         $error = [
             'message' => $isDebug || $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
