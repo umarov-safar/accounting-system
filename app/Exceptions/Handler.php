@@ -106,6 +106,7 @@ class Handler extends ExceptionHandler
     {
         $config = $this->container->make('config');
         $isDebug = $config->get('app.debug');
+
         $code = $this->isHttpException($e) ? (new ReflectionClass($e))->getShortName() : 'UnknownError';
         $error = [
             'message' => $isDebug || $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
