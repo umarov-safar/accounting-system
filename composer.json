@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.3 || ^8.0",
         "ensi/laravel-ensi-filesystem": "^0.1.1",
         "fideloper/proxy": "^4.4",
         "greensight/laravel-serve-swagger": "^0.1.2",
