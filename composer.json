@@ -27,7 +27,6 @@
         "friendsofphp/php-cs-fixer": "^2.16",
         "greensight/laravel-openapi-client-generator": "^0.8",
         "greensight/laravel-openapi-server-generator": "^0.8",
-        "laravel/sail": "^0.0.5",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "php-parallel-lint/php-var-dump-check": "^0.5.0",
