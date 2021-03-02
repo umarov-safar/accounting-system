@@ -1,3 +1,3 @@
 <?php
 
-require "Modules/Foo/routes.php";
+require "Modules/Foos/routes.php";
