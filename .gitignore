@@ -34,6 +34,7 @@ yarn-error.log
 !phpunit.xml
 !psalm.xml
 *.yml
+!.docker/docker-compose.yml
 *.txt
 !robots.txt
 !robots_*.txt
