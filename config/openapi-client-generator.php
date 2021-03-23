@@ -47,6 +47,8 @@ return [
          */
         'generate_nestjs_module' => true,
 
+        'files_to_ignore_during_cleanup' => ['.git', '.gitignore'],
+
         /**
          * Directory where you can place templates to override default ones. Used in -t
          */
@@ -72,6 +74,10 @@ return [
             'packageName' => 'BackendServiceSkeletonClient',
         ],
 
+        
+        'laravel_package_config_key' => 'openapi-clients.backend-service-skeleton',
+
+        'files_to_ignore_during_cleanup' => ['.git', '.gitignore'],
         
         /**
          * Directory where you can place templates to override default ones. . Used in -t
