@@ -35,7 +35,7 @@ return [
          * Specific generator params from https://openapi-generator.tech/docs/generators/typescript-fetch/
          */
         'params' => [
-            'npmName' => '@ensi/backend-service-skeleton',
+            'npmName' => '@ensi/backend-service-skeleton-client',
             'useES6' => true,
             'useSingleRequestParameter' => true,
             'withInterfaces' => true,
@@ -62,14 +62,14 @@ return [
         /*
          * Package name for composer, use standard pattern namespace/package
          */
-        'composer_name' => 'ensi/backend-service-skeleton',
+        'composer_name' => 'ensi/backend-service-skeleton-client',
 
         /*
          * Specific generator params from https://openapi-generator.tech/docs/generators/php/
          */
         'params' => [
             'apiPackage' => 'Api',
-            'invokerPackage' => 'Ensi\BackendServiceSkeleton',
+            'invokerPackage' => 'Ensi\BackendServiceSkeletonClient',
             'modelPackage' => 'Dto',
             'packageName' => 'BackendServiceSkeletonClient',
         ],
