@@ -15,4 +15,18 @@ abstract class BaseJsonResource extends JsonResource
 
         return static::collection($resource)->additional(array_merge_recursive($currentAdditional, $append));
     }
+
+    protected function mapFileToResponse(string $fieldName) : ?array
+    {
+        $value = $this->$fieldName;
+        if (!$value) {
+            return null;
+        }
+
+        return [
+            'path' => $value->path ?? '',
+            'name' => $value->name ?? '',
+            'url'  => $value->url ?? '',
+        ];
+    }
 }

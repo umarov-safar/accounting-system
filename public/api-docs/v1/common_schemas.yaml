@@ -6,6 +6,27 @@ IdObject:
       description: id
       example: 1
 
+File:
+  type: object
+  properties:
+    path:
+      type: string
+      description: Путь к файлу относительно корня диска, идентификатор
+    name:
+      type: string
+      description: Название файла с расширением
+    url:
+      type: string
+      description: Ссылка
+
+MultipartFileUploadRequest:
+  type: object
+  properties:
+    file:
+      type: string
+      format: binary
+      description: Загружаемый файл
+
 RequestBodySort:
   type: array
   items:
