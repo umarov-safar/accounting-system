@@ -10,7 +10,7 @@ return [
     /*
      * Dir template where client package will be generated
      */
-    'output_dir_template' => base_path('clients'.DIRECTORY_SEPARATOR.'client'),
+    'output_dir_template' => env('OPENAPI_CLIENT_OUTPUT_DIR', base_path('clients' . DIRECTORY_SEPARATOR . 'client')),
 
     /*
      * Git user
