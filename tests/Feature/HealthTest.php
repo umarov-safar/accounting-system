@@ -11,7 +11,7 @@ class HealthTest extends TestCase
      *
      * @return void
      */
-    public function testHealthTest()
+    public function test_health()
     {
         $response = $this->get('/health');
 
