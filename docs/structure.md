@@ -20,7 +20,7 @@
 - `Models` -  Eloquent модели
 - `Events` - эвенты
 - `Observers` - [observers](https://laravel.com/docs/8.x/eloquent#observers)
-- `Actions` - обычные или [queueable](https://github.com/spatie/laravel-queueable-action) экшены
+- `Actions` - [обычные](https://stitcher.io/blog/laravel-beyond-crud-03-actions) или [queueable](https://github.com/spatie/laravel-queueable-action) экшены
 - другие директории реализующие бизнес-логику и работу с БД.
 
 Важная особенность этого слоя - он ничего не должен знать про источник откуда к нему приходят "команды" будь то запрос через REST API, консольная команда или какой-то другой транспорт.
