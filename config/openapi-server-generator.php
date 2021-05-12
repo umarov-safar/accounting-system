@@ -19,9 +19,9 @@ return [
     'destination_dir' => 'Http/Api{version}/OpenApiGenerated',
 
     /**
-     * Directory where you can place templates to override default ones. . Used in -t
+     * Directory where you can place templates to override default ones. Used in -t
      */
-    'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'server_templates'),
+    'template_dir' => base_path('vendor/ensi/openapi-server-generator-templates/templates'),
 
     /*
      * Preserve only enums.

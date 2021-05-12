@@ -48,11 +48,6 @@ return [
         'generate_nestjs_module' => true,
 
         'files_to_ignore_during_cleanup' => ['.git', '.gitignore'],
-
-        /**
-         * Directory where you can place templates to override default ones. Used in -t
-         */
-        'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'clients_templates' . DIRECTORY_SEPARATOR . 'js'),
     ],
 
     /*
@@ -80,8 +75,8 @@ return [
         'files_to_ignore_during_cleanup' => ['.git', '.gitignore'],
         
         /**
-         * Directory where you can place templates to override default ones. . Used in -t
+         * Directory where you can place templates to override default ones. Used in -t
          */
-        'template_dir' => resource_path('openapi_generator' . DIRECTORY_SEPARATOR . 'clients_templates' . DIRECTORY_SEPARATOR . 'php'),
+        'template_dir' => base_path('vendor/ensi/openapi-client-generator-php-templates/templates'),
     ],
 ];
