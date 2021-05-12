@@ -368,16 +368,16 @@
         },
         {
             "name": "ensi/laravel-ensi-filesystem",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:greensight/ensi/packages/laravel-ensi-filesystem.git",
-                "reference": "b1762d786c4c7904bb52fccf2cc10f232af3c77e"
+                "reference": "817f68cc9cc1990cda36c0de0692cecd27f26454"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-ensi-filesystem/repository/archive.zip?sha=b1762d786c4c7904bb52fccf2cc10f232af3c77e",
-                "reference": "b1762d786c4c7904bb52fccf2cc10f232af3c77e",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-ensi-filesystem/repository/archive.zip?sha=817f68cc9cc1990cda36c0de0692cecd27f26454",
+                "reference": "817f68cc9cc1990cda36c0de0692cecd27f26454",
                 "shasum": ""
             },
             "require": {
@@ -414,7 +414,7 @@
                     "email": "nekrasov@greensight.ru"
                 }
             ],
-            "time": "2021-04-07T17:09:21+03:00"
+            "time": "2021-05-12T11:16:47+00:00"
         },
         {
             "name": "fideloper/proxy",
