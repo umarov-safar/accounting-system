@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e592e70d455392d2d30089154804f52",
+    "content-hash": "706ef9019dccbd5e42b5c24f1993f45e",
     "packages": [
         {
             "name": "brick/math",
@@ -6954,24 +6954,24 @@
         },
         {
             "name": "greensight/laravel-openapi-client-generator",
-            "version": "0.9.1",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/greensight/laravel-openapi-client-generator.git",
-                "reference": "ce3f4159923f51b587c86541fd93a9261e7bd089"
+                "reference": "6e708a746c9106e4818ed993d25f613c260090b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-openapi-client-generator/zipball/ce3f4159923f51b587c86541fd93a9261e7bd089",
-                "reference": "ce3f4159923f51b587c86541fd93a9261e7bd089",
+                "url": "https://api.github.com/repos/greensight/laravel-openapi-client-generator/zipball/6e708a746c9106e4818ed993d25f613c260090b4",
+                "reference": "6e708a746c9106e4818ed993d25f613c260090b4",
                 "shasum": ""
             },
             "require": {
-                "nette/php-generator": "^3.4",
+                "nette/php-generator": "^3.5",
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "laravel/framework": "^7 || ^8",
+                "laravel/framework": "^7.30 || ^8.40",
                 "orchestra/testbench": "^5.3",
                 "phpunit/phpunit": "^9.2"
             },
@@ -7000,9 +7000,9 @@
             ],
             "support": {
                 "issues": "https://github.com/greensight/laravel-openapi-client-generator/issues",
-                "source": "https://github.com/greensight/laravel-openapi-client-generator/tree/0.9.1"
+                "source": "https://github.com/greensight/laravel-openapi-client-generator/tree/0.10.0"
             },
-            "time": "2021-02-27T21:40:59+00:00"
+            "time": "2021-05-17T07:58:29+00:00"
         },
         {
             "name": "greensight/laravel-openapi-server-generator",
