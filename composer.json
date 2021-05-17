@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "ensi/laravel-ensi-filesystem": "^0.1.1",
+        "ensi/laravel-ensi-filesystem": "^0.1.5",
         "fideloper/proxy": "^4.4",
         "greensight/laravel-serve-swagger": "^0.1.2",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -18,7 +18,7 @@
         "barryvdh/laravel-ide-helper": "^2.8",
         "beyondcode/laravel-dump-server": "^1.6",
         "ensi/openapi-client-generator-php-templates": "^0.1",
-        "ensi/openapi-server-generator-templates": "^0.1.0",
+        "ensi/openapi-server-generator-templates": "^0.1",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^2.16",
