@@ -17,6 +17,8 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
         "beyondcode/laravel-dump-server": "^1.6",
+        "ensi/openapi-client-generator-php-templates": "^0.1",
+        "ensi/openapi-server-generator-templates": "^0.1.0",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^2.16",
@@ -45,6 +47,14 @@
         {
             "type": "vcs",
             "url": "https://gitlab.com/greensight/ensi/packages/laravel-ensi-filesystem.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git"
         }
     ],
     "scripts": {
