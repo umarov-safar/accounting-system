@@ -27,6 +27,19 @@ MultipartFileUploadRequest:
       format: binary
       description: Загружаемый файл
 
+PaginationTypeEnum:
+  type: string
+  description: >
+      * Pagination types:
+      * `cursor` - Пагинация используя cursor
+      * `offset` - Пагинация используя offset
+  enum:
+      - cursor
+      - offset
+  x-enum-varnames:
+      - CURSOR
+      - OFFSET
+
 RequestBodySort:
   type: array
   items:
@@ -38,24 +51,75 @@ RequestBodyInclude:
     type: string
 
 RequestBodyPagination:
+  oneOf:
+    - $ref: '#/RequestBodyCursorPagination'
+    - $ref: '#/RequestBodyOffsetPagination'
+
+RequestBodyCursorPagination:
   type: object
   properties:
-    offset:
-      type: integer
-      example: 0
+    cursor:
+      type: string
+      example: "eyJpZCI6MTAsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0"
     limit:
       type: integer
       example: 20
+    type:
+      $ref: '#/PaginationTypeEnum'
+      example: "cursor"
+
+RequestBodyOffsetPagination:
+  type: object
+  properties:
+    limit:
+      type: integer
+      example: 20
+    offset:
+      type: integer
+      example: 0
+    type:
+      $ref: '#/PaginationTypeEnum'
+      example: "offset"
 
 ResponseBodyPagination:
+  oneOf:
+    - $ref: '#/ResponseBodyCursorPagination'
+    - $ref: '#/ResponseBodyOffsetPagination'
+
+ResponseBodyCursorPagination:
   type: object
   properties:
-    offset:
-      type: integer
-      example: 0
+    cursor:
+      type: string
+      example: "eyJpZCI6MTAsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0"
+      nullable: true
     limit:
       type: integer
       example: 20
+    next_cursor:
+      type: string
+      example: "eyJpZCI6MTAsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0"
+      nullable: true
+    previous_cursor:
+      type: string
+      example: "eyJpZCI6MTAsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0"
+      nullable: true
+    type:
+      $ref: '#/PaginationTypeEnum'
+      example: "cursor"
+
+ResponseBodyOffsetPagination:
+  type: object
+  properties:
+    limit:
+      type: integer
+      example: 20
+    offset:
+      type: integer
+      example: 0
     total:
       type: integer
       example: 253
+    type:
+      $ref: '#/PaginationTypeEnum'
+      example: "offset"

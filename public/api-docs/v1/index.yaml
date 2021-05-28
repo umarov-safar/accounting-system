@@ -51,6 +51,8 @@ components:
           type: object
       required:
           - data
+    PaginationTypeEnum:
+      $ref: './common_schemas.yaml#/PaginationTypeEnum'
   responses: 
     BadRequest:
       description: Bad Request
