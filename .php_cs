@@ -37,5 +37,7 @@ return PhpCsFixer\Config::create()
             'keep_multiple_spaces_after_comma' => true,
         ],
         'single_trait_insert_per_statement' => true,
+        'no_whitespace_in_blank_line' => true,
+        'method_chaining_indentation' => true,
     ])
     ->setFinder($finder);
