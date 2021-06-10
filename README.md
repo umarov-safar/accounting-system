@@ -4,17 +4,17 @@
 
 ## Установка
 
-1. git clone git@gitlab.com:greensight/ensi/backend-service-skeleton.git <new-repo-name>
-2. cd <new-repo-name>
-3. rm -rf .git && git init
-4. git remote add origin git@gitlab.com:greensight/<project>/<new-repo-name>.git
-5. Указываем в .env.example нужный APP_NAME
-5. cp .env.example .env
+1. `git clone git@gitlab.com:greensight/ensi/backend-service-skeleton.git <new-repo-name>`
+2. `cd <new-repo-name>`
+3. `rm -rf .git && git init`
+4. `git remote add origin git@gitlab.com:greensight/<project>/<new-repo-name>.git`
+5. Указываем в `.env.example` нужный `APP_NAME`
+5. `cp .env.example .env`
 6. Указываем в .env доступы к БД
-7. composer i && npm i
-8. git add . && git commit -m "Initial commit" && git push -u origin master
-9. php artisan key:generate
-10. php artisan storage:link
+7. `composer i && npm i`
+8. `git add . && git commit -m "Initial commit" && git push -u origin master`
+9. `php artisan key:generate`
+10. `php artisan storage:link`
 
 ## Модификации относительно чистого Laravel
 
