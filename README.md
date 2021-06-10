@@ -11,6 +11,7 @@
 5. Указываем в `.env.example` нужный `APP_NAME`
 5. `cp .env.example .env`
 6. Указываем в .env доступы к БД
+7. Обновляем `README.md`
 7. `composer i && npm i`
 8. `git add . && git commit -m "Initial commit" && git push -u origin master`
 9. `php artisan key:generate`
