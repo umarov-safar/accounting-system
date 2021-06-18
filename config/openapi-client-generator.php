@@ -10,7 +10,7 @@ return [
     /*
      * Dir template where client package will be generated
      */
-    'output_dir_template' => env('OPENAPI_CLIENT_OUTPUT_DIR', base_path('clients' . DIRECTORY_SEPARATOR . 'client')),
+    'output_dir_template' => env('OPENAPI_CLIENT_OUTPUT_DIR') ?: base_path('clients' . DIRECTORY_SEPARATOR . 'client'),
 
     /*
      * Git user
@@ -69,11 +69,11 @@ return [
             'packageName' => 'BackendServiceSkeletonClient',
         ],
 
-        
+
         'laravel_package_config_key' => 'openapi-clients.backend-service-skeleton',
 
         'files_to_ignore_during_cleanup' => ['.git', '.gitignore'],
-        
+
         /**
          * Directory where you can place templates to override default ones. Used in -t
          */
