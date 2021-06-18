@@ -1,0 +1,29 @@
+version: '3'
+services:
+  php:
+    image: "${PHP_IMAGE}:${PHP_TAG}"
+    network_mode: "service:nginx"
+    env_file:
+      - .env
+      - "${PHP_ENV}"
+    volumes:
+      - "${VOLUMES_ROOT}:/var/www"
+      - "${ENSI_STORAGE}:/var/data"
+  nginx:
+    image: nginx:1.19.3-alpine
+    hostname: ${NGINX_VIRTUAL_HOST}
+    networks:
+      - proxy
+    environment:
+      - VIRTUAL_HOST=${NGINX_VIRTUAL_HOST}
+    env_file:
+      - .env
+    volumes:
+      - "${VOLUMES_ROOT}/.docker/nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "${VOLUMES_ROOT}/.docker/nginx/default.conf.template:/etc/nginx/templates/default.conf.template"
+      - "${VOLUMES_ROOT}:/var/www"
+      - "${ENSI_STORAGE}:/var/data"
+networks:
+  proxy:
+    external:
+      name: "${NETWORK}"

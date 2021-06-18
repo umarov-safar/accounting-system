@@ -1,0 +1,29 @@
+#!/bin/bash
+
+export $(sed '/^#/d' .docker/.env)
+
+PROXY_NAME="${NETWORK}-proxy"
+PROXY_EXISTS=$(docker ps -a | grep "${PROXY_NAME}" 2>&1 > /dev/null && echo "yes")
+NETWORK_EXISTS=$(docker network ls | grep "${NETWORK}" 2>&1 > /dev/null && echo "yes")
+
+case "$1" in
+    up)
+        if [ "${NETWORK_EXISTS}" != "yes" ]; then
+            docker network create "${NETWORK}"
+        fi
+
+        if [ "${PROXY_EXISTS}" != "yes" ]; then
+            docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name "${PROXY_NAME}" jwilder/nginx-proxy
+            docker network connect "${NETWORK}" "${PROXY_NAME}"
+        else
+            docker start "${PROXY_NAME}"
+        fi
+        ;;
+    down)
+        docker stop "${PROXY_NAME}"
+        ;;
+    *)
+        echo -e "Usage: .docker/network COMMAND\n\nExamples:\n\t.docker/network up\n\t.docker/network down\n" >&2
+        exit 1
+        ;;
+esac

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Usage: .docker/make-env [service-name] [shared-data-dir]
+
+SRC_DIR=$(pwd)
+SERVICE=${1:-$(basename "${SRC_DIR}")}
+PARENT_DIR=$(dirname "${SRC_DIR}")
+SHARED_DATA_DIR=${2:-"${PARENT_DIR}/data"}
+
+sed -e "s!#SERVICE#!${SERVICE}!" \
+    -e "s!#SRC_DIR#!${SRC_DIR}!" \
+    -e "s!#SHARED_DATA_DIR#!${SHARED_DATA_DIR}!" \
+    .docker/.env.example > .docker/.env

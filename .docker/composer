@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export $(sed '/^#/d' .docker/.env)
+
+composerHome=${COMPOSER_HOME:-/tmp/composer}
+composerCache=${COMPOSER_CACHE_DIR:-/tmp/composer_cache}
+
+docker run --rm -it \
+    --entrypoint="" \
+    -v$(pwd):/var/www \
+    -u$(id -u):$(id -g) \
+    --env COMPOSER_HOME=${composerHome} \
+    --env COMPOSER_CACHE_DIR=${composerCache} \
+    --volume ${COMPOSER_HOME:-$HOME/.config/composer}:$composerHome \
+    --volume ${COMPOSER_CACHE_DIR:-$HOME/.cache/composer}:$composerCache \
+    ${TOOLS_IMAGE?"TOOLS_IMAGE variable in .docker/.env is required"} \
+    composer $@
