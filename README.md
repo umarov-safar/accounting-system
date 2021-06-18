@@ -1,8 +1,11 @@
 # Ensi Backend Service Skeleton
 
 Представляет из себя модифицированную под наши нужды экземпляр `Laravel 8.5.16`
+## Разворот непосредественно самого скелетона локально для разработки
 
-## Установка
+Разворот сервис не отличается от разворота любого другого сервиса Ensi и описан в  [документации](https://greensight.atlassian.net/wiki/spaces/ENSI/pages/362676232/Backend-)
+
+## Разворот сервиса из Ensi Backend Service Skeleton
 
 1. `git clone git@gitlab.com:greensight/ensi/backend-service-skeleton.git <new-repo-name>`
 2. `cd <new-repo-name>`

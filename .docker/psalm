@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export $(sed '/^#/d' .docker/.env)
+
+docker run --rm -it \
+    --entrypoint="" \
+    -v$(pwd):/var/www \
+    ${TOOLS_IMAGE?"TOOLS_IMAGE variable in .docker/.env is required"} \
+    ./vendor/bin/psalm $@

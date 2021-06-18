@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd .docker
+case "$1" in
+    up)
+        docker-compose up -d
+        ;;
+    down)
+        docker-compose down
+        ;;
+    restart)
+        docker-compose down
+        docker-compose up -d
+        ;;
+    --)
+        shift
+        docker-compose $@
+        ;;
+    *)
+        echo -e "Usage: service COMMAND\n\nExamples:\n\tservice up\n\tservice down\n\tservice -- restart php" >&2
+        exit 1
+        ;;
+esac
