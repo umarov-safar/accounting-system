@@ -69,7 +69,7 @@ class Handler extends ExceptionHandler
 
         return parent::render($request, $e);
     }
-        
+
     /**
      * Output validation exceptions from Form Requests as json.
      *
@@ -113,7 +113,7 @@ class Handler extends ExceptionHandler
             'message' => $isDebug || $this->isHttpException($e) ? $e->getMessage() : 'Server Error',
             'code' => $code,
         ];
-     
+
         if ($isDebug) {
             $error['meta'] = [
                 'exception' => get_class($e),
@@ -124,7 +124,7 @@ class Handler extends ExceptionHandler
                 })->all(),
             ];
         }
-        
+
         return $this->formatErrorPayload([ $error ]);
     }
 

@@ -45,7 +45,7 @@ class PaginationTypeEnum
      */
     const CURSOR = 'cursor';
     const OFFSET = 'offset';
-    
+
     /**
      * Gets allowable values of the enum
      * @return string[]
