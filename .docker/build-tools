@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+export $(sed '/^#/d' .docker/.env)
+
+image=${1:-"${TOOLS_IMAGE?"TOOLS_IMAGE variable in .docker/.env is required"}"}
+
+docker build \
+  --file .docker/tools/Dockerfile \
+  -t ${image} \
+  .
