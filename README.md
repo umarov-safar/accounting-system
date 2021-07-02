@@ -121,3 +121,6 @@ echo json_encode($price);
 
 Реализовано в `App\Exceptions\Handlers.php`
 
+### Лицензия
+
+[Открытая лицензия на право использования программы для ЭВМ Greensight Ecom Platform (GEP)](LICENSE.md).
