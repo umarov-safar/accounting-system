@@ -9,6 +9,7 @@ services:
     volumes:
       - "${VOLUMES_ROOT}:/var/www"
       - "${ENSI_STORAGE}:/var/data"
+      - "${ENSI_ROOT}:/var/project"
   nginx:
     image: nginx:1.19.3-alpine
     hostname: ${NGINX_VIRTUAL_HOST}
