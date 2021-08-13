@@ -3,14 +3,10 @@
 cd .docker
 case "$1" in
     up)
-        docker-compose up -d
+        docker-compose up -d php nginx
         ;;
     down)
         docker-compose down
-        ;;
-    restart)
-        docker-compose down
-        docker-compose up -d
         ;;
     --)
         shift

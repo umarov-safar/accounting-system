@@ -86,8 +86,7 @@ auth.json
 .php_cs.cache
 .huskyrc
 clients/*
-!clients/.gitkeep 
+!clients/.gitkeep
 storage/ensi
-storage/logs
 public/ensi-protected-storage
 generated

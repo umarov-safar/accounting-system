@@ -3,13 +3,20 @@ services:
   php:
     image: "${PHP_IMAGE}:${PHP_TAG}"
     network_mode: "service:nginx"
+    entrypoint:
+      - "/usr/local/bin/local-entrypoint"
+    command:
+      - "php-fpm"
+      - "-R"
     env_file:
       - .env
-      - "${PHP_ENV}"
     volumes:
-      - "${VOLUMES_ROOT}:/var/www"
-      - "${ENSI_STORAGE}:/var/data"
-      - "${ENSI_ROOT}:/var/project"
+      - "${SERVICE_DIR}/.docker/php/local-entrypoint:/usr/local/bin/local-entrypoint"
+
+      - "${PROJECT_DIR}:/var/project"
+      - "${SERVICE_DIR}:/var/www"
+      - "${DATA_DIR}:/var/data"
+
   nginx:
     image: nginx:1.19.3-alpine
     hostname: ${NGINX_VIRTUAL_HOST}
@@ -20,10 +27,37 @@ services:
     env_file:
       - .env
     volumes:
-      - "${VOLUMES_ROOT}/.docker/nginx/nginx.conf:/etc/nginx/nginx.conf"
-      - "${VOLUMES_ROOT}/.docker/nginx/default.conf.template:/etc/nginx/templates/default.conf.template"
-      - "${VOLUMES_ROOT}:/var/www"
-      - "${ENSI_STORAGE}:/var/data"
+      - "${SERVICE_DIR}/.docker/nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "${SERVICE_DIR}/.docker/nginx/default.conf.template:/etc/nginx/templates/default.conf.template"
+
+      - "${SERVICE_DIR}:/var/www"
+      - "${DATA_DIR}:/var/data"
+
+  php-cli:
+    image: "${TOOLS_IMAGE}"
+    entrypoint:
+      - "/usr/local/bin/local-entrypoint"
+    networks:
+      - proxy
+    user: "${USER_ID}:${GROUP_ID}"
+    env_file:
+      - .env
+    environment:
+      COMPOSER_HOME: /tmp/composer
+      COMPOSER_CACHE_DIR: /tmp/composer_cache
+    volumes:
+      - "${SERVICE_DIR}/.docker/php/local-entrypoint:/usr/local/bin/local-entrypoint"
+
+      - "${PROJECT_DIR}:/var/project"
+      - "${SERVICE_DIR}:/var/www"
+      - "${DATA_DIR}:/var/data"
+
+      - "$HOME:/mnt/home"
+      - "${COMPOSER_HOME}:/tmp/composer"
+      - "${COMPOSER_CACHE_DIR}:/tmp/composer_cache"
+      - "${NPM_CACHE_DIR}:/.npm"
+      - "${CONFIG_DIR}:/.config"
+
 networks:
   proxy:
     external:
