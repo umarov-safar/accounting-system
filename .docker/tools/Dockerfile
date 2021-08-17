@@ -1,3 +1,7 @@
-FROM dockerhub.greensight.ru/ensi-tech/php-base-image:8.0-task-70144-2021jun23-1-ci
+FROM composer as composer
 
-RUN apk add npm openjdk8-jre-base
+FROM dockerhub.greensight.ru/ensi-tech/php-base-image:8.0-2021jun23-1
+
+RUN apk add npm git openjdk8-jre-base
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
