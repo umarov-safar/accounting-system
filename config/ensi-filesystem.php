@@ -2,7 +2,7 @@
 
 return [
    /*
-    * e.g "pim"
+    * e.g "catalog"
     */
-   'default_service_code' => 'backend_service_skeleton',
+   'default_domain_code' => 'backend_service_skeleton',
 ];

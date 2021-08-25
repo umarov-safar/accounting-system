@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "595efee4acc2ab37097ba99acf8a7d1d",
+    "content-hash": "700173812ebd7bd9fc63477af0f25489",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -398,10 +398,6 @@
                 "sqlserver",
                 "sqlsrv"
             ],
-            "support": {
-                "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.1.1"
-            },
             "funding": [
                 {
                     "url": "https://www.doctrine-project.org/sponsorship.html",
@@ -880,7 +876,6 @@
                 "illuminate/support": "^8.53",
                 "monolog/monolog": "^2.3"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -893,23 +888,20 @@
                     "email": "koryukov@greensight.ru"
                 }
             ],
-            "support": {
-                "issues": "https://gitlab.com/api/v4/projects/28685169/issues"
-            },
             "time": "2021-08-06T14:55:36+00:00"
         },
         {
             "name": "ensi/laravel-ensi-filesystem",
-            "version": "0.1.5",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:greensight/ensi/packages/laravel-ensi-filesystem.git",
-                "reference": "817f68cc9cc1990cda36c0de0692cecd27f26454"
+                "url": "https://gitlab.com/greensight/ensi/packages/laravel-ensi-filesystem.git",
+                "reference": "5b747160a22271ed9094974738ef71e9352b7b1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-ensi-filesystem/repository/archive.zip?sha=817f68cc9cc1990cda36c0de0692cecd27f26454",
-                "reference": "817f68cc9cc1990cda36c0de0692cecd27f26454",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-ensi-filesystem/repository/archive.zip?sha=5b747160a22271ed9094974738ef71e9352b7b1c",
+                "reference": "5b747160a22271ed9094974738ef71e9352b7b1c",
                 "shasum": ""
             },
             "require": {
@@ -946,7 +938,7 @@
                     "email": "nekrasov@greensight.ru"
                 }
             ],
-            "time": "2021-05-12T11:16:47+00:00"
+            "time": "2021-08-25T08:56:34+00:00"
         },
         {
             "name": "fideloper/proxy",

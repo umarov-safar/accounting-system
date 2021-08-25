@@ -1,46 +1,6 @@
 <?php
 
-$ensiServicesCodes = [
-    'backend_service_skeleton',
-    // Add this and other services codes here to gain access to their public and protected storages.
-];
-
-$ensiDisks = [];
-foreach ($ensiServicesCodes as $serviceCode) {
-    $ensiDisks["ensi_{$serviceCode}_public"] = [
-        'driver' => 'local',
-        'root' => storage_path("ensi/public/{$serviceCode}"),
-        'url' => env('ENSI_PUBLIC_DISK_URL').'/'.$serviceCode,
-        'visibility' => 'public',
-        'permissions' => [
-            'file' => [
-                'public' => 0664,
-                'private' => 0600,
-            ],
-            'dir' => [
-                'public' => 0775,
-                'private' => 0700,
-            ],
-        ],
-    ];
-
-    $ensiDisks["ensi_{$serviceCode}_protected"] = [
-        'driver' => 'local',
-        'root' => storage_path("ensi/protected/{$serviceCode}"),
-        'url' => env('APP_URL').'/ensi-protected-storage',
-        'visibility' => 'public',
-        'permissions' => [
-            'file' => [
-                'public' => 0664,
-                'private' => 0600,
-            ],
-            'dir' => [
-                'public' => 0775,
-                'private' => 0700,
-            ],
-        ],
-    ];
-}
+use Ensi\LaravelEnsiFilesystem\EnsiStorageConfig;
 
 return [
 
@@ -94,7 +54,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
-    ], $ensiDisks),
+    ], EnsiStorageConfig::addDisk('backend_service_skeleton', storage_path('ensi'))),
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +69,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('ensi-protected-storage') => storage_path('ensi/protected/backend_service_skeleton'),
     ],
 
 ];

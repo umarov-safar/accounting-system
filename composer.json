@@ -9,7 +9,7 @@
         "ackintosh/ganesha": "^1.2",
         "doctrine/dbal": "^3.1",
         "ensi/laravel-channel-helper": "dev-master",
-        "ensi/laravel-ensi-filesystem": "^0.1.5",
+        "ensi/laravel-ensi-filesystem": "^0.2.0",
         "fideloper/proxy": "^4.4",
         "greensight/laravel-serve-swagger": "^0.1.2",
         "guzzlehttp/guzzle": "^7.0.1",
