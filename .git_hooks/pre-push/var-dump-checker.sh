@@ -11,7 +11,7 @@ COL_YELLOW=$ESC_SEQ"0;33m"
 echo
 printf "$COL_YELLOW%s$COL_RESET\n" "Running pre-push hook: \"var-dump-checker\""
 
-./vendor/bin/var-dump-check --laravel --exclude bootstrap --exclude node_modules --exclude vendor .
+./vendor/bin/var-dump-check --laravel --exclude bootstrap --exclude node_modules --exclude clients --exclude vendor .
 
 # If the grep command has no hits - echo a warning and exit with non-zero status.
 if [ $? == 1 ]; then
