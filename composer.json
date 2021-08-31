@@ -20,6 +20,7 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
         "beyondcode/laravel-dump-server": "^1.6",
+        "brianium/paratest": "^6.3",
         "ensi/openapi-client-generator-php-templates": "^0.1",
         "ensi/openapi-server-generator-templates": "^0.1",
         "facade/ignition": "^2.5",

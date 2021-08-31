@@ -89,3 +89,4 @@ clients/*
 !clients/.gitkeep
 storage/ensi
 generated
+studio.json
