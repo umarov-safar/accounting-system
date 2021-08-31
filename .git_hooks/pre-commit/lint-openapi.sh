@@ -2,6 +2,8 @@
 
 # В данном хуке выполняется приведение код-стайла в соответствие с конфигом .php_cs
 
+source $(pwd)/.git_hooks/external_runtime
+
 EXECUTABLE_NAME=spectral
 ROOT=`pwd`
 ESC_SEQ="\x1b["

@@ -2,6 +2,8 @@
 
 # В данном хуке выполняется проверка файлов проекта на dd, var_dump и прочие подобные отладочные функции через var-dump-check
 
+source $(pwd)/.git_hooks/external_runtime
+
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_RED=$ESC_SEQ"0;31m"
