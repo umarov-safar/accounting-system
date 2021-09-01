@@ -7,6 +7,7 @@
 /vendor
 .env
 .env.backup
+.env.testing
 .phpunit.result.cache
 docker-compose.override.yml
 composer.local.json
@@ -89,3 +90,4 @@ clients/*
 !clients/.gitkeep
 storage/ensi
 generated
+studio.json

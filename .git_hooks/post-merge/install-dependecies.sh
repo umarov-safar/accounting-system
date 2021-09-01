@@ -4,6 +4,8 @@
 # - composer install если был изменен composer.lock
 # - npm install если был изменен package-lock.json
 
+source $(pwd)/.git_hooks/external_runtime
+
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_RED=$ESC_SEQ"0;31m"
