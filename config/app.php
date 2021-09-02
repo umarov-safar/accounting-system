@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'ru_RU',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,6 +171,7 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\TestsServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\OpenApiClientsServiceProvider::class,
