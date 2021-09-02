@@ -5,11 +5,14 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+        <testsuite name="Component">
+            <directory suffix="ComponentTest.php">./app</directory>
         </testsuite>
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+        <testsuite name="Integration">
+            <directory suffix="IntegrationTest.php">./app</directory>
+        </testsuite>
+        <testsuite name="Unit">
+            <directory suffix="UnitTest.php">./app</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
@@ -17,6 +20,9 @@
             <directory suffix=".php">./app</directory>
         </include>
     </coverage>
+    <logging>
+        <junit outputFile="build/report.junit.xml"/>
+    </logging>
     <php>
         <server name="APP_ENV" value="testing"/>
         <server name="BCRYPT_ROUNDS" value="4"/>

@@ -31,7 +31,7 @@ rcpath=$(findUp "$EXTERNAL_RUNTIME_FILE")
 if [[ "$rcpath" != "" ]]; then
     # source it and run hook in via runtime command
     . $rcpath/$EXTERNAL_RUNTIME_FILE
-    printf "$COL_BLUE%s$COL_RESET\n" "External runtime found, run hook using '$EXTERNAL_RUNTIME_COMMAND' command"
+    printf "$COL_BLUE%s$COL_RESET\n" "External runtime has been found. Running hook with '$EXTERNAL_RUNTIME_COMMAND' command"
     $EXTERNAL_RUNTIME_COMMAND $0
     exit $?
 fi
