@@ -205,7 +205,7 @@ node('docker-agent'){
                                 for i in \$databases; do
                                     psql --username=${username} --dbname=postgres --host=${vars["TESTING_DB_HOST"]} --command="DROP DATABASE IF EXISTS \$i;"
                                 done
-                                psql --username=${username} --dbname=postgres --host=${vars["TESTING_DB_HOST"]} --command='CREATE DATABASE ${dbName};'
+                                psql --username=${username} --dbname=postgres --host=${vars["TESTING_DB_HOST"]} --command='CREATE DATABASE ${dbName} template ensi_tpl_v1;'
                             """)
                         }
 
