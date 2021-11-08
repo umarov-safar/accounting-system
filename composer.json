@@ -8,10 +8,9 @@
         "php": "^8.0",
         "ackintosh/ganesha": "^1.2",
         "doctrine/dbal": "^3.1",
-        "ensi/laravel-channel-helper": "dev-master",
         "ensi/laravel-ensi-filesystem": "^0.2.0",
+        "ensi/laravel-serve-swagger": "^0.2.0",
         "fideloper/proxy": "^4.4",
-        "greensight/laravel-serve-swagger": "^0.1.2",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
@@ -20,15 +19,15 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
         "beyondcode/laravel-dump-server": "^1.6",
+        "ensi/laravel-openapi-client-generator": "^0.12.0",
+        "ensi/laravel-openapi-testing": "^0.2.0",
         "ensi/openapi-client-generator-php-templates": "^0.1",
         "ensi/openapi-server-generator-templates": "^0.1",
+        "ensi/test-factories": "^0.2.1",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.2",
-        "greensight/laravel-openapi-client-generator": "^0.10",
         "greensight/laravel-openapi-server-generator": "^0.8",
-        "greensight/laravel-openapi-testing": "^0.1",
-        "greensight/test-factories": "^0.1.0",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "pestphp/pest": "^1.15",
@@ -63,10 +62,6 @@
         {
             "type": "vcs",
             "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://gitlab.com/greensight/ensi/packages/laravel-channel-helper.git"
         }
     ],
     "scripts": {

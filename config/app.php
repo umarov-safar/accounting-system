@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Greensight\LaravelServeSwagger\ServeSwaggerServiceProvider::class,
+        Ensi\LaravelServeSwagger\ServeSwaggerServiceProvider::class,
 
         /*
          * Application Service Providers...

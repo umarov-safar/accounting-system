@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c478c44396ba0e58c243ff23b71e56f",
+    "content-hash": "864b2e9138b54102a26716ff990910d9",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -935,46 +935,6 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
-            "name": "ensi/laravel-channel-helper",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/greensight/ensi/packages/laravel-channel-helper.git",
-                "reference": "6d7d4768ea2e3cf5b98c5584d96e01fec76634b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-channel-helper/repository/archive.zip?sha=6d7d4768ea2e3cf5b98c5584d96e01fec76634b0",
-                "reference": "6d7d4768ea2e3cf5b98c5584d96e01fec76634b0",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0"
-            },
-            "require-dev": {
-                "illuminate/support": "^8.53",
-                "monolog/monolog": "^2.3"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Ensi\\LaravelChannelHelper\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Ivan Koryukov",
-                    "email": "koryukov@greensight.ru"
-                }
-            ],
-            "support": {
-                "issues": "https://gitlab.com/api/v4/projects/28685169/issues"
-            },
-            "abandoned": true,
-            "time": "2021-08-06T14:55:36+00:00"
-        },
-        {
             "name": "ensi/laravel-ensi-filesystem",
             "version": "0.2.0",
             "source": {
@@ -1023,6 +983,49 @@
                 }
             ],
             "time": "2021-08-25T08:56:34+00:00"
+        },
+        {
+            "name": "ensi/laravel-serve-swagger",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-serve-swagger.git",
+                "reference": "6e73659c5dfe8e2a4460f54eb99f7d61af6ceafb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-serve-swagger/zipball/6e73659c5dfe8e2a4460f54eb99f7d61af6ceafb",
+                "reference": "6e73659c5dfe8e2a4460f54eb99f7d61af6ceafb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3 || ^8.0",
+                "swagger-api/swagger-ui": "^3.30.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelServeSwagger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Golubkova Natalia",
+                    "email": "golubkova@greensight.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-serve-swagger/issues",
+                "source": "https://github.com/ensi-platform/laravel-serve-swagger/tree/0.2.0"
+            },
+            "time": "2021-10-05T20:03:32+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -1142,50 +1145,6 @@
                 }
             ],
             "time": "2021-10-17T19:48:54+00:00"
-        },
-        {
-            "name": "greensight/laravel-serve-swagger",
-            "version": "0.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/greensight/laravel-serve-swagger.git",
-                "reference": "f69e31176f21c99294d6f15ce577d1c54506f351"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-serve-swagger/zipball/f69e31176f21c99294d6f15ce577d1c54506f351",
-                "reference": "f69e31176f21c99294d6f15ce577d1c54506f351",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3 || ^8.0",
-                "swagger-api/swagger-ui": "^3.30.0"
-            },
-            "require-dev": {
-                "laravel/framework": "^8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Greensight\\LaravelServeSwagger\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Golubkova Natalia",
-                    "email": "golubkova@greensight.ru"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/greensight/laravel-serve-swagger/issues",
-                "source": "https://github.com/greensight/laravel-serve-swagger/tree/0.1.8"
-            },
-            "abandoned": "ensi/laravel-serve-swagger",
-            "time": "2021-06-25T10:53:58+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -7243,6 +7202,111 @@
             "time": "2020-11-10T18:47:58+00:00"
         },
         {
+            "name": "ensi/laravel-openapi-client-generator",
+            "version": "0.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-openapi-client-generator.git",
+                "reference": "d8e6706edbf96660b85e2504fdca8b0e4fe950ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-client-generator/zipball/d8e6706edbf96660b85e2504fdca8b0e4fe950ec",
+                "reference": "d8e6706edbf96660b85e2504fdca8b0e4fe950ec",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nette/php-generator": "^3.5",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^7.30 || ^8.40",
+                "orchestra/testbench": "^5.3",
+                "phpunit/phpunit": "^9.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\LaravelOpenapiClientGenerator\\OpenapiClientGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelOpenapiClientGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Nekrasov",
+                    "email": "nekrasov@greensight.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-openapi-client-generator/issues",
+                "source": "https://github.com/ensi-platform/laravel-openapi-client-generator/tree/0.12.0"
+            },
+            "time": "2021-10-05T10:45:26+00:00"
+        },
+        {
+            "name": "ensi/laravel-openapi-testing",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-openapi-testing.git",
+                "reference": "19de59bafb6135232e177f8371029f8f29b76d51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-testing/zipball/19de59bafb6135232e177f8371029f8f29b76d51",
+                "reference": "19de59bafb6135232e177f8371029f8f29b76d51",
+                "shasum": ""
+            },
+            "require": {
+                "osteel/openapi-httpfoundation-testing": "^0.6.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^6.0",
+                "pestphp/pest": "^1.16",
+                "php-parallel-lint/php-var-dump-check": "^0.5.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelOpenApiTesting\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Nekrasov",
+                    "email": "nekrasov@greensight.ru"
+                }
+            ],
+            "keywords": [
+                "factory",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-openapi-testing/issues",
+                "source": "https://github.com/ensi-platform/laravel-openapi-testing/tree/0.2.0"
+            },
+            "time": "2021-10-05T16:25:35+00:00"
+        },
+        {
             "name": "ensi/openapi-client-generator-php-templates",
             "version": "0.1.2",
             "source": {
@@ -7296,6 +7360,59 @@
                 "issues": "https://gitlab.com/api/v4/projects/26594265/issues"
             },
             "time": "2021-05-12T13:07:38+03:00"
+        },
+        {
+            "name": "ensi/test-factories",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/php-test-factories.git",
+                "reference": "0dff7eca4dcc3ae4cd7f1d14cfd30e358935bdc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/php-test-factories/zipball/0dff7eca4dcc3ae4cd7f1d14cfd30e358935bdc7",
+                "reference": "0dff7eca4dcc3ae4cd7f1d14cfd30e358935bdc7",
+                "shasum": ""
+            },
+            "require": {
+                "fakerphp/faker": "^1.10",
+                "illuminate/support": "^8.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^6.0",
+                "pestphp/pest": "^1.16",
+                "php-parallel-lint/php-var-dump-check": "^0.5.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\TestFactories\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Nekrasov",
+                    "email": "nekrasov@greensight.ru"
+                }
+            ],
+            "keywords": [
+                "factory",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/php-test-factories/issues",
+                "source": "https://github.com/ensi-platform/php-test-factories/tree/0.2.1"
+            },
+            "time": "2021-10-11T08:37:06+00:00"
         },
         {
             "name": "facade/flare-client-php",
@@ -7820,59 +7937,6 @@
             "time": "2021-10-05T08:12:17+00:00"
         },
         {
-            "name": "greensight/laravel-openapi-client-generator",
-            "version": "0.10.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/greensight/laravel-openapi-client-generator.git",
-                "reference": "9fd54621f7b813e0a3c55a11239b963c0dd4dc1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-openapi-client-generator/zipball/9fd54621f7b813e0a3c55a11239b963c0dd4dc1b",
-                "reference": "9fd54621f7b813e0a3c55a11239b963c0dd4dc1b",
-                "shasum": ""
-            },
-            "require": {
-                "nette/php-generator": "^3.5",
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "laravel/framework": "^7.30 || ^8.40",
-                "orchestra/testbench": "^5.3",
-                "phpunit/phpunit": "^9.2"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Greensight\\LaravelOpenapiClientGenerator\\OpenapiClientGeneratorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Greensight\\LaravelOpenapiClientGenerator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Kutselay",
-                    "email": "kutselaj@greensight.ru"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/greensight/laravel-openapi-client-generator/issues",
-                "source": "https://github.com/greensight/laravel-openapi-client-generator/tree/0.10.4"
-            },
-            "abandoned": true,
-            "time": "2021-07-09T13:05:42+00:00"
-        },
-        {
             "name": "greensight/laravel-openapi-server-generator",
             "version": "0.8.4",
             "source": {
@@ -7923,113 +7987,6 @@
             },
             "abandoned": "ensi/laravel-openapi-server-generator",
             "time": "2021-09-03T12:32:40+00:00"
-        },
-        {
-            "name": "greensight/laravel-openapi-testing",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/greensight/laravel-openapi-testing.git",
-                "reference": "4de4113f95f24f4066562ac835ae12d2eb3080c7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-openapi-testing/zipball/4de4113f95f24f4066562ac835ae12d2eb3080c7",
-                "reference": "4de4113f95f24f4066562ac835ae12d2eb3080c7",
-                "shasum": ""
-            },
-            "require": {
-                "osteel/openapi-httpfoundation-testing": "^0.6.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^6.0",
-                "pestphp/pest": "^1.16",
-                "php-parallel-lint/php-var-dump-check": "^0.5.0",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Greensight\\LaravelOpenApiTesting\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Nekrasov",
-                    "email": "nekrasov@greensight.ru"
-                }
-            ],
-            "keywords": [
-                "factory",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/greensight/laravel-openapi-testing/issues",
-                "source": "https://github.com/greensight/laravel-openapi-testing/tree/0.1.0"
-            },
-            "abandoned": "ensi/laravel-openapi-testing",
-            "time": "2021-08-24T15:20:41+00:00"
-        },
-        {
-            "name": "greensight/test-factories",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/greensight/php-test-factories.git",
-                "reference": "729fa1eaeb8437824b5852325c7f805a34ba9b32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/greensight/php-test-factories/zipball/729fa1eaeb8437824b5852325c7f805a34ba9b32",
-                "reference": "729fa1eaeb8437824b5852325c7f805a34ba9b32",
-                "shasum": ""
-            },
-            "require": {
-                "fakerphp/faker": "^1.10",
-                "illuminate/support": "^8.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^6.0",
-                "pestphp/pest": "^1.16",
-                "php-parallel-lint/php-var-dump-check": "^0.5.0",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Greensight\\TestFactories\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Nekrasov",
-                    "email": "nekrasov@greensight.ru"
-                }
-            ],
-            "keywords": [
-                "factory",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/greensight/php-test-factories/issues",
-                "source": "https://github.com/greensight/php-test-factories/tree/0.1.0"
-            },
-            "abandoned": "ensi/test-factories",
-            "time": "2021-08-23T14:08:56+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -12963,9 +12920,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "ensi/laravel-channel-helper": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
