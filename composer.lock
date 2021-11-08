@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f51633fdc796624f083596a7dc6b0c41",
+    "content-hash": "6c44113ec5d5164a6608b04f9ea2bd29",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -7242,6 +7242,59 @@
             "time": "2020-11-10T18:47:58+00:00"
         },
         {
+            "name": "ensi/laravel-openapi-client-generator",
+            "version": "0.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-openapi-client-generator.git",
+                "reference": "d8e6706edbf96660b85e2504fdca8b0e4fe950ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-client-generator/zipball/d8e6706edbf96660b85e2504fdca8b0e4fe950ec",
+                "reference": "d8e6706edbf96660b85e2504fdca8b0e4fe950ec",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nette/php-generator": "^3.5",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^7.30 || ^8.40",
+                "orchestra/testbench": "^5.3",
+                "phpunit/phpunit": "^9.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\LaravelOpenapiClientGenerator\\OpenapiClientGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelOpenapiClientGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Nekrasov",
+                    "email": "nekrasov@greensight.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-openapi-client-generator/issues",
+                "source": "https://github.com/ensi-platform/laravel-openapi-client-generator/tree/0.12.0"
+            },
+            "time": "2021-10-05T10:45:26+00:00"
+        },
+        {
             "name": "ensi/openapi-client-generator-php-templates",
             "version": "0.1.2",
             "source": {
@@ -7817,59 +7870,6 @@
                 }
             ],
             "time": "2021-10-05T08:12:17+00:00"
-        },
-        {
-            "name": "greensight/laravel-openapi-client-generator",
-            "version": "0.10.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/greensight/laravel-openapi-client-generator.git",
-                "reference": "9fd54621f7b813e0a3c55a11239b963c0dd4dc1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/greensight/laravel-openapi-client-generator/zipball/9fd54621f7b813e0a3c55a11239b963c0dd4dc1b",
-                "reference": "9fd54621f7b813e0a3c55a11239b963c0dd4dc1b",
-                "shasum": ""
-            },
-            "require": {
-                "nette/php-generator": "^3.5",
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "laravel/framework": "^7.30 || ^8.40",
-                "orchestra/testbench": "^5.3",
-                "phpunit/phpunit": "^9.2"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Greensight\\LaravelOpenapiClientGenerator\\OpenapiClientGeneratorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Greensight\\LaravelOpenapiClientGenerator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Kutselay",
-                    "email": "kutselaj@greensight.ru"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/greensight/laravel-openapi-client-generator/issues",
-                "source": "https://github.com/greensight/laravel-openapi-client-generator/tree/0.10.4"
-            },
-            "abandoned": true,
-            "time": "2021-07-09T13:05:42+00:00"
         },
         {
             "name": "greensight/laravel-openapi-server-generator",
