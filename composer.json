@@ -8,7 +8,6 @@
         "php": "^8.0",
         "ackintosh/ganesha": "^1.2",
         "doctrine/dbal": "^3.1",
-        "ensi/laravel-channel-helper": "dev-master",
         "ensi/laravel-ensi-filesystem": "^0.2.0",
         "ensi/laravel-serve-swagger": "^0.2.0",
         "fideloper/proxy": "^4.4",
@@ -63,10 +62,6 @@
         {
             "type": "vcs",
             "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://gitlab.com/greensight/ensi/packages/laravel-channel-helper.git"
         }
     ],
     "scripts": {

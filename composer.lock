@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8845fe300bf07be2020f7bc689eeb7b",
+    "content-hash": "864b2e9138b54102a26716ff990910d9",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -933,46 +933,6 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
-        },
-        {
-            "name": "ensi/laravel-channel-helper",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/greensight/ensi/packages/laravel-channel-helper.git",
-                "reference": "6d7d4768ea2e3cf5b98c5584d96e01fec76634b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Flaravel-channel-helper/repository/archive.zip?sha=6d7d4768ea2e3cf5b98c5584d96e01fec76634b0",
-                "reference": "6d7d4768ea2e3cf5b98c5584d96e01fec76634b0",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0"
-            },
-            "require-dev": {
-                "illuminate/support": "^8.53",
-                "monolog/monolog": "^2.3"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Ensi\\LaravelChannelHelper\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Ivan Koryukov",
-                    "email": "koryukov@greensight.ru"
-                }
-            ],
-            "support": {
-                "issues": "https://gitlab.com/api/v4/projects/28685169/issues"
-            },
-            "abandoned": true,
-            "time": "2021-08-06T14:55:36+00:00"
         },
         {
             "name": "ensi/laravel-ensi-filesystem",
@@ -12960,9 +12920,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "ensi/laravel-channel-helper": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

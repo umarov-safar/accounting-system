@@ -1,11 +1,11 @@
 <?php
 
-use Ensi\LaravelChannelHelper\ChannelHelper;
+use Ensi\LaravelStdoutLogsHelper\LaravelStdoutLogsHelper;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
-return ChannelHelper::addStdoutStacks([
+return LaravelStdoutLogsHelper::addStdoutStacks([
 
     /*
     |--------------------------------------------------------------------------
@@ -38,7 +38,7 @@ return ChannelHelper::addStdoutStacks([
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ChannelHelper::getNamesForStack('daily'),
+            'channels' => LaravelStdoutLogsHelper::getNamesForStack('daily'),
             'ignore_exceptions' => false,
         ],
 
@@ -48,7 +48,7 @@ return ChannelHelper::addStdoutStacks([
             'level' => env('LOG_LEVEL', 'debug'),
         ],
 
-        'daily' => ChannelHelper::makeDailyChannel('laravel.log'),
+        'daily' => LaravelStdoutLogsHelper::makeDailyChannel('laravel.log'),
 
         'slack' => [
             'driver' => 'slack',
