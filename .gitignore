@@ -85,6 +85,7 @@ auth.json
 # Project #
 ###########
 .php_cs.cache
+.php-cs-fixer.cache
 .huskyrc
 clients/*
 !clients/.gitkeep
