@@ -2,7 +2,7 @@
 
 namespace App\Http\ApiV1\Support\Tests\Factories;
 
-use Greensight\TestFactories\Factory;
+use Ensi\TestFactories\Factory;
 
 abstract class BaseApiFactory extends Factory
 {

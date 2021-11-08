@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b809b00b3c648cb2d298e53d76f8aff7",
+    "content-hash": "c8845fe300bf07be2020f7bc689eeb7b",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -7402,6 +7402,59 @@
             "time": "2021-05-12T13:07:38+03:00"
         },
         {
+            "name": "ensi/test-factories",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/php-test-factories.git",
+                "reference": "0dff7eca4dcc3ae4cd7f1d14cfd30e358935bdc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/php-test-factories/zipball/0dff7eca4dcc3ae4cd7f1d14cfd30e358935bdc7",
+                "reference": "0dff7eca4dcc3ae4cd7f1d14cfd30e358935bdc7",
+                "shasum": ""
+            },
+            "require": {
+                "fakerphp/faker": "^1.10",
+                "illuminate/support": "^8.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^6.0",
+                "pestphp/pest": "^1.16",
+                "php-parallel-lint/php-var-dump-check": "^0.5.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\TestFactories\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Nekrasov",
+                    "email": "nekrasov@greensight.ru"
+                }
+            ],
+            "keywords": [
+                "factory",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/php-test-factories/issues",
+                "source": "https://github.com/ensi-platform/php-test-factories/tree/0.2.1"
+            },
+            "time": "2021-10-11T08:37:06+00:00"
+        },
+        {
             "name": "facade/flare-client-php",
             "version": "1.9.1",
             "source": {
@@ -7974,60 +8027,6 @@
             },
             "abandoned": "ensi/laravel-openapi-server-generator",
             "time": "2021-09-03T12:32:40+00:00"
-        },
-        {
-            "name": "greensight/test-factories",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/greensight/php-test-factories.git",
-                "reference": "729fa1eaeb8437824b5852325c7f805a34ba9b32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/greensight/php-test-factories/zipball/729fa1eaeb8437824b5852325c7f805a34ba9b32",
-                "reference": "729fa1eaeb8437824b5852325c7f805a34ba9b32",
-                "shasum": ""
-            },
-            "require": {
-                "fakerphp/faker": "^1.10",
-                "illuminate/support": "^8.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "mockery/mockery": "^1.4",
-                "orchestra/testbench": "^6.0",
-                "pestphp/pest": "^1.16",
-                "php-parallel-lint/php-var-dump-check": "^0.5.0",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Greensight\\TestFactories\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ilya Nekrasov",
-                    "email": "nekrasov@greensight.ru"
-                }
-            ],
-            "keywords": [
-                "factory",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/greensight/php-test-factories/issues",
-                "source": "https://github.com/greensight/php-test-factories/tree/0.1.0"
-            },
-            "abandoned": "ensi/test-factories",
-            "time": "2021-08-23T14:08:56+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
