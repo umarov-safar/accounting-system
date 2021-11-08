@@ -2,7 +2,7 @@
 
 namespace App\Http\ApiV1\Support\Tests;
 
-use Greensight\LaravelOpenApiTesting\ValidatesAgainstOpenApiSpec;
+use Ensi\LaravelOpenApiTesting\ValidatesAgainstOpenApiSpec;
 use Tests\ComponentTestCase;
 
 abstract class ApiV1ComponentTestCase extends ComponentTestCase
