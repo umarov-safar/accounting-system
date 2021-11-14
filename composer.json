@@ -10,6 +10,7 @@
         "doctrine/dbal": "^3.1",
         "ensi/laravel-ensi-filesystem": "^0.2.0",
         "ensi/laravel-serve-swagger": "^0.2.0",
+        "ensi/laravel-stdout-logs-helper": "0.1.0",
         "fideloper/proxy": "^4.4",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
@@ -22,12 +23,12 @@
         "ensi/laravel-openapi-client-generator": "^0.12.0",
         "ensi/laravel-openapi-testing": "^0.2.0",
         "ensi/openapi-client-generator-php-templates": "^0.1",
-        "ensi/openapi-server-generator-templates": "^0.1",
+        "ensi/laravel-openapi-server-generator": "^1.0",
+        "ensi/openapi-server-generator-templates": "^0.2",
         "ensi/test-factories": "^0.2.1",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.2",
-        "greensight/laravel-openapi-server-generator": "^0.8",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "pestphp/pest": "^1.15",
@@ -62,6 +63,10 @@
         {
             "type": "vcs",
             "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ensi-platform/laravel-openapi-server-generator.git"
         }
     ],
     "scripts": {

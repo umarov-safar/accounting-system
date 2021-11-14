@@ -13,19 +13,22 @@ tags:
   - name: examples
     description: Тэг-пример
 paths:
-  /examples/{id}: 
+  /examples/{id}:
     get:
       tags:
         - examples
       operationId: getExample
-      summary: Получение объекта типа Example 
+      x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
+      x-lg-route-name: 'getExample'
+      x-lg-skip-request-generation: true
+      summary: Получение объекта типа Example
       description: Получение объекта типа Example
       parameters:
         - $ref: '#/components/parameters/PathId'
         - $ref: '#/components/parameters/QueryInclude'
       responses:
-        "200":
-          description: Успешный ответ
+        #"200":
+          #description: Успешный ответ
           # content:
           #  application/json:
           #    schema:
@@ -53,7 +56,7 @@ components:
           - data
     PaginationTypeEnum:
       $ref: './common_schemas.yaml#/PaginationTypeEnum'
-  responses: 
+  responses:
     BadRequest:
       description: Bad Request
       content:
@@ -71,4 +74,4 @@ components:
       content:
         application/json:
           schema:
-            $ref: './errors.yaml#/ErrorResponse'  
+            $ref: './errors.yaml#/ErrorResponse'
