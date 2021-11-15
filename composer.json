@@ -10,7 +10,7 @@
         "doctrine/dbal": "^3.1",
         "ensi/laravel-ensi-filesystem": "^0.2.0",
         "ensi/laravel-serve-swagger": "^0.2.0",
-        "ensi/laravel-stdout-logs-helper": "0.1.0",
+        "ensi/laravel-stdout-logs-helper": "^0.2.0",
         "fideloper/proxy": "^4.4",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
@@ -63,10 +63,6 @@
         {
             "type": "vcs",
             "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/ensi-platform/laravel-openapi-server-generator.git"
         }
     ],
     "scripts": {

@@ -1,6 +1,6 @@
 <?php
 
-use Greensight\LaravelStdoutLogsHelper\LaravelStdoutLogsHelper;
+use Ensi\LaravelStdoutLogsHelper\LaravelStdoutLogsHelper;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
