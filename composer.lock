@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b87b123960f9e69936ace153f9fa8291",
+    "content-hash": "36ebdcb5782ea2a4b120e1e4eae3eed5",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -1029,16 +1029,16 @@
         },
         {
             "name": "ensi/laravel-stdout-logs-helper",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-stdout-logs-helper.git",
-                "reference": "56e2eadf6cedc04942b5f25a946c2ed68b856f2d"
+                "reference": "9753a3bb7d202f755010e708b5fbd41e27530bc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-stdout-logs-helper/zipball/56e2eadf6cedc04942b5f25a946c2ed68b856f2d",
-                "reference": "56e2eadf6cedc04942b5f25a946c2ed68b856f2d",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-stdout-logs-helper/zipball/9753a3bb7d202f755010e708b5fbd41e27530bc6",
+                "reference": "9753a3bb7d202f755010e708b5fbd41e27530bc6",
                 "shasum": ""
             },
             "require": {
@@ -1046,14 +1046,13 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "illuminate/support": "^8.53",
                 "monolog/monolog": "^2.3",
                 "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Greensight\\LaravelStdoutLogsHelper\\": "src/"
+                    "Ensi\\LaravelStdoutLogsHelper\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1069,9 +1068,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-stdout-logs-helper/issues",
-                "source": "https://github.com/ensi-platform/laravel-stdout-logs-helper/tree/0.1.0"
+                "source": "https://github.com/ensi-platform/laravel-stdout-logs-helper/tree/0.2.0"
             },
-            "time": "2021-08-18T11:58:35+00:00"
+            "time": "2021-10-05T20:22:20+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -7341,22 +7340,7 @@
                     "Ensi\\LaravelOpenApiServerGenerator\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Ensi\\LaravelOpenApiServerGenerator\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "cs": [
-                    "php-cs-fixer fix --config .php-cs-fixer.php"
-                ],
-                "test": [
-                    "./vendor/bin/pest --no-coverage"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7367,8 +7351,8 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/1.0.3",
-                "issues": "https://github.com/ensi-platform/laravel-openapi-server-generator/issues"
+                "issues": "https://github.com/ensi-platform/laravel-openapi-server-generator/issues",
+                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/1.0.3"
             },
             "time": "2021-10-21T13:54:42+00:00"
         },
@@ -12014,16 +11998,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.26.1",
+            "version": "1.26.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "5ecc2ebbdad8ae3ec31274596d922495cff69184"
+                "reference": "11d0042f3d3007d6a54d0fb55e4f0d17b4181000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/5ecc2ebbdad8ae3ec31274596d922495cff69184",
-                "reference": "5ecc2ebbdad8ae3ec31274596d922495cff69184",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/11d0042f3d3007d6a54d0fb55e4f0d17b4181000",
+                "reference": "11d0042f3d3007d6a54d0fb55e4f0d17b4181000",
                 "shasum": ""
             },
             "require": {
@@ -12080,7 +12064,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.26.1"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.26.2"
             },
             "funding": [
                 {
@@ -12092,7 +12076,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-10-01T13:08:05+00:00"
+            "time": "2021-11-15T08:21:15+00:00"
         },
         {
             "name": "spatie/macroable",
@@ -12996,5 +12980,5 @@
     "platform-overrides": {
         "php": "8.0"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }
