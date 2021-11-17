@@ -21,7 +21,7 @@ return [
     | Even if `failureRateThreshold` exceeds the threshold,
     | CircuitBreaker remains in `CLOSED` if `minimumRequests` is below this threshold.
     */
-    'minimum_requests' => env('GANESHA_MININUM_REQUESTS', 10),
+    'minimum_requests' => env('GANESHA_MINIMUM_REQUESTS', 10),
 
     /*
     | The interval (seconds) to change CircuitBreaker's state from `OPEN` to `HALF_OPEN`.
