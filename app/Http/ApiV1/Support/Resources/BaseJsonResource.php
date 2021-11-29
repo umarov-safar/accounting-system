@@ -3,12 +3,26 @@
 namespace App\Http\ApiV1\Support\Resources;
 
 use App\Http\ApiV1\Support\Pagination\Page;
+use DateTime;
 use Ensi\LaravelEnsiFilesystem\Models\EnsiFile;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 abstract class BaseJsonResource extends JsonResource
 {
+    public const DATE_TIME_FORMAT = 'Y-m-d\TH:i:s.u\Z';
+    public const DATE_FORMAT = 'Y-m-d';
+
+    public function dateTimeToIso(?DateTime $datetime): ?string
+    {
+        return $datetime ? $datetime->format(static::DATE_TIME_FORMAT) : null;
+    }
+
+    public function dateToIso(?DateTime $date): ?string
+    {
+        return $date ? $date->format(static::DATE_FORMAT) : null;
+    }
+
     public static function collectionWithPagination($resource, array $pagination): AnonymousResourceCollection
     {
         $collection = static::collection($resource);
