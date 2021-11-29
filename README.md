@@ -19,6 +19,7 @@
 8. `git add . && git commit -m "Initial commit" && git push -u origin master`
 9. `php artisan key:generate`
 10. `php artisan storage:link`
+11. Переимновываем/удаляем все заглушки вроде `backend_skeleton` в конфигах, документации и коде сервиса
 
 ## Модификации относительно чистого Laravel
 
