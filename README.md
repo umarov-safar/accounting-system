@@ -12,14 +12,14 @@
 3. `rm -rf .git && git init`
 4. `git remote add origin git@gitlab.com:greensight/<project>/<new-repo-name>.git`
 5. Указываем в `.env.example` нужный `APP_NAME`
-5. `cp .env.example .env`
-6. Указываем в .env доступы к БД
-7. Обновляем `README.md`
-7. `composer i && npm i`
-8. `git add . && git commit -m "Initial commit" && git push -u origin master`
-9. `php artisan key:generate`
-10. `php artisan storage:link`
-11. Переимновываем/удаляем все заглушки вроде `backend_skeleton` в конфигах, документации и коде сервиса
+6. Переимновываем/удаляем все заглушки вроде `backend_skeleton` в конфигах, документации и коде сервиса
+7. `cp .env.example .env`
+8. Указываем в .env доступы к БД
+9. Обновляем `README.md`
+10. `composer i && npm i`
+11. `git add . && git commit -m "Initial commit" && git push -u origin master`
+12. `php artisan key:generate`
+13. `php artisan storage:link`
 
 ## Модификации относительно чистого Laravel
 
