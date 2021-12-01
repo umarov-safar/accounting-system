@@ -2,7 +2,7 @@
 
 namespace App\Http\ApiV1\Support\Pagination;
 
-use App\Http\ApiV1\OpenApiGenerated\Dto\PaginationTypeEnum;
+use App\Http\ApiV1\OpenApiGenerated\Enums\PaginationTypeEnum;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\Cursor;
 use Illuminate\Pagination\CursorPaginationException;
