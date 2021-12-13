@@ -48,7 +48,7 @@ return LaravelStdoutLogsHelper::addStdoutStacks([
             'level' => env('LOG_LEVEL', 'debug'),
         ],
 
-        'daily' => LaravelStdoutLogsHelper::makeDailyChannel('laravel.log'),
+        'daily' => LaravelStdoutLogsHelper::makeDailyChannel(storage_path('logs/laravel.log')),
 
         'slack' => [
             'driver' => 'slack',
