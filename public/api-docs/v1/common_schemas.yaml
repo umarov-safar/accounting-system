@@ -30,6 +30,26 @@ MultipartFileUploadRequest:
       format: binary
       description: Загружаемый файл
 
+PaginationTypeCursorEnum:
+  type: string
+  description: >
+    * Pagination types:
+    * `cursor` - Пагинация используя cursor
+  enum:
+    - cursor
+  x-enum-varnames:
+    - CURSOR
+
+PaginationTypeOffsetEnum:
+  type: string
+  description: >
+    * Pagination types:
+    * `offset` - Пагинация используя offset
+  enum:
+    - offset
+  x-enum-varnames:
+    - OFFSET
+
 PaginationTypeEnum:
   type: string
   description: >
@@ -108,7 +128,7 @@ ResponseBodyCursorPagination:
       example: "eyJpZCI6MTAsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0"
       nullable: true
     type:
-      $ref: '#/PaginationTypeEnum'
+      $ref: '#/PaginationTypeCursorEnum'
       example: "cursor"
 
 ResponseBodyOffsetPagination:
@@ -124,5 +144,5 @@ ResponseBodyOffsetPagination:
       type: integer
       example: 253
     type:
-      $ref: '#/PaginationTypeEnum'
+      $ref: '#/PaginationTypeOffsetEnum'
       example: "offset"
