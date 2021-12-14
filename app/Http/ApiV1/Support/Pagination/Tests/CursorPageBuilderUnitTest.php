@@ -4,7 +4,6 @@ namespace App\Http\ApiV1\Support\Pagination\Tests;
 
 use App\Http\ApiV1\Support\Pagination\CursorPageBuilder;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\CursorPaginationException;
 use Illuminate\Pagination\CursorPaginator;
 use Illuminate\Support\Collection;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
@@ -49,7 +48,7 @@ test('CursorPageBuilder build with positive limit', function () {
     ]);
 });
 
-test('CursorPageBuilder build throws BadRequestHttpException if cursor pagination failed with exception', function ($exception) {
+test('CursorPageBuilder build throws BadRequestHttpException if cursor pagination failed with exception', function () {
     $limit = 10;
     $request = cpb_make_request([
         'pagination' => [
@@ -57,13 +56,11 @@ test('CursorPageBuilder build throws BadRequestHttpException if cursor paginatio
         ],
     ]);
     $queryBuilderMock = $this->mockQueryBuilder();
-    $queryBuilderMock->shouldReceive('cursorPaginate')->andThrow($exception);
+    $queryBuilderMock->shouldReceive('cursorPaginate')->andThrow(new UnexpectedValueException("test"));
     $builder = new CursorPageBuilder($queryBuilderMock, $request);
 
     $builder->build();
-})
-    ->with([new CursorPaginationException("test"), new UnexpectedValueException("test")])
-    ->throws(BadRequestHttpException::class);
+})->throws(BadRequestHttpException::class);
 
 test('CursorPageBuilder build throws BadRequestHttpException if request cursor can not be decoded', function () {
     $limit = 10;
