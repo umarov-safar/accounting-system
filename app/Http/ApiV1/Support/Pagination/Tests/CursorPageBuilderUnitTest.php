@@ -74,8 +74,7 @@ test('CursorPageBuilder build throws BadRequestHttpException if request cursor c
     $builder = new CursorPageBuilder($queryBuilderMock, $request);
 
     $builder->build();
-})
-    ->throws(BadRequestHttpException::class);
+})->throws(BadRequestHttpException::class);
 
 test('CursorPageBuilder build with 0 as limit returns empty array', function () {
     $limit = 0;
