@@ -13,7 +13,7 @@ File:
       type: string
       description: Путь до файла относительно корня диска домена
       example: "attachments/48/2f/image.png"
-    rootPath:
+    root_path:
       type: string
       description: Путь до файла относительно корня физического диска ensi
       example: "protected/domain/attachments/48/2f/image.png"
