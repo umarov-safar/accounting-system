@@ -6,6 +6,7 @@ use Ackintosh\Ganesha;
 use Ackintosh\Ganesha\Builder;
 use Ackintosh\Ganesha\GuzzleMiddleware;
 use Ackintosh\Ganesha\Storage\Adapter\Apcu as ApcuAdapter;
+use Ensi\GuzzleMultibyte\BodySummarizer;
 use Ensi\LaravelInitialEventPropagation\PropagateInitialEventLaravelGuzzleMiddleware;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,7 +38,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
     {
         $stack = new HandlerStack(Utils::chooseHandler());
 
-        $stack->push(Middleware::httpErrors(), 'http_errors');
+        $stack->push(Middleware::httpErrors(new BodySummarizer()), 'http_errors');
         $stack->push(Middleware::redirect(), 'allow_redirects');
         $stack->push(Middleware::prepareBody(), 'prepare_body');
         if (!config('ganesha.disable_middleware', false)) {
