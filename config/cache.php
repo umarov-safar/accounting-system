@@ -79,6 +79,10 @@ return [
             'lock_connection' => 'default',
         ],
 
+        'octane' => [
+            'driver' => 'octane',
+        ],
+
     ],
 
     /*

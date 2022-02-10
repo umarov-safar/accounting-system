@@ -3,6 +3,8 @@
    "devDependencies": {
       "@openapitools/openapi-generator-cli": "^2.1.15",
       "@stoplight/spectral": "^5.7.2",
+      "chokidar": "^3.5.3",
+      "chokidar-cli": "^3.0.0",
       "husky": "^4.3.0"
    },
    "scripts": {
