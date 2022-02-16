@@ -29,7 +29,7 @@ class CursorPageBuilder extends AbstractPageBuilder
             'limit' => $limit,
             'next_cursor' => null,
             'previous_cursor' => null,
-            'type' => PaginationTypeEnum::CURSOR,
+            'type' => PaginationTypeEnum::CURSOR->value,
         ]);
     }
 
@@ -55,7 +55,7 @@ class CursorPageBuilder extends AbstractPageBuilder
             'limit' => $limit,
             'next_cursor' => $paginator->nextCursor()?->encode(),
             'previous_cursor' => $paginator->previousCursor()?->encode(),
-            'type' => PaginationTypeEnum::CURSOR,
+            'type' => PaginationTypeEnum::CURSOR->value,
         ]);
     }
 }

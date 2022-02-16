@@ -13,7 +13,7 @@ class PageBuilderFactory
     {
         $request = $request ?: resolve(Request::class);
 
-        return $request->input('pagination.type', config('pagination.default_type')) === PaginationTypeEnum::CURSOR
+        return $request->input('pagination.type', config('pagination.default_type')) === PaginationTypeEnum::CURSOR->value
             ? new CursorPageBuilder($query, $request)
             : new OffsetPageBuilder($query, $request);
     }

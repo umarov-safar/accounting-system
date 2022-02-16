@@ -24,7 +24,7 @@ class OffsetPageBuilder extends AbstractPageBuilder
             'offset' => 0,
             'limit' => $limit,
             'total' => $collection->count(),
-            'type' => PaginationTypeEnum::OFFSET,
+            'type' => PaginationTypeEnum::OFFSET->value,
         ]);
     }
 
@@ -43,7 +43,7 @@ class OffsetPageBuilder extends AbstractPageBuilder
             'offset' => $skip,
             'limit' => $limit,
             'total' => $total,
-            'type' => PaginationTypeEnum::OFFSET,
+            'type' => PaginationTypeEnum::OFFSET->value,
         ]);
     }
 }

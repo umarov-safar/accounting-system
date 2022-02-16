@@ -7,19 +7,13 @@
 
 namespace App\Http\ApiV1\OpenApiGenerated\Enums;
 
-class PaginationTypeEnum
+/**
+ * Pagination types:
+ * * `cursor` - Пагинация используя cursor
+ * * `offset` - Пагинация используя offset
+ */
+enum PaginationTypeEnum: string
 {
-    public const CURSOR = 'cursor';
-    public const OFFSET = 'offset';
-
-    /**
-     * @return string[]
-     */
-    public static function cases(): array
-    {
-        return [
-            self::CURSOR,
-            self::OFFSET,
-        ];
-    }
+    case CURSOR = 'cursor';
+    case OFFSET = 'offset';
 }

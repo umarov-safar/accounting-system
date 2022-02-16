@@ -24,8 +24,8 @@ function builder_from_query(?array $requestBody = null)
     return (new PageBuilderFactory())->fromQuery(resolve(Builder::class), $request);
 }
 
-test('PageBuilderFactory uses default type from config by default', function ($type, $expectedBuilderClassName) {
-    config(['pagination.default_type' => $type]);
+test('PageBuilderFactory uses default type from config by default', function (PaginationTypeEnum $type, $expectedBuilderClassName) {
+    config(['pagination.default_type' => $type->value]);
 
     $pageBuilder = builder_from_query();
 
@@ -38,7 +38,7 @@ test('PageBuilderFactory uses default type from config by default', function ($t
 test('PageBuilderFactory uses type from request instead of default', function () {
     config(['pagination.default_type' => PaginationTypeEnum::CURSOR]);
 
-    $pageBuilder = builder_from_query(['pagination' => ['type' => PaginationTypeEnum::OFFSET]]);
+    $pageBuilder = builder_from_query(['pagination' => ['type' => PaginationTypeEnum::OFFSET->value]]);
 
     expect($pageBuilder)->toBeInstanceOf(OffsetPageBuilder::class);
 });

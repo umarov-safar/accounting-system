@@ -32,8 +32,8 @@ MultipartFileUploadRequest:
 
 PaginationTypeCursorEnum:
   type: string
-  description: >
-    * Pagination types:
+  description: |
+    Pagination types:
     * `cursor` - Пагинация используя cursor
   enum:
     - cursor
@@ -42,8 +42,8 @@ PaginationTypeCursorEnum:
 
 PaginationTypeOffsetEnum:
   type: string
-  description: >
-    * Pagination types:
+  description: |
+    Pagination types:
     * `offset` - Пагинация используя offset
   enum:
     - offset
@@ -52,8 +52,8 @@ PaginationTypeOffsetEnum:
 
 PaginationTypeEnum:
   type: string
-  description: >
-      * Pagination types:
+  description: |
+      Pagination types:
       * `cursor` - Пагинация используя cursor
       * `offset` - Пагинация используя offset
   enum:
