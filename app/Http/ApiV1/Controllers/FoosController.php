@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ApiV1\Modules\Foos\Controllers;
+namespace App\Http\ApiV1\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
