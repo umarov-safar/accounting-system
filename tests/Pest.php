@@ -1,5 +1,8 @@
 <?php
 
+use Mockery\MockInterface;
+use function Pest\Laravel\mock;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -39,7 +42,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function mockAction(string $class, mixed $returnValue = null): MockInterface
 {
-    // ..
+    return mock($class)->allows(['execute' => $returnValue]);
 }
