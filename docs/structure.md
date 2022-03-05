@@ -35,20 +35,17 @@
 
 ## app/Http/ApiV{n}
 
-Здесь располагается всё необходимое для реализации данной глобальной версии REST API
-
-Каждая версия API разбита на модули (поддиректория `Modules`), схожим с `app/Domain` принципом. Однако это разбиение не обязано быть на 100% один к одному
-Стоит отметить что все версии API должны быть полностью независимыми. Удаление `app/Http/ApiV1` не должно никак сказаться на функциональность `/api/v2`  из `app/Http/ApiV2`
-
-### app/Http/ApiV{n}/Modules/<Module>
-
-Внутри `app/Domain/<Domain>` уже находятся более стандартные технические поддиректории 
+Здесь располагается всё необходимое для реализации данной глобальной версии REST API 
 - `Controllers`
 - `Requests` - [Form Requests](https://laravel.com/docs/master/validation#form-request-validation)
 - `Resources` - [Api Resources.](https://laravel.com/docs/master/eloquent-resources#introduction) Формат представления моделей для каждой версии API должен быть независимым
 - `Queries` - Query Builders построенные на база пакета [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder/)
 - `Filters` - фильтры для Query Builders
 - другие поддиректории
+
+Если сервис планируется большой, то каждая версия API может быть разбита на модули (вместо `app/Http/ApiV1/Controllers` кладем контроллеры в `app/Http/ApiV1/Modules/Foo/Controllers` и т д), схожим с `app/Domain` принципом. Однако, это разбиение не обязано быть на 100% один к одному
+
+Стоит отметить что все версии API должны быть полностью независимыми. Удаление `app/Http/ApiV1` не должно никак сказаться на функциональность `/api/v2` из `app/Http/ApiV2`
 
 ### app/Http/ApiV{n}/Support/
 

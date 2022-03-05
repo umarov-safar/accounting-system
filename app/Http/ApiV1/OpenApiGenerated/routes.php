@@ -7,4 +7,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('examples/{id}', [\App\Http\ApiV1\Modules\Foos\Controllers\FoosController::class, 'get'])->name('getExample');
+Route::get('examples/{id}', [\App\Http\ApiV1\Controllers\FoosController::class, 'get'])->name('getExample');
