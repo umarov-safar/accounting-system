@@ -28,7 +28,7 @@
         "beyondcode/laravel-dump-server": "^1.6",
         "ensi/laravel-openapi-client-generator": "^0.12.0",
         "ensi/laravel-openapi-testing": "^0.2.0",
-        "ensi/openapi-client-generator-php-templates": "^0.1",
+        "ensi/openapi-client-generator-php-templates": "^0.2",
         "ensi/laravel-openapi-server-generator": "^2.0",
         "ensi/openapi-server-generator-templates": "^0.2",
         "ensi/test-factories": "^0.2.1",
