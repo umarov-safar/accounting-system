@@ -27,7 +27,7 @@ return [
      * Related model counts are included using the relationship name suffixed with this string.
      * For example: GET /users?include=postsCount
      */
-    'count_suffix' => 'Count',
+    'count_suffix' => '_count',
 
     /*
      * By default the package will throw an `InvalidFilterQuery` exception when a filter in the
