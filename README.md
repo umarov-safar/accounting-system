@@ -68,10 +68,7 @@ composer.json:
 "barryvdh/laravel-ide-helper",
 "beyondcode/laravel-dump-server",
 "friendsofphp/php-cs-fixer",
-"php-parallel-lint/php-var-dump-check",
-"psalm/plugin-laravel",
-"vimeo/psalm",
-полифилы для php7.4 и 8.0
+"php-parallel-lint/php-var-dump-check"
 
 package.json:
 "husky"

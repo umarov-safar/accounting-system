@@ -25,7 +25,7 @@ return [
 
     /*
      * Related model counts are included using the relationship name suffixed with this string.
-     * For example: GET /users?include=postsCount
+     * For example: GET /users?include=posts_count
      */
     'count_suffix' => '_count',
 
