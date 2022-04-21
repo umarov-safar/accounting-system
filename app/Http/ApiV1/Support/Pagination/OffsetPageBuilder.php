@@ -32,11 +32,11 @@ class OffsetPageBuilder extends AbstractPageBuilder
     {
         $skip = (int) $this->request->input('pagination.offset', 0);
 
-        $this->queryClone = $this->query->clone();
+        $queryClone = $this->query->clone();
         $collection = $this->query->skip($skip)->limit($limit)->get();
 
         $total = $collection->count() === $limit
-            ? $this->queryClone->count()
+            ? $queryClone->count()
             : $skip + $collection->count();
 
         return new Page($collection, [

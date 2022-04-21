@@ -35,12 +35,14 @@
         "friendsofphp/php-cs-fixer": "^3.2",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.1",
         "pestphp/pest": "^1.15",
         "pestphp/pest-plugin-laravel": "^1.1",
         "pestphp/pest-plugin-parallel": "^0.3.0",
-        "php-parallel-lint/php-var-dump-check": "^0.5.0",
+        "phpstan/extension-installer": "^1.1",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0",
+        "spaze/phpstan-disallowed-calls": "^2.3",
         "worksome/envy": "^0.4.0"
     },
     "autoload": {
@@ -85,6 +87,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
+        "phpstan": "phpstan analyse",
         "test": "php artisan test --parallel",
         "test-coverage": "XDEBUG_MODE=coverage php artisan test --parallel --coverage",
         "test-ci": "XDEBUG_MODE=coverage php artisan test --parallel --coverage-clover=build/clover.xml --coverage-html=build/report"
@@ -104,7 +107,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
         }
     },
     "minimum-stability": "dev",
