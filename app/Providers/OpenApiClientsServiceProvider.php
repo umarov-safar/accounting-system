@@ -88,6 +88,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
     }
 
     /**
+     * @todo delete phpstan-ignore-next-line after you start using this method.
      * @phpstan-ignore-next-line
      */
     private function registerService(HandlerStack $handler, string $domain, string $serviceName, string $configurationClassName, array $apisClassNames): void
