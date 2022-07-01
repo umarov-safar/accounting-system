@@ -52,7 +52,20 @@ def dockerTag = ''
 
 node('docker-agent'){
     lock(label: 'docker', quantity: 1) {
-    
+        stage('Checkout') {
+            gitlabCommitStatus("checkout") {
+                cleanWs()
+                options.loadConfigFile("env-folder")
+                options.loadConfigFile("env-service")
+                options.checkDefined(configVarsList)
+                dir('src') {
+                    checkout scm
+                    gitCommit = sh(returnStdout: true, script: 'git log -1 --format=%h').trim();
+                    dockerTag = "${env.BRANCH_NAME}-${gitCommit}"
+                }
+            }
+        }
+
         stage('Test') {
             gitlabCommitStatus("test") {
                 dir('src') {
