@@ -58,11 +58,6 @@ node('docker-agent'){
                 options.loadConfigFile("env-folder")
                 options.loadConfigFile("env-service")
                 options.checkDefined(configVarsList)
-                dir('src') {
-                    checkout scm
-                    gitCommit = sh(returnStdout: true, script: 'git log -1 --format=%h').trim();
-                    dockerTag = "${env.BRANCH_NAME}-${gitCommit}"
-                }
             }
         }
 
