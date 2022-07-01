@@ -18,8 +18,6 @@ def configVarsList = [
     "VALUES_PATH",           // путь до файла values в репозитории values
     "CHART_REPO",            // адрес репозитория чарта
     "CHART_BRANCH",          // ветка в репозитории чарта
-    "DOCKER_IMAGE_ADDRESS",  // название образа с доменом (harbor.gs.ru/project/service)
-    "DOCKER_IMAGE_NAME",     // название образа без домена (project/service)
     "HARBOR_ADDRESS",        // адрес реджистри с протоколом (https://harbor.gs.ru)
     "REGISTRY_CREDS",        // credentials id от реджистри
     "BASE_IMAGE",            // базовый образ для приложения (harbor.gs.ru/project/php:7.3)
