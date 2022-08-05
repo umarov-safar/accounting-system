@@ -3,7 +3,7 @@
 Представляет из себя модифицированную под наши нужды экземпляр `Laravel 9.2.0`
 ## Разворот непосредественно самого скелетона локально для разработки
 
-Разворот сервис не отличается от разворота любого другого сервиса Ensi и описан в  [документации](https://greensight.atlassian.net/wiki/spaces/ENSI/pages/362676232/Backend-)
+Разворот сервис не отличается от разворота любого другого сервиса Ensi и описан в  [Gitlab Pages](https://ensi-platform.gitlab.io/docs/tech/back)
 
 ## Разворот сервиса из Ensi Backend Service Skeleton
 
@@ -88,7 +88,7 @@ GET /health возвращает ОК с кодом 200.
 - [greensight/laravel-openapi-server-generator](https://github.com/greensight/laravel-openapi-server-generator/)
 - [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder/)
 
-Пример описания API при помощи спецификации openapi 3 под требования генераторов и [Ensi API Design Guide](https://docs.google.com/document/u/1/d/1Sj-G3lWzJvXmeojRv8yQb3ZSZeL3n6fa8EKN12kLvgg/edit?usp=sharing) можно найти [здесь](https://gitlab.com/greensight/ensi/templates/openapi-example)
+Пример описания API при помощи спецификации openapi 3 под требования генераторов и [Ensi API Design Guide](https://ensi-platform.gitlab.io/docs/guid/api) можно найти [здесь](https://gitlab.com/greensight/ensi/templates/openapi-example)
 
 ### Подчищено всё ненужное из Laravel для чистоты и быстродействия
 
