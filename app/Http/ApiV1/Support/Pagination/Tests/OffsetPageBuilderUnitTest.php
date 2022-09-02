@@ -77,12 +77,14 @@ test('OffsetPageBuilder build needs another count query if there is more items p
 
 test('OffsetPageBuilder build with 0 as limit returns empty array', function () {
     $limit = 0;
+    $total = 12;
     $request = ofb_make_request([
         'pagination' => [
             'limit' => $limit,
         ],
     ]);
     $queryBuilderMock = $this->mockQueryBuilder();
+    $queryBuilderMock->shouldReceive('count')->andReturn($total);
     $builder = new OffsetPageBuilder($queryBuilderMock, $request);
 
     $page = $builder->build();
@@ -91,7 +93,7 @@ test('OffsetPageBuilder build with 0 as limit returns empty array', function () 
     expect($page->pagination)->toMatchArray([
         "offset" => 0,
         "limit" => $limit,
-        "total" => 0,
+        "total" => $total,
         "type" => "offset",
     ]);
 });
@@ -121,12 +123,14 @@ test('OffsetPageBuilder build with negative limit', function () {
 
 test('OffsetPageBuilder build with negative limit and forbidToBypassPagination=true', function () {
     $limit = -1;
+    $total = 12;
     $request = ofb_make_request([
         'pagination' => [
             'limit' => $limit,
         ],
     ]);
     $queryBuilderMock = $this->mockQueryBuilder();
+    $queryBuilderMock->shouldReceive('count')->andReturn($total);
     $builder = new OffsetPageBuilder($queryBuilderMock, $request);
 
     $page = $builder->forbidToBypassPagination()->build();
@@ -135,7 +139,7 @@ test('OffsetPageBuilder build with negative limit and forbidToBypassPagination=t
     expect($page->pagination)->toMatchArray([
         "offset" => 0,
         "limit" => $limit,
-        "total" => 0,
+        "total" => $total,
         "type" => "offset",
     ]);
 });
