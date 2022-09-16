@@ -32,8 +32,8 @@ MultipartFileUploadRequest:
 
 PaginationTypeCursorEnum:
   type: string
-  description: |
-    Pagination types:
+  description: >
+    * Pagination types:
     * `cursor` - Пагинация используя cursor
   enum:
     - cursor
@@ -42,8 +42,8 @@ PaginationTypeCursorEnum:
 
 PaginationTypeOffsetEnum:
   type: string
-  description: |
-    Pagination types:
+  description: >
+    * Pagination types:
     * `offset` - Пагинация используя offset
   enum:
     - offset
@@ -52,16 +52,16 @@ PaginationTypeOffsetEnum:
 
 PaginationTypeEnum:
   type: string
-  description: |
-      Pagination types:
-      * `cursor` - Пагинация используя cursor
-      * `offset` - Пагинация используя offset
+  description: >
+    Pagination types:
+    * `cursor` - Пагинация используя cursor
+    * `offset` - Пагинация используя offset
   enum:
-      - cursor
-      - offset
+    - cursor
+    - offset
   x-enum-varnames:
-      - CURSOR
-      - OFFSET
+    - CURSOR
+    - OFFSET
 
 RequestBodySort:
   type: array
@@ -88,8 +88,10 @@ RequestBodyCursorPagination:
       type: integer
       example: 20
     type:
-      $ref: '#/PaginationTypeEnum'
-      example: "cursor"
+      description: Тип пагинации
+      allOf:
+        - type: string
+        - $ref: '#/PaginationTypeCursorEnum'
 
 RequestBodyOffsetPagination:
   type: object
@@ -101,8 +103,10 @@ RequestBodyOffsetPagination:
       type: integer
       example: 0
     type:
-      $ref: '#/PaginationTypeEnum'
-      example: "offset"
+      description: Тип пагинации
+      allOf:
+        - type: string
+        - $ref: '#/PaginationTypeOffsetEnum'
 
 ResponseBodyPagination:
   oneOf:
@@ -128,8 +132,10 @@ ResponseBodyCursorPagination:
       example: "eyJpZCI6MTAsIl9wb2ludHNUb05leHRJdGVtcyI6dHJ1ZX0"
       nullable: true
     type:
-      $ref: '#/PaginationTypeCursorEnum'
-      example: "cursor"
+      description: Тип пагинации
+      allOf:
+        - type: string
+        - $ref: '#/PaginationTypeCursorEnum'
 
 ResponseBodyOffsetPagination:
   type: object
@@ -144,5 +150,7 @@ ResponseBodyOffsetPagination:
       type: integer
       example: 253
     type:
-      $ref: '#/PaginationTypeOffsetEnum'
-      example: "offset"
+      description: Тип пагинации
+      allOf:
+        - type: string
+        - $ref: '#/PaginationTypeOffsetEnum'
