@@ -7315,16 +7315,16 @@
         },
         {
             "name": "ensi/openapi-client-generator-php-templates",
-            "version": "0.2.4",
+            "version": "0.2.5",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates.git",
-                "reference": "835c8f00f83abfd24989c6049e681f0537e6e3af"
+                "reference": "468afc0bfc831e70dde4e0f626e49410f84fdab2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-client-generator-php-templates/repository/archive.zip?sha=835c8f00f83abfd24989c6049e681f0537e6e3af",
-                "reference": "835c8f00f83abfd24989c6049e681f0537e6e3af",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-client-generator-php-templates/repository/archive.zip?sha=468afc0bfc831e70dde4e0f626e49410f84fdab2",
+                "reference": "468afc0bfc831e70dde4e0f626e49410f84fdab2",
                 "shasum": ""
             },
             "type": "library",
@@ -7338,9 +7338,9 @@
                 }
             ],
             "support": {
-                "source": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates/-/tree/0.2.4"
+                "source": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates/-/tree/0.2.5"
             },
-            "time": "2022-02-18T14:02:26+00:00"
+            "time": "2022-09-19T06:22:32+00:00"
         },
         {
             "name": "ensi/openapi-server-generator-templates",
