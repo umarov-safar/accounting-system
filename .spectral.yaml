@@ -1,6 +1,6 @@
 extends: spectral:oas
 rules:
-  oas3-unused-components-schema: off
+  oas3-unused-component: off
   operation-operationId: error
   operation-tags: error
   operation-tag-defined: error
@@ -40,6 +40,26 @@ rules:
       function: pattern
       functionOptions:
         match: "^(\/[a-z0-9-{}:]+)+$"
+  fields-case-request:
+    description: fields must use snake_case
+    type: style
+    severity: error
+    given: "$.paths[*][*][requestBody][content][*][schema]..[properties]"
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^(_?)[a-z0-9]+((_|\\.)?[a-z0-9])*$"
+  fields-case-response:
+    description: fields must use snake_case
+    type: style
+    severity: error
+    given: "$.paths[*][*][responses][*][content][*][schema]..[properties]"
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^(_?)[a-z0-9]+((_|\\.)?[a-z0-9])*$"
   operation-id-case:
     description: operationIds must use lowerCamelCase
     type: style
