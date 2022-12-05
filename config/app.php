@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Ensi\LaravelServeSwagger\ServeSwaggerServiceProvider::class,
+        Ensi\LaravelServeStoplight\ServeStoplightServiceProvider::class,
 
         /*
          * Application Service Providers...

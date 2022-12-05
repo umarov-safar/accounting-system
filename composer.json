@@ -14,7 +14,7 @@
         "ensi/laravel-phprdkafka": "^0.2",
         "ensi/laravel-phprdkafka-consumer": "^0.2",
         "ensi/laravel-phprdkafka-producer": "^0.2",
-        "ensi/laravel-serve-swagger": "^0.2.0",
+        "ensi/laravel-serve-stoplight": "^0.1.4",
         "ensi/laravel-stdout-logs-helper": "^0.2.0",
         "ensi/octane-swoole-urgent-starter": "^0.1.0",
         "guzzlehttp/guzzle": "^7.2",
