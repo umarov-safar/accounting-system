@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Web\Controllers\HealthCheck;
-use App\Http\Web\Controllers\SwaggerController;
+use App\Http\Web\Controllers\OasController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('health', HealthCheck::class);
 
-Route::get('/', [SwaggerController::class, 'listSwaggers']);
+Route::get('/', [OasController::class, 'list']);

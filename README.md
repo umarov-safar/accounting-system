@@ -83,7 +83,7 @@ GET /health возвращает ОК с кодом 200.
 
 ### Установлены пакеты для работы с API
 
-- [greensight/laravel-serve-swagger](https://github.com/greensight/laravel-serve-swagger/)
+- [greensight/laravel-serve-stoplight](https://github.com/greensight/laravel-serve-stoplight/)
 - [greensight/laravel-openapi-client-generator](https://github.com/greensight/laravel-openapi-client-generator/)
 - [greensight/laravel-openapi-server-generator](https://github.com/greensight/laravel-openapi-server-generator/)
 - [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder/)
