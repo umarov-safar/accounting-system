@@ -2,12 +2,12 @@
 
 namespace App\Http\Web\Controllers;
 
-class SwaggerController
+class OasController
 {
-    public function listSwaggers()
+    public function list()
     {
         $urls = [];
-        foreach (config('serve-swagger.urls') as $url) {
+        foreach (config('serve-stoplight.urls') as $url) {
             $urls[] = [
                 'url' => url($url['url']),
                 'name' => $url['name'],
