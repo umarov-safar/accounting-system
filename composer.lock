@@ -1134,16 +1134,16 @@
         },
         {
             "name": "ensi/laravel-phprdkafka-consumer",
-            "version": "0.2.5",
+            "version": "0.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer.git",
-                "reference": "05d7e3a07c63f9d5d7e9a43f521c1e40b99546ce"
+                "reference": "29de85523f17aad70bc428abfe594600161d3756"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka-consumer/zipball/05d7e3a07c63f9d5d7e9a43f521c1e40b99546ce",
-                "reference": "05d7e3a07c63f9d5d7e9a43f521c1e40b99546ce",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka-consumer/zipball/29de85523f17aad70bc428abfe594600161d3756",
+                "reference": "29de85523f17aad70bc428abfe594600161d3756",
                 "shasum": ""
             },
             "require": {
@@ -1157,6 +1157,7 @@
             "require-dev": {
                 "brianium/paratest": "^6.2",
                 "friendsofphp/php-cs-fixer": "^3.2",
+                "kwn/php-rdkafka-stubs": "^2.2",
                 "nunomaduro/collision": "^5.3",
                 "orchestra/testbench": "^6.15",
                 "pestphp/pest": "^1.18",
@@ -1198,9 +1199,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer/issues",
-                "source": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer/tree/0.2.5"
+                "source": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer/tree/0.2.7"
             },
-            "time": "2022-02-16T18:09:10+00:00"
+            "time": "2022-12-09T12:07:59+00:00"
         },
         {
             "name": "ensi/laravel-phprdkafka-producer",
@@ -11904,5 +11905,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

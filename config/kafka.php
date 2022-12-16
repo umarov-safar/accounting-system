@@ -3,6 +3,7 @@
 // configurattion options can be found here: https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
 // if an option is set to null it is ignored.
 return [
+    'contour' => env('KAFKA_CONTOUR', 'local'),
     'consumers' => [
         'default' => [
             'metadata.broker.list' => env('KAFKA_BROKER_LIST'),
@@ -17,6 +18,7 @@ return [
             'group.id' => env('KAFKA_CONSUMER_GROUP_ID', env('APP_NAME')),
             'enable.auto.commit' => true,
             'auto.offset.reset' => 'largest',
+            'allow.auto.create.topics' => true,
         ],
     ],
     'producers' => [
