@@ -38,7 +38,7 @@ return [
 
     'server' => env('OCTANE_SERVER', 'swoole'),
 
-	'swoole' => [
+    'swoole' => [
         'command' => '/var/www/vendor/bin/urgent-swoole-server',
         'show_fatal_error' => env('OCTANE_SHOW_FATAL_ERROR', false),
     ],

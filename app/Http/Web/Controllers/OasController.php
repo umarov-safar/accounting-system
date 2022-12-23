@@ -14,6 +14,6 @@ class OasController
             ];
         }
 
-        return response()->json(['urls' => $urls], 200, [], JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+        return response()->json(['urls' => $urls], 200, [], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     }
 }
