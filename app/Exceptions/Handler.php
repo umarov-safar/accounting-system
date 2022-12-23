@@ -146,7 +146,7 @@ class Handler extends ExceptionHandler
     private function formatErrorPayload(array $errorData): array
     {
         return [
-            'data'   => null,
+            'data' => null,
             'errors' => $errorData,
         ];
     }

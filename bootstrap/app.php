@@ -18,7 +18,7 @@ $app = new Illuminate\Foundation\Application(
 );
 
 // load common env file
-require __DIR__.'/environment.php';
+require __DIR__ . '/environment.php';
 
 /*
 |--------------------------------------------------------------------------
