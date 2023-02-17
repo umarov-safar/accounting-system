@@ -16,6 +16,7 @@ use GuzzleHttp\Utils;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use LogicException;
+use Ensi\LaravelMetrics\Guzzle\GuzzleMiddleware as MetricsMiddleware;
 
 class OpenApiClientsServiceProvider extends ServiceProvider
 {
@@ -46,6 +47,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
         }
 
         $stack->push(new PropagateInitialEventLaravelGuzzleMiddleware());
+        $stack->push(MetricsMiddleware::middleware());
 
         return $stack;
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1955f685d4a5a6b4319f7628428ebbce",
+    "content-hash": "818b568a28e8a57909f51e785ae75758",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -1063,6 +1063,53 @@
             "time": "2022-02-17T15:48:29+00:00"
         },
         {
+            "name": "ensi/laravel-metrics",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-metrics.git",
+                "reference": "58fac34cef549367c4f4ff223c6d4383b0a4454c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-metrics/zipball/58fac34cef549367c4f4ff223c6d4383b0a4454c",
+                "reference": "58fac34cef549367c4f4ff223c6d4383b0a4454c",
+                "shasum": ""
+            },
+            "require": {
+                "ensi/laravel-prometheus": "^1.0",
+                "guzzlehttp/guzzle": "^7.0",
+                "php": ">=8.1",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "franzl/studio": "^0.16.0",
+                "orchestra/testbench": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\LaravelMetrics\\MetricsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelMetrics\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-metrics/issues",
+                "source": "https://github.com/ensi-platform/laravel-metrics/tree/1.0.1"
+            },
+            "time": "2022-12-10T10:56:56+00:00"
+        },
+        {
             "name": "ensi/laravel-phprdkafka",
             "version": "0.2.2",
             "source": {
@@ -1254,6 +1301,53 @@
                 "source": "https://github.com/ensi-platform/laravel-php-rdkafka-producer/tree/0.2.1"
             },
             "time": "2021-10-08T11:26:01+00:00"
+        },
+        {
+            "name": "ensi/laravel-prometheus",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-prometheus.git",
+                "reference": "826bdf41afe96c70eec435d78d67f16c9a99db0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-prometheus/zipball/826bdf41afe96c70eec435d78d67f16c9a99db0b",
+                "reference": "826bdf41afe96c70eec435d78d67f16c9a99db0b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-redis": "*",
+                "php": ">=8.1",
+                "promphp/prometheus_client_php": "2.*"
+            },
+            "require-dev": {
+                "laravel/framework": "^9.0",
+                "orchestra/testbench": "^7.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\LaravelPrometheus\\PrometheusServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelPrometheus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-prometheus/issues",
+                "source": "https://github.com/ensi-platform/laravel-prometheus/tree/1.0.2"
+            },
+            "time": "2023-02-17T21:16:32+00:00"
         },
         {
             "name": "ensi/laravel-serve-stoplight",
@@ -3296,6 +3390,73 @@
                 }
             ],
             "time": "2022-07-30T15:51:26+00:00"
+        },
+        {
+            "name": "promphp/prometheus_client_php",
+            "version": "v2.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PromPHP/prometheus_client_php.git",
+                "reference": "df77bbcc65bd173f2ffaf40ab4e1ca8716da8ce6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PromPHP/prometheus_client_php/zipball/df77bbcc65bd173f2ffaf40ab4e1ca8716da8ce6",
+                "reference": "df77bbcc65bd173f2ffaf40ab4e1ca8716da8ce6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.2|^8.0"
+            },
+            "replace": {
+                "endclothing/prometheus_client_php": "*",
+                "jimdo/prometheus_client_php": "*",
+                "lkaemmerling/prometheus_client_php": "*"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6.3|^7.0",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.5.4",
+                "phpstan/phpstan-phpunit": "^1.1.0",
+                "phpstan/phpstan-strict-rules": "^1.1.0",
+                "phpunit/phpunit": "^9.4",
+                "squizlabs/php_codesniffer": "^3.6",
+                "symfony/polyfill-apcu": "^1.6"
+            },
+            "suggest": {
+                "ext-apc": "Required if using APCu.",
+                "ext-redis": "Required if using Redis.",
+                "promphp/prometheus_push_gateway_php": "An easy client for using Prometheus PushGateway.",
+                "symfony/polyfill-apcu": "Required if you use APCu on PHP8.0+"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Prometheus\\": "src/Prometheus/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Kämmerling",
+                    "email": "kontakt@lukas-kaemmerling.de"
+                }
+            ],
+            "description": "Prometheus instrumentation library for PHP applications.",
+            "support": {
+                "issues": "https://github.com/PromPHP/prometheus_client_php/issues",
+                "source": "https://github.com/PromPHP/prometheus_client_php/tree/v2.6.2"
+            },
+            "time": "2022-06-30T03:46:23+00:00"
         },
         {
             "name": "psr/cache",
