@@ -10,7 +10,16 @@ return [
     'global_middleware' => [ RdKafkaConsumerMiddleware::class ],
     'stop_signals' => [SIGTERM, SIGINT],
 
-    'processors' => [],
+    'processors' => [
+        [
+            'topic' => 'foobars',
+            'consumer' => 'default',
+            'type' => 'action',
+            'class' => \App\Domain\Kafka\Actions\Listen\FoobarsListenAction::class,
+            'queue' => false,
+            'consume_timeout' => 5000,
+        ],
+    ],
 
     'consumer_options' => [
        /** options for consumer with name `default` */
