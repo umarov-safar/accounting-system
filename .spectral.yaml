@@ -39,7 +39,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^(\/([a-z0-9-{}:]+|\{[a-zA-Z_]+\}))+$'
+        match: '^(\/([a-z0-9-:]+|\{[a-zA-Z-_]+\}|(\{[a-zA-Z-_]+\}:[a-z0-9-]+)))+$'
   fields-case-request:
     description: fields must use snake_case
     type: style
