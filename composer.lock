@@ -1299,23 +1299,23 @@
         },
         {
             "name": "ensi/laravel-stdout-logs-helper",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-stdout-logs-helper.git",
-                "reference": "9753a3bb7d202f755010e708b5fbd41e27530bc6"
+                "reference": "b654d378427089ed7a1317ed41697b41d2ee0ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-stdout-logs-helper/zipball/9753a3bb7d202f755010e708b5fbd41e27530bc6",
-                "reference": "9753a3bb7d202f755010e708b5fbd41e27530bc6",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-stdout-logs-helper/zipball/b654d378427089ed7a1317ed41697b41d2ee0ac0",
+                "reference": "b654d378427089ed7a1317ed41697b41d2ee0ac0",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.3 || ^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
+                "friendsofphp/php-cs-fixer": "^3.2",
                 "monolog/monolog": "^2.3",
                 "phpunit/phpunit": "^9.5"
             },
@@ -1338,9 +1338,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-stdout-logs-helper/issues",
-                "source": "https://github.com/ensi-platform/laravel-stdout-logs-helper/tree/0.2.0"
+                "source": "https://github.com/ensi-platform/laravel-stdout-logs-helper/tree/0.2.1"
             },
-            "time": "2021-10-05T20:22:20+00:00"
+            "time": "2023-03-10T10:04:21+00:00"
         },
         {
             "name": "ensi/octane-swoole-urgent-starter",
@@ -12119,5 +12119,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
