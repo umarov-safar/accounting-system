@@ -11,14 +11,14 @@ return [
     'stop_signals' => [SIGTERM, SIGINT],
 
     'processors' => [
-        [
-            'topic' => 'foobars',
-            'consumer' => 'default',
-            'type' => 'action',
-            'class' => \App\Domain\Kafka\Actions\Listen\FoobarsListenAction::class,
-            'queue' => false,
-            'consume_timeout' => 5000,
-        ],
+        // [
+        //     'topic' => 'foobars',
+        //     'consumer' => 'default',
+        //     'type' => 'action',
+        //     'class' => \App\Domain\Kafka\Actions\Listen\FoobarsListenAction::class,
+        //     'queue' => false,
+        //     'consume_timeout' => 5000,
+        // ],
     ],
 
     'consumer_options' => [

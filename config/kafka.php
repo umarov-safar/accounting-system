@@ -16,7 +16,7 @@ return [
                 'debug' => env('KAFKA_DEBUG', false) ? 'all' : null,
             ],
             'topics' => [
-                'foobars' =>  $contour . '.domain.fact.foobars.1'
+                // 'foobars' =>  $contour . '.domain.fact.foobars.1'
             ]
         ]
     ],
