@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1955f685d4a5a6b4319f7628428ebbce",
+    "content-hash": "9d10731728d8be94ecef03f39e878906",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -1064,16 +1064,16 @@
         },
         {
             "name": "ensi/laravel-phprdkafka",
-            "version": "0.2.2",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-php-rdkafka.git",
-                "reference": "6fd1388957f427ee89641a60080fc6e4f525bb4e"
+                "reference": "aa7b8cd7a5186cb228e86f697e398ac951ff546e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka/zipball/6fd1388957f427ee89641a60080fc6e4f525bb4e",
-                "reference": "6fd1388957f427ee89641a60080fc6e4f525bb4e",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka/zipball/aa7b8cd7a5186cb228e86f697e398ac951ff546e",
+                "reference": "aa7b8cd7a5186cb228e86f697e398ac951ff546e",
                 "shasum": ""
             },
             "require": {
@@ -1083,6 +1083,7 @@
             },
             "require-dev": {
                 "brianium/paratest": "^6.2",
+                "kwn/php-rdkafka-stubs": "^2.2",
                 "nunomaduro/collision": "^5.3",
                 "orchestra/testbench": "^6.15",
                 "phpunit/phpunit": "^9.3",
@@ -1124,26 +1125,26 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-php-rdkafka/issues",
-                "source": "https://github.com/ensi-platform/laravel-php-rdkafka/tree/0.2.2"
+                "source": "https://github.com/ensi-platform/laravel-php-rdkafka/tree/0.3.1"
             },
-            "time": "2022-02-16T18:01:46+00:00"
+            "time": "2023-02-22T13:30:43+00:00"
         },
         {
             "name": "ensi/laravel-phprdkafka-consumer",
-            "version": "0.2.7",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer.git",
-                "reference": "29de85523f17aad70bc428abfe594600161d3756"
+                "reference": "2ed094aaecab03df1d923abbeb7ed16b8eaf1ecb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka-consumer/zipball/29de85523f17aad70bc428abfe594600161d3756",
-                "reference": "29de85523f17aad70bc428abfe594600161d3756",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka-consumer/zipball/2ed094aaecab03df1d923abbeb7ed16b8eaf1ecb",
+                "reference": "2ed094aaecab03df1d923abbeb7ed16b8eaf1ecb",
                 "shasum": ""
             },
             "require": {
-                "ensi/laravel-phprdkafka": "^0.2",
+                "ensi/laravel-phprdkafka": "^0.3",
                 "ext-rdkafka": "*",
                 "illuminate/contracts": "^8.37 || ^9.0",
                 "illuminate/pipeline": "^8.37 || ^9.0",
@@ -1195,37 +1196,52 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer/issues",
-                "source": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer/tree/0.2.7"
+                "source": "https://github.com/ensi-platform/laravel-php-rdkafka-consumer/tree/0.3.0"
             },
-            "time": "2022-12-09T12:07:59+00:00"
+            "time": "2023-02-22T11:36:54+00:00"
         },
         {
             "name": "ensi/laravel-phprdkafka-producer",
-            "version": "0.2.1",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-php-rdkafka-producer.git",
-                "reference": "43dcfafa1da1bd70820b603d7fae3511f9b0732d"
+                "reference": "7db30580ac9b88e38b7f19ab3cd3825072ef7c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka-producer/zipball/43dcfafa1da1bd70820b603d7fae3511f9b0732d",
-                "reference": "43dcfafa1da1bd70820b603d7fae3511f9b0732d",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-php-rdkafka-producer/zipball/7db30580ac9b88e38b7f19ab3cd3825072ef7c40",
+                "reference": "7db30580ac9b88e38b7f19ab3cd3825072ef7c40",
                 "shasum": ""
             },
             "require": {
-                "ensi/laravel-phprdkafka": "^0.2",
+                "ensi/laravel-phprdkafka": "^0.3.0",
                 "ext-rdkafka": "*",
+                "illuminate/contracts": "^8.37 || ^9",
+                "illuminate/pipeline": "^8.37 || ^9",
+                "illuminate/support": "^8.37 || ^9",
                 "php": "^8.0"
             },
             "require-dev": {
                 "brianium/paratest": "^6.2",
-                "nunomaduro/collision": "^5.3",
-                "orchestra/testbench": "^6.15",
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "kwn/php-rdkafka-stubs": "^2.2",
+                "nunomaduro/collision": "^5.3 || ^6",
+                "orchestra/testbench": "^6.15 || ^7",
+                "pestphp/pest": "^1.18",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "php-parallel-lint/php-var-dump-check": "^0.5.0",
                 "phpunit/phpunit": "^9.3",
                 "spatie/laravel-ray": "^1.9"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\LaravelPhpRdKafkaProducer\\LaravelPhpRdKafkaProducerServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Ensi\\LaravelPhpRdKafkaProducer\\": "src"
@@ -1251,9 +1267,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-php-rdkafka-producer/issues",
-                "source": "https://github.com/ensi-platform/laravel-php-rdkafka-producer/tree/0.2.1"
+                "source": "https://github.com/ensi-platform/laravel-php-rdkafka-producer/tree/0.3.0"
             },
-            "time": "2021-10-08T11:26:01+00:00"
+            "time": "2023-02-22T11:31:21+00:00"
         },
         {
             "name": "ensi/laravel-serve-stoplight",
