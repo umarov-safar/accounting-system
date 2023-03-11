@@ -221,6 +221,7 @@ node('docker-agent'){
                         export KAFKA_SASL_MECHANISMS=PLAIN
                         export KAFKA_SASL_USERNAME=${options.get("KAFKA_LOGIN")}
                         export KAFKA_SASL_PASSWORD=${options.get("KAFKA_PASSWORD")}
+                        export KAFKA_CONTOUR=${options.get("KAFKA_CONTOUR")}
                         """,
                     "missed-topics.txt")
 
