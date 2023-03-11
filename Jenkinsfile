@@ -32,7 +32,11 @@ def configVarsList = [
     "TESTING_DB_HOST",       // адрес СУБД для создания тестовых БД
     "POSTGRES_TEST_CREDS",   // credentials id от СУБД
     "PSQL_IMAGE",            // образ psql
-    "AUTODEPLOY_BRANCHES"    // ветка для autodeploy
+    "AUTODEPLOY_BRANCHES",    // ветка для autodeploy
+    "KAFKA_BOOTSTRAP_SERVER",
+    "KAFKA_LOGIN",
+    "KAFKA_PASSWORD",
+    "KAFKA_TOOLS_IMAGE"
 ]
 
 properties([
@@ -206,6 +210,28 @@ node('docker-agent'){
 
                         }
                     }
+                }
+            }
+
+            stage('Check kafka') {
+                gitlabCommitStatus("deploy") {
+                    checkKafkaTopics("${options.get('DOCKER_IMAGE_ADDRESS')}:${dockerTag}", """
+                        export KAFKA_BROKER_LIST=${options.get("KAFKA_BOOTSTRAP_SERVER")}
+                        export KAFKA_SECURITY_PROTOCOL=SASL_PLAINTEXT
+                        export KAFKA_SASL_MECHANISMS=PLAIN
+                        export KAFKA_SASL_USERNAME=${options.get("KAFKA_LOGIN")}
+                        export KAFKA_SASL_PASSWORD=${options.get("KAFKA_PASSWORD")}
+                        """,
+                    "missed-topics.txt")
+
+                    tryCreateKafkaTopics(
+                        options.get("KAFKA_TOOLS_IMAGE"),
+                        options.get("KAFKA_BOOTSTRAP_SERVER"),
+                        options.get("KAFKA_LOGIN"),
+                        options.get("KAFKA_PASSWORD"),
+                        "ms-helm-values/${options.get("COMMON_VALUES_PATH")}/kafka-topics.yaml",
+                        "missed-topics.txt"
+                    )
                 }
             }
 
