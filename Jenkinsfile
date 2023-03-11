@@ -1,7 +1,7 @@
 #!groovy
 // -*- coding: utf-8; mode: Groovy; -*-
 
-@Library('ru.greensight@v1.0.2')_
+@Library('ru.greensight@v1.0.4')_
 
 import ru.greensight.HelmParams
 import ru.greensight.Options
