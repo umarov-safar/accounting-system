@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\ApiV1\Support\Tests\ApiV1ComponentTestCase;
-
 use function Pest\Laravel\getJson;
 
 uses(ApiV1ComponentTestCase::class);

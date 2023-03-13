@@ -990,6 +990,9 @@
                     "email": "nekrasov@greensight.ru"
                 }
             ],
+            "support": {
+                "source": "https://gitlab.com/greensight/ensi/packages/laravel-ensi-filesystem/-/tree/0.3.1"
+            },
             "time": "2022-07-14T10:04:21+03:00"
         },
         {
@@ -7806,6 +7809,9 @@
                     "email": "nekrasov@greensight.ru"
                 }
             ],
+            "support": {
+                "source": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates/-/tree/0.2.6"
+            },
             "time": "2023-01-24T06:39:41+00:00"
         },
         {
@@ -7832,6 +7838,9 @@
                     "email": "nekrasov@greensight.ru"
                 }
             ],
+            "support": {
+                "source": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates/-/tree/0.2.6"
+            },
             "time": "2023-03-13T09:14:34+00:00"
         },
         {
@@ -12222,5 +12231,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
