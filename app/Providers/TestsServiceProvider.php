@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Faker\Generator;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\ParallelTesting;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +29,5 @@ class TestsServiceProvider extends ServiceProvider
         ParallelTesting::setUpTestDatabase(function ($database, $token) {
             Artisan::call('db:seed --class=DatabaseSeederForTests');
         });
-        $this->app->bind(Generator::class); // todo
     }
 }
