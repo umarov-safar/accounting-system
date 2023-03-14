@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d10731728d8be94ecef03f39e878906",
+    "content-hash": "3d8083efa221a8fd53421f34e4dd6a1c",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -7784,6 +7784,56 @@
                 "source": "https://github.com/ensi-platform/laravel-openapi-testing/tree/0.2.3"
             },
             "time": "2023-01-09T14:57:27+00:00"
+        },
+        {
+            "name": "ensi/laravel-test-factories",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-test-factories.git",
+                "reference": "dc6b904ae61730159e589c8bafcf15df5751888e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-test-factories/zipball/dc6b904ae61730159e589c8bafcf15df5751888e",
+                "reference": "dc6b904ae61730159e589c8bafcf15df5751888e",
+                "shasum": ""
+            },
+            "require": {
+                "ensi/test-factories": ">=0.2",
+                "guzzlehttp/guzzle": ">=6.0",
+                "laravel/framework": ">=8.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "php-parallel-lint/php-var-dump-check": "^0.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelTestFactories\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Natalia Golubkova",
+                    "email": "golubkova@greensight.ru"
+                }
+            ],
+            "keywords": [
+                "factory",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-test-factories/issues",
+                "source": "https://github.com/ensi-platform/laravel-test-factories/tree/0.0.2"
+            },
+            "time": "2023-03-14T09:23:42+00:00"
         },
         {
             "name": "ensi/openapi-client-generator-php-templates",

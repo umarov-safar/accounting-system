@@ -6,7 +6,9 @@ use Arr;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Laravel\Octane\Exceptions\DdException;
 use ReflectionClass;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Throwable;
@@ -55,18 +57,21 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
         if ($request->is('api/*')) {
+            if ($e instanceof DdException) {
+                return parent::render($request, $e);
+            }
+
             if ($e instanceof ValidationException) {
                 return $this->convertValidationExceptionToResponse($e, $request);
             }
 
+            if (Str::of(get_class($e))->endsWith('ApiException')) {
+                return $this->convertServiceExceptionToResponse($e);
+            }
+
             $e = $this->prepareException($e);
 
-            return new JsonResponse(
-                $this->convertExceptionToArray($e),
-                $this->getExceptionStatusCode($e),
-                $e instanceof HttpExceptionInterface ? $e->getHeaders() : [],
-                JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
-            );
+            return $this->buildJsonResponse($e);
         }
 
         return parent::render($request, $e);
@@ -121,13 +126,55 @@ class Handler extends ExceptionHandler
                 'exception' => get_class($e),
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
-                'trace' => collect($e->getTrace())->map(function ($trace) {
-                    return Arr::except($trace, ['args']);
-                })->all(),
+                'meta' => $this->getTrace($e),
             ];
         }
 
         return $this->formatErrorPayload([ $error ]);
+    }
+
+    protected function convertServiceExceptionToResponse(Throwable $e): JsonResponse
+    {
+        $isDebug = config('app.debug');
+        $errors = method_exists($e, 'getResponseErrors')
+            ? $e->getResponseErrors()
+            : null;
+
+        switch ($e->getCode()) {
+            case 400:
+                if (empty($errors)) {
+                    $errors = [['message' => 'Bad request', 'code' => 'BadRequest']];
+                }
+
+                break;
+            case 404:
+                if (!$isDebug || empty($errors)) {
+                    $errors = [['message' => 'Not found', 'code' => 'NotFound']];
+                }
+
+                break;
+            default:
+                return $this->buildJsonResponse($e);
+        }
+
+        if (!$isDebug) {
+            $errors = array_map(
+                fn (array $item) => Arr::only($item, ['code', 'message']),
+                $errors
+            );
+        }
+
+        return response()->json($this->formatErrorPayload($errors), $e->getCode());
+    }
+
+    protected function buildJsonResponse(Throwable $e): JsonResponse
+    {
+        return new JsonResponse(
+            $this->convertExceptionToArray($e),
+            $this->getExceptionStatusCode($e),
+            $e instanceof HttpExceptionInterface ? $e->getHeaders() : [],
+            JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES
+        );
     }
 
     protected function getExceptionStatusCode(Throwable $exception): int
@@ -149,5 +196,12 @@ class Handler extends ExceptionHandler
             'data' => null,
             'errors' => $errorData,
         ];
+    }
+
+    protected function getTrace(Throwable $e)
+    {
+        return collect($e->getTrace())->map(function (array $trace) {
+            return Arr::except($trace, ['args']);
+        })->all();
     }
 }
