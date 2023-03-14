@@ -2,10 +2,10 @@
 
 namespace App\Exceptions;
 
-use Arr;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Octane\Exceptions\DdException;
