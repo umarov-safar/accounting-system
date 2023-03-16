@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d10731728d8be94ecef03f39e878906",
+    "content-hash": "4e342e0df4c5b32b619afa3a88d16feb",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -7116,72 +7116,6 @@
             "time": "2023-03-03T09:35:17+00:00"
         },
         {
-            "name": "cebe/php-openapi",
-            "version": "1.5.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cebe/php-openapi.git",
-                "reference": "8f1f70688fd4bea04410718616450a38b7b8c40b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cebe/php-openapi/zipball/8f1f70688fd4bea04410718616450a38b7b8c40b",
-                "reference": "8f1f70688fd4bea04410718616450a38b7b8c40b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "justinrainbow/json-schema": "^5.0",
-                "php": ">=7.1.0",
-                "symfony/yaml": "^3.4 | ^4.0 | ^5.0"
-            },
-            "require-dev": {
-                "apis-guru/openapi-directory": "1.0.0",
-                "cebe/indent": "*",
-                "mermade/openapi3-examples": "1.0.0",
-                "nexmo/api-specification": "1.0.0",
-                "oai/openapi-specification": "3.0.3",
-                "phpstan/phpstan": "^0.12.0",
-                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.5 || ^9.4"
-            },
-            "bin": [
-                "bin/php-openapi"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "cebe\\openapi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Carsten Brandt",
-                    "email": "mail@cebe.cc",
-                    "homepage": "https://cebe.cc/",
-                    "role": "Creator"
-                }
-            ],
-            "description": "Read and write OpenAPI yaml/json files and make the content accessable in PHP objects.",
-            "homepage": "https://github.com/cebe/php-openapi#readme",
-            "keywords": [
-                "openapi"
-            ],
-            "support": {
-                "issues": "https://github.com/cebe/php-openapi/issues",
-                "source": "https://github.com/cebe/php-openapi"
-            },
-            "time": "2021-05-24T11:32:07+00:00"
-        },
-        {
             "name": "composer/class-map-generator",
             "version": "1.0.0",
             "source": {
@@ -7473,6 +7407,80 @@
             "time": "2022-02-25T21:32:43+00:00"
         },
         {
+            "name": "devizzent/cebe-php-openapi",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DEVizzent/cebe-php-openapi.git",
+                "reference": "c5a294e49d79b3efbb7b0c5a4e99c76abce03f29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DEVizzent/cebe-php-openapi/zipball/c5a294e49d79b3efbb7b0c5a4e99c76abce03f29",
+                "reference": "c5a294e49d79b3efbb7b0c5a4e99c76abce03f29",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "justinrainbow/json-schema": "^5.2",
+                "php": ">=7.1.0",
+                "symfony/yaml": "^3.4 || ^4 || ^5 || ^6"
+            },
+            "conflict": {
+                "symfony/yaml": "3.4.0 - 3.4.4 || 4.0.0 - 4.4.17 || 5.0.0 - 5.1.9 || 5.2.0"
+            },
+            "require-dev": {
+                "apis-guru/openapi-directory": "1.0.0",
+                "cebe/indent": "*",
+                "mermade/openapi3-examples": "1.0.0",
+                "nexmo/api-specification": "1.0.0",
+                "oai/openapi-specification-3.0": "3.0.3",
+                "oai/openapi-specification-3.1": "3.1.0",
+                "phpstan/phpstan": "^0.12.0",
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.5 || ^9.4"
+            },
+            "bin": [
+                "bin/php-openapi"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "cebe\\openapi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "https://cebe.cc/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Vicent Valls",
+                    "email": "vizzent@gmail.com"
+                }
+            ],
+            "description": "Read and write OpenAPI yaml/json files and make the content accessable in PHP objects.",
+            "homepage": "https://github.com/DEVizzent/cebe-php-openapi#readme",
+            "keywords": [
+                "openapi"
+            ],
+            "support": {
+                "issues": "https://github.com/DEVizzent/cebe-php-openapi/issues",
+                "source": "https://github.com/DEVizzent/cebe-php-openapi"
+            },
+            "time": "2023-01-26T21:28:59+00:00"
+        },
+        {
             "name": "doctrine/annotations",
             "version": "2.0.1",
             "source": {
@@ -7673,20 +7681,20 @@
         },
         {
             "name": "ensi/laravel-openapi-server-generator",
-            "version": "2.0.11",
+            "version": "2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-server-generator.git",
-                "reference": "5ffd96aa6311817a50ce48fe8b95bdb67d0660d3"
+                "reference": "2341cc1f51027b86826b13b264c6a023fc04192c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/5ffd96aa6311817a50ce48fe8b95bdb67d0660d3",
-                "reference": "5ffd96aa6311817a50ce48fe8b95bdb67d0660d3",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/2341cc1f51027b86826b13b264c6a023fc04192c",
+                "reference": "2341cc1f51027b86826b13b264c6a023fc04192c",
                 "shasum": ""
             },
             "require": {
-                "cebe/php-openapi": ">=1.4.2 <1.6.0",
+                "devizzent/cebe-php-openapi": "^1.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -7726,26 +7734,26 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-server-generator/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.11"
+                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.12"
             },
-            "time": "2023-03-13T09:13:45+00:00"
+            "time": "2023-03-16T12:17:30+00:00"
         },
         {
             "name": "ensi/laravel-openapi-testing",
-            "version": "0.2.3",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-testing.git",
-                "reference": "e757374bd2879f8c8b0884fd90c114759aa34316"
+                "reference": "b2ccd216f6e0eae92e19d6be1a902105135ee2a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-testing/zipball/e757374bd2879f8c8b0884fd90c114759aa34316",
-                "reference": "e757374bd2879f8c8b0884fd90c114759aa34316",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-testing/zipball/b2ccd216f6e0eae92e19d6be1a902105135ee2a8",
+                "reference": "b2ccd216f6e0eae92e19d6be1a902105135ee2a8",
                 "shasum": ""
             },
             "require": {
-                "osteel/openapi-httpfoundation-testing": "^0.7",
+                "ensi/openapi-httpfoundation-testing": "^0.0.2",
                 "php": "^8.0"
             },
             "require-dev": {
@@ -7778,9 +7786,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-testing/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-testing/tree/0.2.3"
+                "source": "https://github.com/ensi-platform/laravel-openapi-testing/tree/0.3.0"
             },
-            "time": "2023-01-09T14:57:27+00:00"
+            "time": "2023-03-16T12:38:34+00:00"
         },
         {
             "name": "ensi/openapi-client-generator-php-templates",
@@ -7807,6 +7815,133 @@
                 }
             ],
             "time": "2023-01-24T06:39:41+00:00"
+        },
+        {
+            "name": "ensi/openapi-httpfoundation-testing",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/openapi-httpfoundation-testing.git",
+                "reference": "df31a1dc70788663b783bcc64250547f640374bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/openapi-httpfoundation-testing/zipball/df31a1dc70788663b783bcc64250547f640374bd",
+                "reference": "df31a1dc70788663b783bcc64250547f640374bd",
+                "shasum": ""
+            },
+            "require": {
+                "ensi/openapi-psr7-validator": "^0.0.2",
+                "ext-json": "*",
+                "nyholm/psr7": "^1.0",
+                "php": "^7.2|^8.0",
+                "psr/http-message": "^1.0",
+                "symfony/http-foundation": "^4.0 || ^5.0 || ^6.0",
+                "symfony/psr-http-message-bridge": "^2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=8.5.23",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Osteel\\OpenApi\\Testing\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yannick Chenot",
+                    "email": "yannick@yellowraincoat.co.uk",
+                    "homepage": "https://github.com/osteel",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Validate HttpFoundation requests and responses against OpenAPI (3.0.x) definitions",
+            "homepage": "https://github.com/osteel/openapi-httpfoundation-testing",
+            "keywords": [
+                "api",
+                "http",
+                "httpfoundation",
+                "laravel",
+                "openapi",
+                "symfony",
+                "testing",
+                "validation"
+            ],
+            "support": {
+                "source": "https://github.com/ensi-platform/openapi-httpfoundation-testing/tree/0.0.2"
+            },
+            "time": "2023-03-16T12:13:53+00:00"
+        },
+        {
+            "name": "ensi/openapi-psr7-validator",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/openapi-psr7-validator.git",
+                "reference": "a3649b36f26343536cc0747e160228fb0e51a8fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/openapi-psr7-validator/zipball/a3649b36f26343536cc0747e160228fb0e51a8fe",
+                "reference": "a3649b36f26343536cc0747e160228fb0e51a8fe",
+                "shasum": ""
+            },
+            "require": {
+                "devizzent/cebe-php-openapi": "^1.0",
+                "ext-json": "*",
+                "league/uri": "^6.3",
+                "php": ">=7.2",
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "psr/http-message": "^1.0",
+                "psr/http-server-middleware": "^1.0",
+                "respect/validation": "^1.1.3 || ^2.0",
+                "riverline/multipart-parser": "^2.0.3",
+                "webmozart/assert": "^1.4"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^8.0",
+                "guzzlehttp/psr7": "^1.5",
+                "hansott/psr7-cookies": "^3.0.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1",
+                "phpstan/phpstan-phpunit": "^1",
+                "phpstan/phpstan-webmozart-assert": "^1",
+                "phpunit/phpunit": "^7 || ^8 || ^9",
+                "symfony/cache": "^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OpenAPIValidation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Validate PSR-7 messages against OpenAPI (3.0.2) specifications expressed in YAML or JSON",
+            "homepage": "https://github.com/thephpleague/openapi-psr7-validator",
+            "keywords": [
+                "http",
+                "openapi",
+                "psr7",
+                "validation"
+            ],
+            "support": {
+                "source": "https://github.com/ensi-platform/openapi-psr7-validator/tree/0.0.2"
+            },
+            "time": "2023-03-16T11:49:49+00:00"
         },
         {
             "name": "ensi/openapi-server-generator-templates",
@@ -8289,67 +8424,6 @@
                 "source": "https://github.com/justinrainbow/json-schema/tree/5.2.12"
             },
             "time": "2022-04-13T08:02:27+00:00"
-        },
-        {
-            "name": "league/openapi-psr7-validator",
-            "version": "0.16.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/openapi-psr7-validator.git",
-                "reference": "a87c402b6c9af07e4638ab542031c606483f75bd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/openapi-psr7-validator/zipball/a87c402b6c9af07e4638ab542031c606483f75bd",
-                "reference": "a87c402b6c9af07e4638ab542031c606483f75bd",
-                "shasum": ""
-            },
-            "require": {
-                "cebe/php-openapi": "^1.3",
-                "ext-json": "*",
-                "league/uri": "^6.3",
-                "php": ">=7.2",
-                "psr/cache": "^1.0 || ^2.0 || ^3.0",
-                "psr/http-message": "^1.0",
-                "psr/http-server-middleware": "^1.0",
-                "respect/validation": "^1.1.3 || ^2.0",
-                "riverline/multipart-parser": "^2.0.3",
-                "webmozart/assert": "^1.4"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^8.0",
-                "guzzlehttp/psr7": "^1.5",
-                "hansott/psr7-cookies": "^3.0.2",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.12.59",
-                "phpstan/phpstan-phpunit": "^0.12.16",
-                "phpstan/phpstan-webmozart-assert": "^0.12.7",
-                "phpunit/phpunit": "^7 || ^8 || ^9",
-                "symfony/cache": "^5.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "League\\OpenAPIValidation\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Validate PSR-7 messages against OpenAPI (3.0.2) specifications expressed in YAML or JSON",
-            "homepage": "https://github.com/thephpleague/openapi-psr7-validator",
-            "keywords": [
-                "http",
-                "openapi",
-                "psr7",
-                "validation"
-            ],
-            "support": {
-                "issues": "https://github.com/thephpleague/openapi-psr7-validator/issues",
-                "source": "https://github.com/thephpleague/openapi-psr7-validator/tree/0.16.4"
-            },
-            "time": "2021-10-06T13:40:02+00:00"
         },
         {
             "name": "league/uri",
@@ -8885,74 +8959,6 @@
                 }
             ],
             "time": "2022-06-22T07:13:36+00:00"
-        },
-        {
-            "name": "osteel/openapi-httpfoundation-testing",
-            "version": "v0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/osteel/openapi-httpfoundation-testing.git",
-                "reference": "6fb27056dccbc552b418fd63fa397dc17b2e3309"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/osteel/openapi-httpfoundation-testing/zipball/6fb27056dccbc552b418fd63fa397dc17b2e3309",
-                "reference": "6fb27056dccbc552b418fd63fa397dc17b2e3309",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "league/openapi-psr7-validator": "^0.16",
-                "nyholm/psr7": "^1.0",
-                "php": "^7.2|^8.0",
-                "psr/http-message": "^1.0",
-                "symfony/http-foundation": "^4.0 || ^5.0 || ^6.0",
-                "symfony/psr-http-message-bridge": "^2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": ">=8.0",
-                "squizlabs/php_codesniffer": "^3.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Osteel\\OpenApi\\Testing\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yannick Chenot",
-                    "email": "yannick@yellowraincoat.co.uk",
-                    "homepage": "https://github.com/osteel",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Validate HttpFoundation requests and responses against OpenAPI (3.0.x) definitions",
-            "homepage": "https://github.com/osteel/openapi-httpfoundation-testing",
-            "keywords": [
-                "api",
-                "http",
-                "httpfoundation",
-                "laravel",
-                "openapi",
-                "symfony",
-                "testing",
-                "validation"
-            ],
-            "support": {
-                "issues": "https://github.com/osteel/openapi-httpfoundation-testing/issues",
-                "source": "https://github.com/osteel/openapi-httpfoundation-testing/tree/v0.7"
-            },
-            "time": "2022-02-05T15:38:16+00:00"
         },
         {
             "name": "pestphp/pest",
@@ -12222,5 +12228,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
