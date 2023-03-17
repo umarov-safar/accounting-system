@@ -110,6 +110,13 @@ return LaravelStdoutLogsHelper::addStdoutStacks([
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'http_client' => [
+            'name' => 'http_client',
+            'path' => storage_path('logs/http_client.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'driver' => 'monolog',
+        ],
     ],
 
 ]);
