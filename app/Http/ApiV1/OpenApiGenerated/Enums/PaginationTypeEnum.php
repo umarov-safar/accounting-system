@@ -8,9 +8,7 @@
 namespace App\Http\ApiV1\OpenApiGenerated\Enums;
 
 /**
- * Pagination types:
- * * `cursor` - Пагинация используя cursor
- * * `offset` - Пагинация используя offset
+ * Pagination types: * `cursor` - Пагинация используя cursor * `offset` - Пагинация используя offset
  */
 enum PaginationTypeEnum: string
 {
