@@ -88,7 +88,7 @@
         ],
         "test": "php artisan test --parallel",
         "test-coverage": "XDEBUG_MODE=coverage php artisan test --parallel --coverage",
-        "test-ci": "XDEBUG_MODE=coverage php artisan test --parallel --coverage-clover=build/clover.xml --coverage-html=build/report"
+        "test-ci": "php artisan test --parallel"
     },
     "extra": {
         "laravel": {
