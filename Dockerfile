@@ -1,4 +1,4 @@
-FROM dockerhub.greensight.ru/ensi-tech/php-base-image:8.1-task-83916-2021jan28-1-swoole
+FROM dockerhub.greensight.ru/ensi-tech/php-base-image:8.1-master-2023mar4-1-swoole
 
 COPY . /var/www/
 

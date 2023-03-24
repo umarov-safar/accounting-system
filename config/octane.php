@@ -43,6 +43,7 @@ return [
         'show_fatal_error' => env('OCTANE_SHOW_FATAL_ERROR', false),
         'options' => [
             'dispatch_mode' => 1,
+            'send_yield' => false,
             'tcp_fastopen' => true,
             'open_tcp_nodelay' => true,
         ],
