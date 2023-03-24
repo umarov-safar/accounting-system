@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d8083efa221a8fd53421f34e4dd6a1c",
+    "content-hash": "9ff16cc4b9c8b6f154bc93bee1d358dd",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -3829,16 +3829,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.12",
+            "version": "v0.11.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "52cb7c47d403c31c0adc9bf7710fc355f93c20f7"
+                "reference": "722317c9f5627e588788e340f29b923e58f92f54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/52cb7c47d403c31c0adc9bf7710fc355f93c20f7",
-                "reference": "52cb7c47d403c31c0adc9bf7710fc355f93c20f7",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/722317c9f5627e588788e340f29b923e58f92f54",
+                "reference": "722317c9f5627e588788e340f29b923e58f92f54",
                 "shasum": ""
             },
             "require": {
@@ -3899,9 +3899,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.12"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.13"
             },
-            "time": "2023-01-29T21:24:40+00:00"
+            "time": "2023-03-21T14:22:44+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -4131,16 +4131,16 @@
         },
         {
             "name": "spatie/laravel-package-tools",
-            "version": "1.14.1",
+            "version": "1.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "b477dd2f89d0751f0e51ffb3a70181f0bc7ab8df"
+                "reference": "bab62023a4745a61170ad5424184533685e73c2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/b477dd2f89d0751f0e51ffb3a70181f0bc7ab8df",
-                "reference": "b477dd2f89d0751f0e51ffb3a70181f0bc7ab8df",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/bab62023a4745a61170ad5424184533685e73c2d",
+                "reference": "bab62023a4745a61170ad5424184533685e73c2d",
                 "shasum": ""
             },
             "require": {
@@ -4179,7 +4179,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.14.1"
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.14.2"
             },
             "funding": [
                 {
@@ -4187,7 +4187,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-27T15:33:45+00:00"
+            "time": "2023-03-14T16:41:21+00:00"
         },
         {
             "name": "spatie/laravel-query-builder",
@@ -7120,23 +7120,26 @@
         },
         {
             "name": "cebe/php-openapi",
-            "version": "1.5.2",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/php-openapi.git",
-                "reference": "8f1f70688fd4bea04410718616450a38b7b8c40b"
+                "reference": "020d72b8e3a9a60bc229953e93eda25c49f46f45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/php-openapi/zipball/8f1f70688fd4bea04410718616450a38b7b8c40b",
-                "reference": "8f1f70688fd4bea04410718616450a38b7b8c40b",
+                "url": "https://api.github.com/repos/cebe/php-openapi/zipball/020d72b8e3a9a60bc229953e93eda25c49f46f45",
+                "reference": "020d72b8e3a9a60bc229953e93eda25c49f46f45",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "justinrainbow/json-schema": "^5.0",
+                "justinrainbow/json-schema": "^5.2",
                 "php": ">=7.1.0",
-                "symfony/yaml": "^3.4 | ^4.0 | ^5.0"
+                "symfony/yaml": "^3.4 || ^4 || ^5 || ^6"
+            },
+            "conflict": {
+                "symfony/yaml": "3.4.0 - 3.4.4 || 4.0.0 - 4.4.17 || 5.0.0 - 5.1.9 || 5.2.0"
             },
             "require-dev": {
                 "apis-guru/openapi-directory": "1.0.0",
@@ -7153,7 +7156,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -7182,7 +7185,7 @@
                 "issues": "https://github.com/cebe/php-openapi/issues",
                 "source": "https://github.com/cebe/php-openapi"
             },
-            "time": "2021-05-24T11:32:07+00:00"
+            "time": "2022-04-20T14:46:44+00:00"
         },
         {
             "name": "composer/class-map-generator",
@@ -7476,6 +7479,80 @@
             "time": "2022-02-25T21:32:43+00:00"
         },
         {
+            "name": "devizzent/cebe-php-openapi",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DEVizzent/cebe-php-openapi.git",
+                "reference": "c5a294e49d79b3efbb7b0c5a4e99c76abce03f29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DEVizzent/cebe-php-openapi/zipball/c5a294e49d79b3efbb7b0c5a4e99c76abce03f29",
+                "reference": "c5a294e49d79b3efbb7b0c5a4e99c76abce03f29",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "justinrainbow/json-schema": "^5.2",
+                "php": ">=7.1.0",
+                "symfony/yaml": "^3.4 || ^4 || ^5 || ^6"
+            },
+            "conflict": {
+                "symfony/yaml": "3.4.0 - 3.4.4 || 4.0.0 - 4.4.17 || 5.0.0 - 5.1.9 || 5.2.0"
+            },
+            "require-dev": {
+                "apis-guru/openapi-directory": "1.0.0",
+                "cebe/indent": "*",
+                "mermade/openapi3-examples": "1.0.0",
+                "nexmo/api-specification": "1.0.0",
+                "oai/openapi-specification-3.0": "3.0.3",
+                "oai/openapi-specification-3.1": "3.1.0",
+                "phpstan/phpstan": "^0.12.0",
+                "phpunit/phpunit": "^6.5 || ^7.5 || ^8.5 || ^9.4"
+            },
+            "bin": [
+                "bin/php-openapi"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "cebe\\openapi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc",
+                    "homepage": "https://cebe.cc/",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Vicent Valls",
+                    "email": "vizzent@gmail.com"
+                }
+            ],
+            "description": "Read and write OpenAPI yaml/json files and make the content accessable in PHP objects.",
+            "homepage": "https://github.com/DEVizzent/cebe-php-openapi#readme",
+            "keywords": [
+                "openapi"
+            ],
+            "support": {
+                "issues": "https://github.com/DEVizzent/cebe-php-openapi/issues",
+                "source": "https://github.com/DEVizzent/cebe-php-openapi"
+            },
+            "time": "2023-01-26T21:28:59+00:00"
+        },
+        {
             "name": "doctrine/annotations",
             "version": "2.0.1",
             "source": {
@@ -7676,20 +7753,20 @@
         },
         {
             "name": "ensi/laravel-openapi-server-generator",
-            "version": "2.0.11",
+            "version": "2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-server-generator.git",
-                "reference": "5ffd96aa6311817a50ce48fe8b95bdb67d0660d3"
+                "reference": "683c65dbf29739cb8dfb7fd5e96f77cc5c59dadd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/5ffd96aa6311817a50ce48fe8b95bdb67d0660d3",
-                "reference": "5ffd96aa6311817a50ce48fe8b95bdb67d0660d3",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/683c65dbf29739cb8dfb7fd5e96f77cc5c59dadd",
+                "reference": "683c65dbf29739cb8dfb7fd5e96f77cc5c59dadd",
                 "shasum": ""
             },
             "require": {
-                "cebe/php-openapi": ">=1.4.2 <1.6.0",
+                "devizzent/cebe-php-openapi": "^1.0",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -7729,9 +7806,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-server-generator/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.11"
+                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.13"
             },
-            "time": "2023-03-13T09:13:45+00:00"
+            "time": "2023-03-17T08:19:16+00:00"
         },
         {
             "name": "ensi/laravel-openapi-testing",
@@ -7787,16 +7864,16 @@
         },
         {
             "name": "ensi/laravel-test-factories",
-            "version": "0.0.2",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-test-factories.git",
-                "reference": "dc6b904ae61730159e589c8bafcf15df5751888e"
+                "reference": "b13767aa0f1be2b2a3f87f0a959b3e0c41a0d860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-test-factories/zipball/dc6b904ae61730159e589c8bafcf15df5751888e",
-                "reference": "dc6b904ae61730159e589c8bafcf15df5751888e",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-test-factories/zipball/b13767aa0f1be2b2a3f87f0a959b3e0c41a0d860",
+                "reference": "b13767aa0f1be2b2a3f87f0a959b3e0c41a0d860",
                 "shasum": ""
             },
             "require": {
@@ -7831,22 +7908,22 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-test-factories/issues",
-                "source": "https://github.com/ensi-platform/laravel-test-factories/tree/0.0.2"
+                "source": "https://github.com/ensi-platform/laravel-test-factories/tree/0.1.1"
             },
-            "time": "2023-03-14T09:23:42+00:00"
+            "time": "2023-03-20T14:35:51+00:00"
         },
         {
             "name": "ensi/openapi-client-generator-php-templates",
-            "version": "0.2.6",
+            "version": "0.2.7",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates.git",
-                "reference": "93274e46d248d2b01b47cd50fb759aeef72256ce"
+                "reference": "053a48bea413848cd364016934ea07007260453e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-client-generator-php-templates/repository/archive.zip?sha=93274e46d248d2b01b47cd50fb759aeef72256ce",
-                "reference": "93274e46d248d2b01b47cd50fb759aeef72256ce",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-client-generator-php-templates/repository/archive.zip?sha=053a48bea413848cd364016934ea07007260453e",
+                "reference": "053a48bea413848cd364016934ea07007260453e",
                 "shasum": ""
             },
             "type": "library",
@@ -7860,9 +7937,9 @@
                 }
             ],
             "support": {
-                "source": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates/-/tree/0.2.6"
+                "source": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates/-/tree/0.2.7"
             },
-            "time": "2023-01-24T06:39:41+00:00"
+            "time": "2023-03-20T07:24:48+00:00"
         },
         {
             "name": "ensi/openapi-server-generator-templates",
@@ -7895,16 +7972,16 @@
         },
         {
             "name": "ensi/test-factories",
-            "version": "0.2.3",
+            "version": "0.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/php-test-factories.git",
-                "reference": "fc381ea5c5ff141e171c7ee11b630cb9c7144a2f"
+                "reference": "404d89f9fafd943c81a1a508ffb47bcf0f04655d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/php-test-factories/zipball/fc381ea5c5ff141e171c7ee11b630cb9c7144a2f",
-                "reference": "fc381ea5c5ff141e171c7ee11b630cb9c7144a2f",
+                "url": "https://api.github.com/repos/ensi-platform/php-test-factories/zipball/404d89f9fafd943c81a1a508ffb47bcf0f04655d",
+                "reference": "404d89f9fafd943c81a1a508ffb47bcf0f04655d",
                 "shasum": ""
             },
             "require": {
@@ -7940,9 +8017,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/php-test-factories/issues",
-                "source": "https://github.com/ensi-platform/php-test-factories/tree/0.2.3"
+                "source": "https://github.com/ensi-platform/php-test-factories/tree/0.2.4"
             },
-            "time": "2023-02-08T13:06:53+00:00"
+            "time": "2023-03-23T14:03:10+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -8075,16 +8152,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.15.0",
+            "version": "v3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "7306744c63e9cc1337894252b4eec4920c38b053"
+                "reference": "d48755372a113bddb99f749e34805d83f3acfe04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/7306744c63e9cc1337894252b4eec4920c38b053",
-                "reference": "7306744c63e9cc1337894252b4eec4920c38b053",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/d48755372a113bddb99f749e34805d83f3acfe04",
+                "reference": "d48755372a113bddb99f749e34805d83f3acfe04",
                 "shasum": ""
             },
             "require": {
@@ -8159,7 +8236,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.15.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.15.1"
             },
             "funding": [
                 {
@@ -8167,7 +8244,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-12T22:44:55+00:00"
+            "time": "2023-03-13T23:26:30+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -8351,20 +8428,20 @@
         },
         {
             "name": "league/openapi-psr7-validator",
-            "version": "0.16.4",
+            "version": "0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/openapi-psr7-validator.git",
-                "reference": "a87c402b6c9af07e4638ab542031c606483f75bd"
+                "reference": "c3daf7cc679a8c40c591a0272392ab726b92844f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/openapi-psr7-validator/zipball/a87c402b6c9af07e4638ab542031c606483f75bd",
-                "reference": "a87c402b6c9af07e4638ab542031c606483f75bd",
+                "url": "https://api.github.com/repos/thephpleague/openapi-psr7-validator/zipball/c3daf7cc679a8c40c591a0272392ab726b92844f",
+                "reference": "c3daf7cc679a8c40c591a0272392ab726b92844f",
                 "shasum": ""
             },
             "require": {
-                "cebe/php-openapi": "^1.3",
+                "cebe/php-openapi": "^1.6",
                 "ext-json": "*",
                 "league/uri": "^6.3",
                 "php": ">=7.2",
@@ -8380,9 +8457,9 @@
                 "guzzlehttp/psr7": "^1.5",
                 "hansott/psr7-cookies": "^3.0.2",
                 "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.12.59",
-                "phpstan/phpstan-phpunit": "^0.12.16",
-                "phpstan/phpstan-webmozart-assert": "^0.12.7",
+                "phpstan/phpstan": "^1",
+                "phpstan/phpstan-phpunit": "^1",
+                "phpstan/phpstan-webmozart-assert": "^1",
                 "phpunit/phpunit": "^7 || ^8 || ^9",
                 "symfony/cache": "^5.1"
             },
@@ -8406,9 +8483,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/openapi-psr7-validator/issues",
-                "source": "https://github.com/thephpleague/openapi-psr7-validator/tree/0.16.4"
+                "source": "https://github.com/thephpleague/openapi-psr7-validator/tree/0.17"
             },
-            "time": "2021-10-06T13:40:02+00:00"
+            "time": "2022-02-10T13:54:23+00:00"
         },
         {
             "name": "league/uri",
@@ -8947,21 +9024,21 @@
         },
         {
             "name": "osteel/openapi-httpfoundation-testing",
-            "version": "v0.7",
+            "version": "v0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/osteel/openapi-httpfoundation-testing.git",
-                "reference": "6fb27056dccbc552b418fd63fa397dc17b2e3309"
+                "reference": "f0fc193e7726ed2d2663c65bd8a43961247c35e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/osteel/openapi-httpfoundation-testing/zipball/6fb27056dccbc552b418fd63fa397dc17b2e3309",
-                "reference": "6fb27056dccbc552b418fd63fa397dc17b2e3309",
+                "url": "https://api.github.com/repos/osteel/openapi-httpfoundation-testing/zipball/f0fc193e7726ed2d2663c65bd8a43961247c35e3",
+                "reference": "f0fc193e7726ed2d2663c65bd8a43961247c35e3",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "league/openapi-psr7-validator": "^0.16",
+                "league/openapi-psr7-validator": "^0.17",
                 "nyholm/psr7": "^1.0",
                 "php": "^7.2|^8.0",
                 "psr/http-message": "^1.0",
@@ -8969,7 +9046,7 @@
                 "symfony/psr-http-message-bridge": "^2.0"
             },
             "require-dev": {
-                "phpunit/phpunit": ">=8.0",
+                "phpunit/phpunit": ">=8.5.23",
                 "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
@@ -9009,29 +9086,29 @@
             ],
             "support": {
                 "issues": "https://github.com/osteel/openapi-httpfoundation-testing/issues",
-                "source": "https://github.com/osteel/openapi-httpfoundation-testing/tree/v0.7"
+                "source": "https://github.com/osteel/openapi-httpfoundation-testing/tree/v0.7.2"
             },
-            "time": "2022-02-05T15:38:16+00:00"
+            "time": "2022-07-01T16:13:11+00:00"
         },
         {
             "name": "pestphp/pest",
-            "version": "v1.22.5",
+            "version": "v1.22.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "a1a0f049cddb7da097e7450e1a80da4d1a59571e"
+                "reference": "9f6a88232733f9d1e33f49531340f447bd255c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/a1a0f049cddb7da097e7450e1a80da4d1a59571e",
-                "reference": "a1a0f049cddb7da097e7450e1a80da4d1a59571e",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/9f6a88232733f9d1e33f49531340f447bd255c9e",
+                "reference": "9f6a88232733f9d1e33f49531340f447bd255c9e",
                 "shasum": ""
             },
             "require": {
-                "nunomaduro/collision": "^5.11.0|^6.3.0",
+                "nunomaduro/collision": "^5.11.0|^6.4.0",
                 "pestphp/pest-plugin": "^1.1.0",
                 "php": "^7.3 || ^8.0",
-                "phpunit/phpunit": "^9.6.4"
+                "phpunit/phpunit": "^9.6.5"
             },
             "require-dev": {
                 "illuminate/console": "^8.83.27",
@@ -9092,7 +9169,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v1.22.5"
+                "source": "https://github.com/pestphp/pest/tree/v1.22.6"
             },
             "funding": [
                 {
@@ -9120,7 +9197,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-03-03T10:16:59+00:00"
+            "time": "2023-03-17T23:24:14+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -9635,24 +9712,27 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.6.2",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "48f445a408c131e38cab1c235aa6d2bb7a0bb20d"
+                "reference": "1534aea9bde19a5c85c5d1e1f834ab63f4c5dcf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/48f445a408c131e38cab1c235aa6d2bb7a0bb20d",
-                "reference": "48f445a408c131e38cab1c235aa6d2bb7a0bb20d",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/1534aea9bde19a5c85c5d1e1f834ab63f4c5dcf5",
+                "reference": "1534aea9bde19a5c85c5d1e1f834ab63f4c5dcf5",
                 "shasum": ""
             },
             "require": {
+                "doctrine/deprecations": "^1.0",
                 "php": "^7.4 || ^8.0",
-                "phpdocumentor/reflection-common": "^2.0"
+                "phpdocumentor/reflection-common": "^2.0",
+                "phpstan/phpdoc-parser": "^1.13"
             },
             "require-dev": {
                 "ext-tokenizer": "*",
+                "phpbench/phpbench": "^1.2",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^1.8",
                 "phpstan/phpstan-phpunit": "^1.1",
@@ -9684,9 +9764,54 @@
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "support": {
                 "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
-                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.6.2"
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.7.0"
             },
-            "time": "2022-10-14T12:47:21+00:00"
+            "time": "2023-03-12T10:13:29+00:00"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "1.16.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "e27e92d939e2e3636f0a1f0afaba59692c0bf571"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/e27e92d939e2e3636f0a1f0afaba59692c0bf571",
+                "reference": "e27e92d939e2e3636f0a1f0afaba59692c0bf571",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.5",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "symfony/process": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\PhpDocParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPDoc parser with support for nullable, intersection and generic types",
+            "support": {
+                "issues": "https://github.com/phpstan/phpdoc-parser/issues",
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.16.1"
+            },
+            "time": "2023-02-07T18:11:17+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -11931,28 +12056,27 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.4.21",
+            "version": "v6.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3713e20d93e46e681e51605d213027e48dab3469"
+                "reference": "e8e6a1d59e050525f27a1f530aa9703423cb7f57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3713e20d93e46e681e51605d213027e48dab3469",
-                "reference": "3713e20d93e46e681e51605d213027e48dab3469",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e8e6a1d59e050525f27a1f530aa9703423cb7f57",
+                "reference": "e8e6a1d59e050525f27a1f530aa9703423cb7f57",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5",
-                "symfony/deprecation-contracts": "^2.1|^3",
+                "php": ">=8.1",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
-                "symfony/console": "<5.3"
+                "symfony/console": "<5.4"
             },
             "require-dev": {
-                "symfony/console": "^5.3|^6.0"
+                "symfony/console": "^5.4|^6.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -11986,7 +12110,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.4.21"
+                "source": "https://github.com/symfony/yaml/tree/v6.2.7"
             },
             "funding": [
                 {
@@ -12002,7 +12126,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-21T19:46:44+00:00"
+            "time": "2023-02-16T09:57:23+00:00"
         },
         {
             "name": "thecodingmachine/safe",
