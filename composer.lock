@@ -7792,16 +7792,16 @@
         },
         {
             "name": "ensi/openapi-client-generator-php-templates",
-            "version": "0.2.6",
+            "version": "0.2.7",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates.git",
-                "reference": "93274e46d248d2b01b47cd50fb759aeef72256ce"
+                "reference": "053a48bea413848cd364016934ea07007260453e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-client-generator-php-templates/repository/archive.zip?sha=93274e46d248d2b01b47cd50fb759aeef72256ce",
-                "reference": "93274e46d248d2b01b47cd50fb759aeef72256ce",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-client-generator-php-templates/repository/archive.zip?sha=053a48bea413848cd364016934ea07007260453e",
+                "reference": "053a48bea413848cd364016934ea07007260453e",
                 "shasum": ""
             },
             "type": "library",
@@ -7814,7 +7814,10 @@
                     "email": "nekrasov@greensight.ru"
                 }
             ],
-            "time": "2023-01-24T06:39:41+00:00"
+            "support": {
+                "source": "https://gitlab.com/greensight/ensi/packages/openapi-client-generator-php-templates/-/tree/0.2.7"
+            },
+            "time": "2023-03-20T07:24:48+00:00"
         },
         {
             "name": "ensi/openapi-httpfoundation-testing",
