@@ -140,6 +140,10 @@ return [
 
         // config/view.php
         'VIEW_COMPILED_PATH',
+
+        // config/octane.php
+        'OCTANE_SHOW_FATAL_ERROR',
+        'MAX_EXECUTION_TIME',
     ],
 
     /**
