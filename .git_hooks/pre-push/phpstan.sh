@@ -9,7 +9,7 @@ COL_YELLOW=$ESC_SEQ"0;33m"
 echo
 printf "$COL_YELLOW%s$COL_RESET\n" "Running pre-push hook: \"phpstan\""
 
-if composer run phpstan; then
+if composer phpstan; then
     echo "Okay"
     exit 0
 else
