@@ -18,12 +18,18 @@ class OffsetPageBuilder extends AbstractPageBuilder
 
     protected function buildWithNotPositiveLimit(int $limit): Page
     {
-        $collection = $limit < 0 && !$this->forbidToBypassPagination ? $this->query->get() : new Collection();
+        if ($limit < 0 && !$this->forbidToBypassPagination) {
+            $collection = $this->query->get();
+            $total = $collection->count();
+        } else {
+            $collection = new Collection();
+            $total = $this->query->count();
+        }
 
         return new Page($collection, [
             'offset' => 0,
             'limit' => $limit,
-            'total' => $collection->count(),
+            'total' => $total,
             'type' => PaginationTypeEnum::OFFSET->value,
         ]);
     }

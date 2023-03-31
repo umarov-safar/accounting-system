@@ -2,8 +2,6 @@
 
 # В данном хуке выполняется приведение код-стайла в соответствие с конфигом .php_cs
 
-source $(pwd)/.git_hooks/external_runtime
-
 EXECUTABLE_NAME=php-cs-fixer
 EXECUTABLE_COMMAND=fix
 CONFIG_FILE=.php-cs-fixer.php

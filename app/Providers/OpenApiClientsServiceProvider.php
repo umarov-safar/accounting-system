@@ -8,9 +8,11 @@ use Ackintosh\Ganesha\GuzzleMiddleware;
 use Ackintosh\Ganesha\Storage\Adapter\Apcu as ApcuAdapter;
 use Ensi\GuzzleMultibyte\BodySummarizer;
 use Ensi\LaravelInitialEventPropagation\PropagateInitialEventLaravelGuzzleMiddleware;
+use Ensi\LaravelMetrics\Guzzle\GuzzleMiddleware as MetricsMiddleware;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Utils;
 use Illuminate\Support\Facades\Log;
@@ -46,8 +48,22 @@ class OpenApiClientsServiceProvider extends ServiceProvider
         }
 
         $stack->push(new PropagateInitialEventLaravelGuzzleMiddleware());
+        $stack->push(MetricsMiddleware::middleware());
+
+        if (config('app.debug')) {
+            $stack->push($this->configureLoggerMiddleware(), 'logger');
+        }
 
         return $stack;
+    }
+
+    private function configureLoggerMiddleware(): callable
+    {
+        $logger = logger()->channel('http_client');
+        $format = "{req_headers}\n{req_body}\n\n{res_headers}\n{res_body}\n\n";
+        $formatter = new MessageFormatter($format);
+
+        return Middleware::log($logger, $formatter, 'debug');
     }
 
     private function configureGaneshaMiddleware(): GuzzleMiddleware

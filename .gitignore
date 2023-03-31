@@ -87,7 +87,6 @@ auth.json
 ###########
 .php_cs.cache
 .php-cs-fixer.cache
-.huskyrc
 phpstan.neon
 clients/*
 !clients/.gitkeep
