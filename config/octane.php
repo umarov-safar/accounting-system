@@ -225,6 +225,6 @@ return [
     |
     */
 
-    'max_execution_time' => 30,
+    'max_execution_time' => env('MAX_EXECUTION_TIME', 30),
 
 ];
