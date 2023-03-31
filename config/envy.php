@@ -143,7 +143,6 @@ return [
 
         // config/octane.php
         'OCTANE_SHOW_FATAL_ERROR',
-        'MAX_EXECUTION_TIME',
     ],
 
     /**
@@ -156,5 +155,9 @@ return [
         'MIX_PUSHER_APP_CLUSTER',
         'ENSI_PROTECTED_DISK_URL',
         'ENSI_PUBLIC_DISK_URL',
+
+        // not app
+        'DEBUG_HOST',
+        'DEBUG_PORT',
     ],
 ];
