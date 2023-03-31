@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a10097d99b58b21a324efc10a27332b",
+    "content-hash": "991c5ae01385e4f566c008fac28cb1c6",
     "packages": [
         {
             "name": "ackintosh/ganesha",
