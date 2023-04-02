@@ -7,7 +7,8 @@ Error:
     message:
       description: Описание ошибки
       type: string
-    meta: 
+    meta:
+      x-skip-response-validation: true
       type: object
       description: Объект с мета-информацией
   required:
@@ -17,6 +18,9 @@ Error:
 ErrorResponse:
   type: object
   properties:
+    data:
+      type: object
+      nullable: true
     errors:
       type: array
       description: Массив ошибок
@@ -26,4 +30,5 @@ ErrorResponse:
       type: object
       description: Объект с мета-информацией
   required:
+    - data
     - errors

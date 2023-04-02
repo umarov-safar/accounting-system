@@ -87,7 +87,6 @@ auth.json
 ###########
 .php_cs.cache
 .php-cs-fixer.cache
-.huskyrc
 clients/*
 !clients/.gitkeep
 storage/ensi

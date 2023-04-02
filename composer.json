@@ -11,6 +11,7 @@
         "ensi/guzzle-multibyte": "^0.1.0",
         "ensi/laravel-ensi-filesystem": "^0.3.0",
         "ensi/laravel-initial-event-propagation": "^0.2",
+        "ensi/laravel-metrics": "^1.0.0",
         "ensi/laravel-phprdkafka": "^0.3.0",
         "ensi/laravel-phprdkafka-consumer": "^0.3.0",
         "ensi/laravel-phprdkafka-producer": "^0.3.0",
@@ -28,7 +29,7 @@
         "beyondcode/laravel-dump-server": "^1.6",
         "ensi/laravel-openapi-client-generator": "^0.12.0",
         "ensi/laravel-openapi-server-generator": "^2.0",
-        "ensi/laravel-openapi-testing": "^0.2.0",
+        "ensi/laravel-openapi-testing": "^0.3.0",
         "ensi/laravel-test-factories": "^0.1",
         "ensi/openapi-client-generator-php-templates": "^0.2",
         "ensi/openapi-server-generator-templates": "^0.2",
@@ -88,7 +89,7 @@
         ],
         "test": "php artisan test --parallel",
         "test-coverage": "XDEBUG_MODE=coverage php artisan test --parallel --coverage",
-        "test-ci": "XDEBUG_MODE=coverage php artisan test --parallel --coverage-clover=build/clover.xml --coverage-html=build/report"
+        "test-ci": "php artisan test --parallel"
     },
     "extra": {
         "laravel": {
