@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "199cf9cd69e1d9270a3c989b7c0e05b3",
+    "content-hash": "02e870e1e74f5e131e3d0fce9715f0a5",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -848,16 +848,16 @@
         },
         {
             "name": "ensi/guzzle-multibyte",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/guzzle-multibyte.git",
-                "reference": "f646ad1658e5a82cd20e15172484f620e71dff01"
+                "reference": "822b1746428c4af2b969b83ee7f337ca2d48a023"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/guzzle-multibyte/zipball/f646ad1658e5a82cd20e15172484f620e71dff01",
-                "reference": "f646ad1658e5a82cd20e15172484f620e71dff01",
+                "url": "https://api.github.com/repos/ensi-platform/guzzle-multibyte/zipball/822b1746428c4af2b969b83ee7f337ca2d48a023",
+                "reference": "822b1746428c4af2b969b83ee7f337ca2d48a023",
                 "shasum": ""
             },
             "require": {
@@ -885,9 +885,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/guzzle-multibyte/issues",
-                "source": "https://github.com/ensi-platform/guzzle-multibyte/tree/0.1.0"
+                "source": "https://github.com/ensi-platform/guzzle-multibyte/tree/0.1.1"
             },
-            "time": "2022-01-21T12:44:43+00:00"
+            "time": "2023-04-07T09:05:32+00:00"
         },
         {
             "name": "ensi/initial-event-propagation",
@@ -12392,5 +12392,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
