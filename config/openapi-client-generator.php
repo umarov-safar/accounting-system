@@ -28,29 +28,6 @@ return [
     'git_host' => 'gitlab.com',
 
     /*
-     * Args for generate nodejs client
-     */
-    'js_args' => [
-        /*
-         * Specific generator params from https://openapi-generator.tech/docs/generators/typescript-fetch/
-         */
-        'params' => [
-            'npmName' => '@ensi/backend-service-skeleton-client',
-            'useES6' => true,
-            'useSingleRequestParameter' => true,
-            'withInterfaces' => true,
-            'typescriptThreePlus' => true,
-        ],
-
-        /*
-         * Need generate nest js module, only for backend services
-         */
-        'generate_nestjs_module' => true,
-
-        'files_to_ignore_during_cleanup' => ['.git', '.gitignore'],
-    ],
-
-    /*
      * Args for generate php client
      */
     'php_args' => [
