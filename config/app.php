@@ -168,7 +168,6 @@ return [
          * Package Service Providers...
          */
         Ensi\LaravelServeStoplight\ServeStoplightServiceProvider::class,
-        Ensi\LaravelTestFactories\LaravelTestServiceProvider::class,
 
         /*
          * Application Service Providers...

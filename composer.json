@@ -30,7 +30,7 @@
         "ensi/laravel-openapi-client-generator": "^0.12.0",
         "ensi/laravel-openapi-server-generator": "^2.0",
         "ensi/laravel-openapi-testing": "^0.3.0",
-        "ensi/laravel-test-factories": "^0.1",
+        "ensi/laravel-test-factories": "^0.2",
         "ensi/openapi-client-generator-php-templates": "^0.2",
         "ensi/openapi-server-generator-templates": "^0.2",
         "fakerphp/faker": "^1.9.1",
