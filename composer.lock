@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02e870e1e74f5e131e3d0fce9715f0a5",
+    "content-hash": "cd36b4132f618054d831fc4dc6653840",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -7789,16 +7789,16 @@
         },
         {
             "name": "ensi/laravel-openapi-client-generator",
-            "version": "0.12.4",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-client-generator.git",
-                "reference": "d2387595e24cb24473f9ac03ea0b029fbc015f57"
+                "reference": "64edf7c63787d9896c6f09df9959411bd776764d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-client-generator/zipball/d2387595e24cb24473f9ac03ea0b029fbc015f57",
-                "reference": "d2387595e24cb24473f9ac03ea0b029fbc015f57",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-client-generator/zipball/64edf7c63787d9896c6f09df9959411bd776764d",
+                "reference": "64edf7c63787d9896c6f09df9959411bd776764d",
                 "shasum": ""
             },
             "require": {
@@ -7807,9 +7807,10 @@
                 "php": "^8.1"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.14",
                 "laravel/framework": "^8.40 || ^9.0",
                 "orchestra/testbench": "^6.0 || ^7.0",
-                "phpunit/phpunit": "^9.2"
+                "pestphp/pest": "^1.22"
             },
             "type": "library",
             "extra": {
@@ -7836,9 +7837,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-client-generator/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-client-generator/tree/0.12.4"
+                "source": "https://github.com/ensi-platform/laravel-openapi-client-generator/tree/0.13.0"
             },
-            "time": "2022-10-10T06:27:27+00:00"
+            "time": "2023-04-14T12:18:34+00:00"
         },
         {
             "name": "ensi/laravel-openapi-server-generator",
