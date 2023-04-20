@@ -142,6 +142,8 @@ node('docker-agent'){
 
                                             composer install --no-ansi --no-interaction --no-suggest --ignore-platform-reqs
                                             composer dump -o
+
+                                            npm ci
                                         """)
 
                                         testStatus = sh(script: """
@@ -152,7 +154,14 @@ node('docker-agent'){
                                             export DB_USERNAME=${username}
                                             export DB_PASSWORD=${password}
 
-                                            composer test-ci
+                                            run-parts --exit-on-error .git_hooks/ci/
+                                            
+                                            if [ \$(git status --porcelain | wc -l) -eq "0" ]; then
+                                                echo "Git repo is clean."
+                                            else
+                                                echo "Git repo dirty. Quit."
+                                                exit 1
+                                            fi
                                         """, returnStatus: true)
                                     }
                                 }
