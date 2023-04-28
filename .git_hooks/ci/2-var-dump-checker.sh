@@ -1,0 +1,1 @@
+../scripts/var-dump-checker.sh
