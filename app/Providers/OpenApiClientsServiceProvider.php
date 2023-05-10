@@ -8,6 +8,7 @@ use Ackintosh\Ganesha\GuzzleMiddleware;
 use Ackintosh\Ganesha\Storage\Adapter\Apcu as ApcuAdapter;
 use Ensi\GuzzleMultibyte\BodySummarizer;
 use Ensi\LaravelInitialEventPropagation\PropagateInitialEventLaravelGuzzleMiddleware;
+use Ensi\LaravelMetrics\Guzzle\GuzzleMiddleware as MetricsMiddleware;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
@@ -17,7 +18,6 @@ use GuzzleHttp\Utils;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use LogicException;
-use Ensi\LaravelMetrics\Guzzle\GuzzleMiddleware as MetricsMiddleware;
 
 class OpenApiClientsServiceProvider extends ServiceProvider
 {
@@ -65,6 +65,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
 
         return Middleware::log($logger, $formatter, 'debug');
     }
+
     private function configureGaneshaMiddleware(): GuzzleMiddleware
     {
         $config = config('ganesha');
