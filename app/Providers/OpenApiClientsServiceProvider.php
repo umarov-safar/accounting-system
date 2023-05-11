@@ -50,7 +50,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
         $stack->push(new PropagateInitialEventLaravelGuzzleMiddleware());
         $stack->push(MetricsMiddleware::middleware());
 
-        if (config('app.debug')) {
+        if (config('logging.http_logger_enable')) {
             $stack->push($this->configureLoggerMiddleware(), 'logger');
         }
 
