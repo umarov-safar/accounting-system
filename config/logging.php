@@ -33,6 +33,8 @@ return LaravelStdoutLogsHelper::addStdoutStacks([
 
     'deprecations' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
 
+    'http_logger_enable' => env('HTTP_CLIENT_LOGGER_ENABLE', false),
+
     /*
     |--------------------------------------------------------------------------
     | Log Channels
