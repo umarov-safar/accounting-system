@@ -3,6 +3,7 @@
 // configurattion options can be found here: https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
 // if an option is set to null it is ignored.
 $contour = env('KAFKA_CONTOUR', 'local');
+
 return [
     'connections' => [
         'default' => [
@@ -17,8 +18,8 @@ return [
             ],
             'topics' => [
                 // 'foobars' =>  $contour . '.domain.fact.foobars.1'
-            ]
-        ]
+            ],
+        ],
     ],
     'consumers' => [
         'default' => [

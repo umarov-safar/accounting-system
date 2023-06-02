@@ -87,6 +87,7 @@ auth.json
 ###########
 .php_cs.cache
 .php-cs-fixer.cache
+phpstan.neon
 clients/*
 !clients/.gitkeep
 storage/ensi

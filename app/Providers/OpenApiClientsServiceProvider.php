@@ -103,6 +103,10 @@ class OpenApiClientsServiceProvider extends ServiceProvider
         return new GuzzleMiddleware($ganesha);
     }
 
+    /**
+     * @todo delete phpstan-ignore-next-line after you start using this method.
+     * @phpstan-ignore-next-line
+     */
     private function registerService(HandlerStack $handler, string $domain, string $serviceName, string $configurationClassName, array $apisClassNames): void
     {
         $config = config("openapi-clients.$domain.$serviceName");

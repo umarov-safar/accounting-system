@@ -1,6 +1,7 @@
 <?php
 
 use Mockery\MockInterface;
+
 use function Pest\Laravel\mock;
 
 /*
