@@ -40,7 +40,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
     {
         $stack = new HandlerStack(Utils::chooseHandler());
 
-        $stack->push(Middleware::httpErrors(new BodySummarizer()), 'http_errors');
+        $stack->push(Middleware::httpErrors(new BodySummarizer(config('guzzle.http_error.truncate_at'))), 'http_errors');
         $stack->push(Middleware::redirect(), 'allow_redirects');
         $stack->push(Middleware::prepareBody(), 'prepare_body');
         if (!config('ganesha.disable_middleware', false)) {
@@ -50,7 +50,7 @@ class OpenApiClientsServiceProvider extends ServiceProvider
         $stack->push(new PropagateInitialEventLaravelGuzzleMiddleware());
         $stack->push(MetricsMiddleware::middleware());
 
-        if (config('app.debug')) {
+        if (config('logging.http_logger_enable')) {
             $stack->push($this->configureLoggerMiddleware(), 'logger');
         }
 

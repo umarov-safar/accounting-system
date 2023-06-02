@@ -43,6 +43,7 @@ return [
         'show_fatal_error' => env('OCTANE_SHOW_FATAL_ERROR', false),
         'options' => [
             'dispatch_mode' => 1,
+            'send_yield' => false,
             'tcp_fastopen' => true,
             'open_tcp_nodelay' => true,
         ],
@@ -225,6 +226,6 @@ return [
     |
     */
 
-    'max_execution_time' => 30,
+    'max_execution_time' => env('MAX_EXECUTION_TIME', 30),
 
 ];

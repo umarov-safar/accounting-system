@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "991c5ae01385e4f566c008fac28cb1c6",
+    "content-hash": "078e07b1753a974c020d1a6dde44b4b6",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -1356,6 +1356,65 @@
                 "source": "https://github.com/ensi-platform/laravel-prometheus/tree/1.0.3"
             },
             "time": "2023-02-20T13:30:45+00:00"
+        },
+        {
+            "name": "ensi/laravel-query-builder-helpers",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-query-builder-helpers.git",
+                "reference": "f7ab698d851889b68e4e36d2e1c77b5ca0542b59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-query-builder-helpers/zipball/f7ab698d851889b68e4e36d2e1c77b5ca0542b59",
+                "reference": "f7ab698d851889b68e4e36d2e1c77b5ca0542b59",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "php": "^8.1",
+                "spatie/laravel-query-builder": "^5.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.9",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\QueryBuilderHelpers\\QueryBuilderHelpersServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\QueryBuilderHelpers\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This package contains extensions for laravel-query-builder",
+            "homepage": "https://github.com/ensi-platform/laravel-query-builder-helpers",
+            "keywords": [
+                "ensi",
+                "greensight",
+                "laravel",
+                "query-builder-extensions"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-query-builder-helpers/issues",
+                "source": "https://github.com/ensi-platform/laravel-query-builder-helpers/tree/0.1.0"
+            },
+            "time": "2023-05-02T13:54:59+00:00"
         },
         {
             "name": "ensi/laravel-serve-stoplight",
@@ -7792,16 +7851,16 @@
         },
         {
             "name": "ensi/laravel-openapi-client-generator",
-            "version": "0.12.4",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-client-generator.git",
-                "reference": "d2387595e24cb24473f9ac03ea0b029fbc015f57"
+                "reference": "64edf7c63787d9896c6f09df9959411bd776764d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-client-generator/zipball/d2387595e24cb24473f9ac03ea0b029fbc015f57",
-                "reference": "d2387595e24cb24473f9ac03ea0b029fbc015f57",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-client-generator/zipball/64edf7c63787d9896c6f09df9959411bd776764d",
+                "reference": "64edf7c63787d9896c6f09df9959411bd776764d",
                 "shasum": ""
             },
             "require": {
@@ -7810,9 +7869,10 @@
                 "php": "^8.1"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.14",
                 "laravel/framework": "^8.40 || ^9.0",
                 "orchestra/testbench": "^6.0 || ^7.0",
-                "phpunit/phpunit": "^9.2"
+                "pestphp/pest": "^1.22"
             },
             "type": "library",
             "extra": {
@@ -7839,9 +7899,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-client-generator/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-client-generator/tree/0.12.4"
+                "source": "https://github.com/ensi-platform/laravel-openapi-client-generator/tree/0.13.0"
             },
-            "time": "2022-10-10T06:27:27+00:00"
+            "time": "2023-04-14T12:18:34+00:00"
         },
         {
             "name": "ensi/laravel-openapi-server-generator",
@@ -7953,6 +8013,63 @@
                 "source": "https://github.com/ensi-platform/laravel-openapi-testing/tree/0.3.0"
             },
             "time": "2023-03-16T12:38:34+00:00"
+        },
+        {
+            "name": "ensi/laravel-test-factories",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ensi-platform/laravel-test-factories.git",
+                "reference": "f712149952e23b5a629f890c37b6142be70c21aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-test-factories/zipball/f712149952e23b5a629f890c37b6142be70c21aa",
+                "reference": "f712149952e23b5a629f890c37b6142be70c21aa",
+                "shasum": ""
+            },
+            "require": {
+                "ensi/test-factories": ">=0.2",
+                "guzzlehttp/guzzle": ">=6.0",
+                "laravel/framework": ">=8.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "php-parallel-lint/php-var-dump-check": "^0.5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ensi\\LaravelTestFactories\\LaravelTestServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ensi\\LaravelTestFactories\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Natalia Golubkova",
+                    "email": "golubkova@greensight.ru"
+                }
+            ],
+            "keywords": [
+                "factory",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/ensi-platform/laravel-test-factories/issues",
+                "source": "https://github.com/ensi-platform/laravel-test-factories/tree/0.2.3"
+            },
+            "time": "2023-05-12T14:14:55+00:00"
         },
         {
             "name": "ensi/openapi-client-generator-php-templates",
@@ -12742,5 +12859,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

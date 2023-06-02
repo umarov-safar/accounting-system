@@ -99,7 +99,6 @@ return [
     'not_in' => 'Выбранное значение для :attribute ошибочно.',
     'not_regex' => 'Выбранный формат для :attribute ошибочный.',
     'numeric' => 'Поле :attribute должно быть числом.',
-    'password' => 'Неверный пароль.',
     'present' => 'Поле :attribute должно присутствовать.',
     'prohibited' => 'Поле :attribute запрещено.',
     'prohibited_if' => 'Поле :attribute запрещено когда :other равно :value.',
