@@ -7905,16 +7905,16 @@
         },
         {
             "name": "ensi/laravel-openapi-server-generator",
-            "version": "2.0.13",
+            "version": "2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-server-generator.git",
-                "reference": "683c65dbf29739cb8dfb7fd5e96f77cc5c59dadd"
+                "reference": "80b45a46fb950aa6168b393c27ed6d9e41e6700b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/683c65dbf29739cb8dfb7fd5e96f77cc5c59dadd",
-                "reference": "683c65dbf29739cb8dfb7fd5e96f77cc5c59dadd",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/80b45a46fb950aa6168b393c27ed6d9e41e6700b",
+                "reference": "80b45a46fb950aa6168b393c27ed6d9e41e6700b",
                 "shasum": ""
             },
             "require": {
@@ -7958,9 +7958,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-server-generator/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.13"
+                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.15"
             },
-            "time": "2023-03-17T08:19:16+00:00"
+            "time": "2023-06-05T13:07:12+00:00"
         },
         {
             "name": "ensi/laravel-openapi-testing",
