@@ -18,7 +18,7 @@ paths:
       tags:
         - examples
       operationId: getExample
-      x-lg-handler: 'App\Http\ApiV1\Controllers\FoosController@get'
+      x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
       x-lg-route-name: 'getExample'
       x-lg-skip-request-generation: true
       summary: Получение объекта типа Example
