@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "ackintosh/ganesha": "^1.2",
+        "ackintosh/ganesha": "^3.1",
         "doctrine/dbal": "^3.1",
         "ensi/guzzle-multibyte": "^0.1.0",
         "ensi/laravel-ensi-filesystem": "^0.3.0",
