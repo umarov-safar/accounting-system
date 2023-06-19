@@ -1,7 +1,7 @@
 #!groovy
 // -*- coding: utf-8; mode: Groovy; -*-
 
-@Library('ru.greensight@v1.0.4')_
+@Library('ru.greensight@v1.0.6')_
 
 import ru.greensight.HelmParams
 import ru.greensight.Options
@@ -26,8 +26,9 @@ def configVarsList = [
     "BASE_CI_IMAGE",         // базовый образ для тестирования приложения
     "GITLAB_TOKEN_CREDS",    // credentials id с токеном гитлаба
     "HELM_IMAGE",            // образ helm
-    "SOPS_IMAGE",            // образ sops
-    "SOPS_URL",              // адрес sops keyservice
+    "NEW_SOPS_IMAGE",        // образ sops
+    "NEW_SOPS_URL",          // адрес sops keyservice
+    "SOPS_KEY_CREDS",        // credentials c gpg ключом
     "K8S_CREDS",             // credentials id от kubeconfig
     "TESTING_DB_HOST",       // адрес СУБД для создания тестовых БД
     "POSTGRES_TEST_CREDS",   // credentials id от СУБД
@@ -100,6 +101,13 @@ node('docker-agent'){
                 if (doDeploy) {
                     cloneToFolder('ms-helm-values', options.get("VALUES_REPO"), options.get("VALUES_BRANCH"), options.get("GIT_CREDENTIALS_ID"))
 
+                    helm.addFirstExistingOptional([
+                        "ms-helm-values/${options.get("COMMON_VALUES_PATH")}/common-env.yaml",
+                    ])
+                    helm.addFirstExistingOptional([
+                        "ms-helm-values/${options.get("COMMON_VALUES_PATH")}/common-env.sops.yaml",
+                    ])
+
                     def branchFolder = "ms-helm-values/${options.get("VALUES_PATH")}/${env.BRANCH_NAME}/${options.get("HELM_RELEASE")}"
                     def masterFolder = "ms-helm-values/${options.get("VALUES_PATH")}/master/${options.get("HELM_RELEASE")}"
                     helm.addFirstExisting([
@@ -109,10 +117,6 @@ node('docker-agent'){
                     helm.addFirstExistingOptional([
                         "${branchFolder}/${options.get("HELM_RELEASE")}.sops.yaml",
                         "${masterFolder}/${options.get("HELM_RELEASE")}.sops.yaml"
-                    ])
-
-                    helm.addFirstExistingOptional([
-                        "ms-helm-values/${options.get("COMMON_VALUES_PATH")}/common-env.yaml",
                     ])
 
                     cloneToFolder('ms-helm-chart', options.get("CHART_REPO"), options.get("CHART_BRANCH"), options.get("GIT_CREDENTIALS_ID"))
@@ -155,7 +159,7 @@ node('docker-agent'){
                                             export DB_PASSWORD=${password}
 
                                             run-parts --exit-on-error .git_hooks/ci/
-                                            
+
                                             if [ \$(git status --porcelain | wc -l) -eq "0" ]; then
                                                 echo "Git repo is clean."
                                             else
@@ -254,6 +258,7 @@ node('docker-agent'){
                     if (continueDeploy) {
                         def svcName = ""
                         def ingressHost = ""
+                        def helmParamsStr = ""
 
                         helm
                             .setValue("app.image.repository", options.get('DOCKER_IMAGE_ADDRESS'))
@@ -261,11 +266,9 @@ node('docker-agent'){
                             .setValue("web.service.name", releaseName)
                             .setValue("hook.enabled", params.RUN_PRE_INSTALL_HOOK)
 
-                        if (params.DELETE_AFTER && !options.getAsList('NOT_AUTODELETE').contains(options.get("VALUES_BRANCH"))) {
-                            helm.setValue("app.deleteAfter", "+${params.DELETE_AFTER}h")
+                        withCredentials([file(credentialsId: options.get("SOPS_KEY_CREDS"), variable: 'gpgKeyPath')]) {
+                            helmParamsStr = helm.buildParams(options.get('NEW_SOPS_IMAGE'), options.get('NEW_SOPS_URL'), gpgKeyPath)
                         }
-
-                        def helmParamsStr = helm.buildParams(options.get('SOPS_IMAGE'), options.get('SOPS_URL'))
 
                         docker.image(options.get("HELM_IMAGE")).inside('--entrypoint=""') {
                             withCredentials([file(credentialsId: options.get("K8S_CREDS"), variable: 'kubecfg')]) {
