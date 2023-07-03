@@ -46,8 +46,8 @@ properties([
        booleanParam(name: 'DEPLOY_K8S', defaultValue: false, description: 'Отгрузить в kubernetes'),
        booleanParam(name: 'PAUSE_BEFORE_DEPLOY', defaultValue: false, description: 'Ask user approvement before deploy'),
        booleanParam(name: 'RUN_PRE_INSTALL_HOOK', defaultValue: true, description: 'Execute migration before deploy'),
-       string(name: 'VALUES_BRANCH', defaultValue: env.BRANCH_NAME, description: "config-store branch"),
-       string(name: 'DELETE_AFTER', defaultValue: '336', description: "Delete application after N hours")
+       choice(name: 'VALUES_BRANCH', choices: [env.BRANCH_NAME, 'master'], description: 'config-store branch'),
+       choice(name: 'RELEASE_NAME', choices: [env.BRANCH_NAME, 'master'], description: 'name release branch')
    ]),
     buildDiscarder(logRotator (artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10')),
     disableConcurrentBuilds(),
@@ -57,6 +57,7 @@ def doDeploy = ''
 def gitCommit = ''
 def dockerTag = ''
 def releaseName = ''
+def valuesBranchRelease = ''
 
 node('docker-agent'){
     lock(label: 'docker', quantity: 1) {
@@ -84,8 +85,8 @@ node('docker-agent'){
 
                 options.checkDefined(configVarsList)
 
-                releaseName = "${options.get('HELM_RELEASE')}-${options.get("VALUES_BRANCH")}".replace("_", "-")
-
+                releaseName = "${options.get('HELM_RELEASE')}-${params.RELEASE_NAME}".replace("_", "-")
+                    
                 def releaseExists = false
                 docker.image(options.get("HELM_IMAGE")).inside('--entrypoint=""') {
                     withCredentials([file(credentialsId: options.get("K8S_CREDS"), variable: 'kubecfg')]) {
@@ -94,12 +95,33 @@ node('docker-agent'){
                             returnStatus: true
                         )
                         releaseExists = status == 0
+
+                        if (releaseExists){
+                            valuesBranchRelease = sh(
+                                script: "KUBECONFIG=${kubecfg} kubectl get configmap ${releaseName} --namespace ${options.get('K8S_NAMESPACE')} --output=json | jq -r '.metadata.labels.valuesBranchRelease' ",
+                            returnStdout: true)?.trim()
+                            if (valuesBranchRelease == "" || valuesBranchRelease == "null") {
+                                options.vars["VALUES_BRANCH_DEPLOY"] = params.VALUES_BRANCH
+                            } else {
+                                options.vars["VALUES_BRANCH_DEPLOY"] = valuesBranchRelease
+                            }
+                        } else {
+                            options.vars["VALUES_BRANCH_DEPLOY"] = params.VALUES_BRANCH
+                        }
+
+                        //Удалить после того как все configmap/ingress/deployment останутся без *-ms в названии
+                        if(releaseExists){
+                            sh(script: "KUBECONFIG=${kubecfg} helm --namespace ${options.get('K8S_NAMESPACE')} delete ${releaseName}") 
+                        }
                     }
                 }
                 doDeploy = params.DEPLOY_K8S || options.getAsList("AUTODEPLOY_BRANCHES").contains(BRANCH_NAME) || releaseExists
 
+                echo "Debug: Название ветки конфига ${options.get('VALUES_BRANCH_DEPLOY')}"
+                echo "Debug: Название релиза ${releaseName}"
+
                 if (doDeploy) {
-                    cloneToFolder('ms-helm-values', options.get("VALUES_REPO"), options.get("VALUES_BRANCH"), options.get("GIT_CREDENTIALS_ID"))
+                    cloneToFolder('ms-helm-values', options.get("VALUES_REPO"), options.get("VALUES_BRANCH_DEPLOY"), options.get("GIT_CREDENTIALS_ID"))
 
                     helm.addFirstExistingOptional([
                         "ms-helm-values/${options.get("COMMON_VALUES_PATH")}/common-env.yaml",
@@ -278,6 +300,19 @@ node('docker-agent'){
                                       --namespace ${options.get('K8S_NAMESPACE')} \
                                       ${releaseName} ms-helm-chart"""
 
+                                if (!options.getAsList('NOT_AUTODELETE').contains(params.RELEASE_NAME)){
+                                    sh(script:"""
+                                        VERSIONRELEASE=`KUBECONFIG=${kubecfg} helm status ${releaseName} --namespace ${options.get('K8S_NAMESPACE')} --output json | jq -r '.version'`
+                                        KUBECONFIG=${kubecfg} kubectl patch --namespace ${options.get('K8S_NAMESPACE')} --patch '{"metadata":{"labels":{"autodelete":"true"}}}' secret/sh.helm.release.v1.${releaseName}.v\$VERSIONRELEASE
+                                    """)
+                                }
+                                
+                                if (params.RELEASE_NAME != "master"){
+                                    sh(script:"""
+                                        KUBECONFIG=${kubecfg} kubectl patch --namespace ${options.get('K8S_NAMESPACE')} --patch '{"metadata":{"labels":{"valuesBranchRelease": "${options.get('VALUES_BRANCH_DEPLOY')}"}}}' configmap/${releaseName}
+                                    """)
+                                }
+
                                 svcName = sh(returnStdout: true, script: """helm template -s templates/web-svc.yaml \
                                     ${helmParamsStr} \
                                     ${releaseName} ms-helm-chart \
@@ -292,7 +327,11 @@ node('docker-agent'){
                             }
                         }
 
+                        currentBuild.displayName = "#${BUILD_NUMBER} - Release : $params.RELEASE_NAME | Values : ${options.get('VALUES_BRANCH_DEPLOY')}"
+
                         currentBuild.description = [
+                            "Release Branch : $params.RELEASE_NAME",
+                            "Values Branch : ${options.get('VALUES_BRANCH_DEPLOY')}",
                             "Docker image: ${options.get('DOCKER_IMAGE_ADDRESS')}:${dockerTag}",
                             "Internal host: http://${svcName}.${options.get('K8S_NAMESPACE')}.svc.cluster.local",
                             "Public host: https://${ingressHost}"
