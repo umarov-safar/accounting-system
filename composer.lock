@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a6bb9be7ebe59a1737495b1c6bca8bf",
+    "content-hash": "40d58c9fd463b3254fc6b6aa6dde4563",
     "packages": [
         {
             "name": "ackintosh/ganesha",
@@ -7906,16 +7906,16 @@
         },
         {
             "name": "ensi/laravel-openapi-server-generator",
-            "version": "2.0.15",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/laravel-openapi-server-generator.git",
-                "reference": "80b45a46fb950aa6168b393c27ed6d9e41e6700b"
+                "reference": "63dc3c97ece41c7076456b1948afb2da2c52bb9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/80b45a46fb950aa6168b393c27ed6d9e41e6700b",
-                "reference": "80b45a46fb950aa6168b393c27ed6d9e41e6700b",
+                "url": "https://api.github.com/repos/ensi-platform/laravel-openapi-server-generator/zipball/63dc3c97ece41c7076456b1948afb2da2c52bb9f",
+                "reference": "63dc3c97ece41c7076456b1948afb2da2c52bb9f",
                 "shasum": ""
             },
             "require": {
@@ -7959,9 +7959,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ensi-platform/laravel-openapi-server-generator/issues",
-                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/2.0.15"
+                "source": "https://github.com/ensi-platform/laravel-openapi-server-generator/tree/3.0.0"
             },
-            "time": "2023-06-05T13:07:12+00:00"
+            "time": "2023-07-11T10:49:59+00:00"
         },
         {
             "name": "ensi/laravel-openapi-testing",
@@ -8230,16 +8230,16 @@
         },
         {
             "name": "ensi/openapi-server-generator-templates",
-            "version": "0.2.6",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git",
-                "reference": "6a3af5470fd502aca9a7a3fd2061fb97fb50529b"
+                "reference": "afb78dd3ff58a2aa162a6a0450bd4f43f2dbf574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-server-generator-templates/repository/archive.zip?sha=6a3af5470fd502aca9a7a3fd2061fb97fb50529b",
-                "reference": "6a3af5470fd502aca9a7a3fd2061fb97fb50529b",
+                "url": "https://gitlab.com/api/v4/projects/greensight%2Fensi%2Fpackages%2Fopenapi-server-generator-templates/repository/archive.zip?sha=afb78dd3ff58a2aa162a6a0450bd4f43f2dbf574",
+                "reference": "afb78dd3ff58a2aa162a6a0450bd4f43f2dbf574",
                 "shasum": ""
             },
             "type": "library",
@@ -8253,9 +8253,9 @@
                 }
             ],
             "support": {
-                "source": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates/-/tree/0.2.6"
+                "source": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates/-/tree/3.0.0"
             },
-            "time": "2023-03-13T09:14:34+00:00"
+            "time": "2023-07-11T10:51:09+00:00"
         },
         {
             "name": "ensi/test-factories",
