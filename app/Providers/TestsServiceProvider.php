@@ -8,22 +8,12 @@ use Illuminate\Support\ServiceProvider;
 
 class TestsServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
         //
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         // Executed when a test database is created or recreated
         ParallelTesting::setUpTestDatabase(function ($database, $token) {

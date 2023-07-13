@@ -5,7 +5,6 @@ namespace App\Http\ApiV1\Support\Pagination;
 use App\Http\ApiV1\OpenApiGenerated\Enums\PaginationTypeEnum;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\Cursor;
-use Illuminate\Pagination\CursorPaginator;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use UnexpectedValueException;
 
@@ -44,7 +43,6 @@ class CursorPageBuilder extends AbstractPageBuilder
         }
 
         try {
-            /** @var CursorPaginator */
             $paginator = $this->query->cursorPaginate($limit, cursor: $cursor);
         } catch (UnexpectedValueException $e) {
             throw new BadRequestHttpException("Invalid pagination cursor: {$e->getMessage()}");

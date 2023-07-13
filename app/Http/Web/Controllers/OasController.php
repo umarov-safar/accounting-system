@@ -2,9 +2,11 @@
 
 namespace App\Http\Web\Controllers;
 
+use Illuminate\Http\JsonResponse;
+
 class OasController
 {
-    public function list()
+    public function list(): JsonResponse
     {
         $urls = [];
         foreach (config('serve-stoplight.urls') as $url) {
