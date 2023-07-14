@@ -18,14 +18,14 @@ abstract class AbstractPageBuilder
 
     abstract public function build(): Page;
 
-    public function forbidToBypassPagination(bool $value = true)
+    public function forbidToBypassPagination(bool $value = true): static
     {
         $this->forbidToBypassPagination = $value;
 
         return $this;
     }
 
-    public function maxLimit(?int $maxLimit)
+    public function maxLimit(?int $maxLimit): static
     {
         $this->maxLimit = $maxLimit;
 
@@ -34,7 +34,7 @@ abstract class AbstractPageBuilder
 
     protected function applyMaxLimit(int $limit): int
     {
-        return $limit = $this->maxLimit !== null && $this->maxLimit > 0 ? min($limit, $this->maxLimit) : $limit;
+        return $this->maxLimit !== null && $this->maxLimit > 0 ? min($limit, $this->maxLimit) : $limit;
     }
 
     protected function getDefaultLimit(): int
