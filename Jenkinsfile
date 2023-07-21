@@ -37,7 +37,9 @@ def configVarsList = [
     "KAFKA_BOOTSTRAP_SERVER",
     "KAFKA_LOGIN",
     "KAFKA_PASSWORD",
-    "KAFKA_TOOLS_IMAGE"
+    "KAFKA_TOOLS_IMAGE",
+    "DTRACK_CREDS",
+    "DTRACK_FOLDER"
 ]
 
 properties([
@@ -86,7 +88,7 @@ node('docker-agent'){
                 options.checkDefined(configVarsList)
 
                 releaseName = "${options.get('HELM_RELEASE')}-${params.RELEASE_NAME}".replace("_", "-")
-                    
+
                 def releaseExists = false
                 docker.image(options.get("HELM_IMAGE")).inside('--entrypoint=""') {
                     withCredentials([file(credentialsId: options.get("K8S_CREDS"), variable: 'kubecfg')]) {
@@ -111,7 +113,7 @@ node('docker-agent'){
 
                         //Удалить после того как все configmap/ingress/deployment останутся без *-ms в названии
                         if(releaseExists){
-                            sh(script: "KUBECONFIG=${kubecfg} helm --namespace ${options.get('K8S_NAMESPACE')} delete ${releaseName}") 
+                            sh(script: "KUBECONFIG=${kubecfg} helm --namespace ${options.get('K8S_NAMESPACE')} delete ${releaseName}")
                         }
                     }
                 }
@@ -147,6 +149,31 @@ node('docker-agent'){
                     checkout scm
                     gitCommit = sh(returnStdout: true, script: 'git log -1 --format=%h').trim();
                     dockerTag = "${env.BRANCH_NAME}-${gitCommit}"
+                }
+            }
+        }
+
+        stage('Security') {
+            dir('src') {
+                withCredentials([string(credentialsId: 'dt-token', variable: 'dtrack_api_key')]) {
+                     docker.image(options.get("BASE_CI_IMAGE")).inside("--entrypoint=''") {
+                         sh """
+                             composer global require --no-plugins --no-interaction cyclonedx/cyclonedx-php-composer
+                             composer global config --no-plugins --no-interaction allow-plugins.cyclonedx/cyclonedx-php-composer true
+                             composer CycloneDX:make-sbom composer.json > bom.xml
+                         """
+                        dependencyTrackPublisher(
+                            artifact: 'bom.xml',
+                            projectName: options.get("HELM_RELEASE"),
+                            projectVersion: env.BRANCH_NAME,
+                            synchronous: true,
+                            dependencyTrackApiKey: dtrack_api_key,
+                            projectProperties: [parentId: options.get('DTRACK_FOLDER')],
+                            failedTotalCritical: 1,
+                            failedTotalHigh: 1,
+                            failedTotalMedium: 1
+                        )
+                     }
                 }
             }
         }
@@ -306,7 +333,7 @@ node('docker-agent'){
                                         KUBECONFIG=${kubecfg} kubectl patch --namespace ${options.get('K8S_NAMESPACE')} --patch '{"metadata":{"labels":{"autodelete":"true"}}}' secret/sh.helm.release.v1.${releaseName}.v\$VERSIONRELEASE
                                     """)
                                 }
-                                
+
                                 if (params.RELEASE_NAME != "master"){
                                     sh(script:"""
                                         KUBECONFIG=${kubecfg} kubectl patch --namespace ${options.get('K8S_NAMESPACE')} --patch '{"metadata":{"labels":{"valuesBranchRelease": "${options.get('VALUES_BRANCH_DEPLOY')}"}}}' configmap/${releaseName}
