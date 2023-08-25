@@ -48,8 +48,8 @@ properties([
        booleanParam(name: 'DEPLOY_K8S', defaultValue: false, description: 'Отгрузить в kubernetes'),
        booleanParam(name: 'PAUSE_BEFORE_DEPLOY', defaultValue: false, description: 'Ask user approvement before deploy'),
        booleanParam(name: 'RUN_PRE_INSTALL_HOOK', defaultValue: true, description: 'Execute migration before deploy'),
-       choice(name: 'VALUES_BRANCH', choices: [env.BRANCH_NAME, 'master'], description: 'config-store branch'),
-       choice(name: 'RELEASE_NAME', choices: [env.BRANCH_NAME, 'master'], description: 'name release branch')
+       string(name: 'VALUES_BRANCH', defaultValue: env.BRANCH_NAME, description: 'config-store branch'),
+       string(name: 'RELEASE_NAME', defaultValue: env.BRANCH_NAME, description: 'name release branch')
    ]),
     buildDiscarder(logRotator (artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10')),
     disableConcurrentBuilds(),
@@ -105,15 +105,14 @@ node('docker-agent'){
                             if (valuesBranchRelease == "" || valuesBranchRelease == "null") {
                                 options.vars["VALUES_BRANCH_DEPLOY"] = params.VALUES_BRANCH
                             } else {
-                                options.vars["VALUES_BRANCH_DEPLOY"] = valuesBranchRelease
+                                if(params.DEPLOY_K8S) {
+                                    options.vars["VALUES_BRANCH_DEPLOY"] = params.VALUES_BRANCH
+                                }else{
+                                    options.vars["VALUES_BRANCH_DEPLOY"] = valuesBranchRelease
+                                }
                             }
                         } else {
                             options.vars["VALUES_BRANCH_DEPLOY"] = params.VALUES_BRANCH
-                        }
-
-                        //Удалить после того как все configmap/ingress/deployment останутся без *-ms в названии
-                        if(releaseExists){
-                            sh(script: "KUBECONFIG=${kubecfg} helm --namespace ${options.get('K8S_NAMESPACE')} delete ${releaseName}")
                         }
                     }
                 }
