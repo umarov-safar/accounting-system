@@ -164,7 +164,7 @@ node('docker-agent'){
                         dependencyTrackPublisher(
                             artifact: 'bom.xml',
                             projectName: options.get("HELM_RELEASE"),
-                            projectVersion: env.BRANCH_NAME,
+                            projectVersion: "master",
                             synchronous: true,
                             dependencyTrackApiKey: dtrack_api_key,
                             projectProperties: [parentId: options.get('DTRACK_FOLDER')],
