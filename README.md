@@ -1,11 +1,11 @@
-# Ensi Backend Service Skeleton
+# Backend Service Skeleton
 
 Представляет из себя модифицированную под наши нужды экземпляр `Laravel 9.2.0`
 ## Разворот непосредественно самого скелетона локально для разработки
 
-Разворот сервис не отличается от разворота любого другого сервиса Ensi и описан [тут](https://docs.ensi.tech/installation/local/backend)
+Разворот сервис не отличается от разворота любого другого сервиса Eijen и описан [тут](https://docs.ensi.tech/installation/local/backend)
 
-## Разворот сервиса из Ensi Backend Service Skeleton
+## Разворот сервиса из Backend Service Skeleton
 
 1. `git clone git@gitlab.com:greensight/ensi/backend-service-skeleton.git <new-repo-name>`
 2. `cd <new-repo-name>`
@@ -54,9 +54,9 @@ config('app.locale') = 'ru';
 Управлять какие именно хуки выполняются и в каком порядке можно в файле .huskyrc.json, он лежит в репозитории.
 При необходимости его содержимое можно переопределить файлом .huskyrc с тем же форматом, он уже находится в .gitignore.
 
-### Ensi Storage
+### Eijen Storage
 
-Для работы с файлами в Ensi добавлен пакет [ensi/laravel-ensi-filesystem](https://gitlab.com/greensight/ensi/packages/laravel-ensi-filesystem)
+Для работы с файлами в Eijen добавлен пакет [ensi/laravel-ensi-filesystem](https://gitlab.com/greensight/ensi/packages/laravel-ensi-filesystem)
 Для работы всего этого нужно
 
 1. Чтобы config/ensi-filesystem.php был выставлен корректный код текущего сервиса в качестве дефолтного
@@ -88,7 +88,7 @@ GET /health возвращает ОК с кодом 200.
 - [greensight/laravel-openapi-server-generator](https://github.com/greensight/laravel-openapi-server-generator/)
 - [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder/)
 
-Пример описания API при помощи спецификации openapi 3 под требования генераторов и [Ensi API Design Guide](https://ensi-platform.gitlab.io/docs/guid/api) можно найти [здесь](https://gitlab.com/greensight/ensi/templates/openapi-example)
+Пример описания API при помощи спецификации openapi 3 под требования генераторов и [Eijen API Design Guide](https://ensi-platform.gitlab.io/docs/guid/api) можно найти [здесь](https://gitlab.com/greensight/ensi/templates/openapi-example)
 
 ### Подчищено всё ненужное из Laravel для чистоты и быстродействия
 
