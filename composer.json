@@ -9,6 +9,7 @@
         "ackintosh/ganesha": "^3.1",
         "doctrine/dbal": "^3.1",
         "ensi/guzzle-multibyte": "^0.1.0",
+        "ensi/laravel-auditing": "^0.3.5",
         "ensi/laravel-ensi-filesystem": "^0.3.0",
         "ensi/laravel-initial-event-propagation": "^0.2",
         "ensi/laravel-metrics": "^1.0.0",
