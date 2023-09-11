@@ -30,6 +30,7 @@ MultipartFileUploadRequest:
       format: binary
       description: Загружаемый файл
 
+
 PaginationTypeCursorEnum:
   type: string
   description: >
@@ -154,3 +155,29 @@ ResponseBodyOffsetPagination:
       allOf:
         - type: string
         - $ref: '#/PaginationTypeOffsetEnum'
+
+
+PreloadFile:
+  type: object
+  properties:
+    data:
+      type: object
+      properties:
+        preload_file_id:
+          type: integer
+          description: Идентификатор загруженного файла
+          example: 2032
+        file:
+          $ref: '#/File'
+
+RequestBodyMassOperation:
+  type: object
+  properties:
+    ids:
+      type: array
+      items:
+        type: integer
+      description: Идентификаторы целевых сущностей
+      example: [103, 115]
+  required:
+    - ids

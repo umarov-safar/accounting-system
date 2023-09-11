@@ -1,0 +1,172 @@
+AccountReadonlyProperties:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор бренда
+      example: 274
+    created_at:
+      description: "Дата создания"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+    updated_at:
+      description: "Дата обновления"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+  required:
+    - id
+    - created_at
+    - updated_at
+
+AccountFillableProperties:
+  type: object
+  properties:
+    seller_id:
+      type: integer
+      example: 1
+      description: ID продавца
+    name:
+      type: string
+      example: Отменено
+      description: Название статуса
+    is_active:
+      type: boolean
+      example: true
+      description: Активность счета и кассы
+    type:
+      type: integer
+      example: 1
+      description: Тип из AccountTypeEnum
+    description:
+      type: text
+      description: Описание
+      example: Some account for someting
+
+AccountFillableRequiredProperties:
+  type: object
+  required:
+    - name
+    - is_active
+    - seller_id
+
+Account:
+  allOf:
+    - $ref: '#/AccountReadonlyProperties'
+    - $ref: '#/AccountFillableProperties'
+    - $ref: '#/AccountFillableRequiredProperties'
+
+CreateAccountRequest:
+  allOf:
+    - $ref: '#/AccountFillableProperties'
+    - $ref: '#/AccountFillableRequiredProperties'
+
+ReplaceAccountRequest:
+  allOf:
+    - $ref: '#/AccountFillableProperties'
+    - $ref: '#/AccountFillableRequiredProperties'
+
+PatchAccountRequest:
+  allOf:
+    - $ref: '#/AccountFillableProperties'
+
+AccountResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/Account'
+    meta:
+      type: object
+  required:
+    - data
+
+SearchAccountsFilter:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор(ы) бренда
+      example: 3
+    seller_id:
+      type: integer
+      description: Идентификатор(ы) продавцы
+      example: 3
+    name:
+      type: string
+      description: Название
+      example: 'son'
+    name_like:
+      type: string
+      description: Название
+      example: 'son'
+    name_llike:
+      type: string
+      description: Название
+      example: 'son'
+    name_rlike:
+      type: string
+      description: Название
+      example: 'son'
+    is_active:
+      type: boolean
+      description: Активность бренда
+      example: true
+    type:
+      type: integer
+      example: 1
+      description: Тип из AccountType
+    description_like:
+      type: string
+      example: some desc
+      description: Описание
+    created_at_gte:
+      type: string
+      description: Дата создания от
+      format: date-time
+      example: '2021-12-20T18:00:10.000000Z'
+    created_at_lte:
+      type: string
+      description: Дата создания до
+      format: date-time
+      example: '2022-12-20T18:00:10.000000Z'
+    updated_at_gte:
+      type: string
+      format: date-time
+      description: Дата обновления от
+      example: '2021-07-09T04:25:11.000000Z'
+    updated_at_lte:
+      type: string
+      format: date-time
+      description: Дата обновления до
+      example: '2021-07-03T11:57:28.000000Z'
+
+SearchAccountsRequest:
+  type: object
+  properties:
+    sort:
+      $ref: '../../common_schemas.yaml#/RequestBodySort'
+      description: name, is_active, seller_id
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи (include) пока что связи нет
+    pagination:
+      $ref: '../../common_schemas.yaml#/RequestBodyPagination'
+    filter:
+      $ref: '#/SearchAccountsFilter'
+
+SearchAccountsResponse:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/Account'
+    meta:
+      type: object
+      properties:
+        pagination:
+          $ref: '../../common_schemas.yaml#/ResponseBodyPagination'
+  required:
+    - data
+    - meta

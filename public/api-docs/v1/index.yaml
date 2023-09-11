@@ -1,48 +1,39 @@
 openapi: 3.0.3
 info:
-  title: Ensi Backend Skeleton (Replace me)
+  title: Accounting
   contact:
     name: API Support
     url: https://ensi.tech/contacts
     email: mail@greensight.ru
   version: 1.0.0
-  description: Ensi Backend Skeleton Description (Replace me)
+  description: Accounting
 servers:
   - url: /api/v1
 tags:
   - name: examples
     description: Тэг-пример
 paths:
-  /examples/{id}:
-    get:
-      tags:
-        - examples
-      operationId: getExample
-      x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
-      x-lg-route-name: 'getExample'
-      x-lg-skip-request-generation: true
-      summary: Получение объекта типа Example
-      description: Получение объекта типа Example
-      parameters:
-        - $ref: '#/components/parameters/PathId'
-        - $ref: '#/components/parameters/QueryInclude'
-      responses:
-        #"200":
-          #description: Успешный ответ
-          # content:
-          #  application/json:
-          #    schema:
-          #      $ref: './customers.yaml#/CustomerResponse'
-        "404":
-          $ref: '#/components/responses/NotFound'
-        "500":
-          $ref: '#/components/responses/ServerError'
+  /accounts:
+    $ref: './accounts/paths.yaml#/AccountsCreate'
+  /accounts/{id}:
+    $ref: './accounts/paths.yaml#/AccountsCurrent'
+  /accounts:mass-delete:
+    $ref: './accounts/paths.yaml#/AccountsMassDelete'
+  /accounts:search:
+    $ref: './accounts/paths.yaml#/AccountsSearch'
 components:
   parameters:
     QueryInclude:
       $ref: './common_parameters.yaml#/QueryInclude'
     PathId:
       $ref: './common_parameters.yaml#/PathId'
+  requestBodies:
+    MassDeleteBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './common_schemas.yaml#/RequestBodyMassOperation'
   schemas:
     EmptyDataResponse:
       type: object
@@ -56,6 +47,8 @@ components:
           - data
     PaginationTypeEnum:
       $ref: './common_schemas.yaml#/PaginationTypeEnum'
+    AccountTypeEnum:
+      $ref: './accounts/enums/account_type_enum.yaml'
   responses:
     BadRequest:
       description: Bad Request
@@ -75,3 +68,9 @@ components:
         application/json:
           schema:
             $ref: './errors.yaml#/ErrorResponse'
+    DeleteResponse:
+      description: Удаление выполнено
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EmptyDataResponse'

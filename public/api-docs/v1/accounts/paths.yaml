@@ -1,0 +1,188 @@
+AccountsCreate:
+  post:
+    tags:
+      - accounts
+    operationId: createAccount
+    summary: Запрос на создание нового статус счета и кассы
+    description: Запрос на создание нового статус счета и кассы
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@create'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/accounts.yaml#/CreateAccountRequest'
+    responses:
+      "201":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/accounts.yaml#/AccountResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+AccountsCurrent:
+  get:
+    tags:
+      - accounts
+    operationId: getAccount
+    summary: Запрос счета и кассы по ID
+    description: Запрос счета и кассы по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@get'
+    parameters:
+      - $ref: '#/PathId'
+      - $ref: '#/QueryIncludeAccounts'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/accounts.yaml#/AccountResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  put:
+    tags:
+      - accounts
+    operationId: replaceAccount
+    summary: Запрос на обновление статус счета и кассы
+    description: Запрос на обновление статус счета и кассы
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@replace'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/accounts.yaml#/ReplaceAccountRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/accounts.yaml#/AccountResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  patch:
+    tags:
+      - accounts
+    operationId: patchAccount
+    summary: Обновляет отдельные поля статус счета и кассы
+    description: Обновляет отдельные поля статус счета и кассы
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@patch'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/accounts.yaml#/PatchAccountRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/accounts.yaml#/AccountResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  delete:
+    tags:
+      - accounts
+    operationId: deleteAccount
+    summary: Запрос на удаление статус счета и кассы по ID
+    description: Запрос на удаление статус счета и кассы по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@delete'
+    x-lg-skip-request-generation: true
+    parameters:
+      - $ref: '#/PathId'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+AccountsMassDelete:
+  post:
+    tags:
+      - accounts
+    operationId: massDeleteAccounts
+    summary: Массовое удаление счета/кассы, только без привязанных объектов
+    description:  Массовое удаление счета/кассы, только без привязанных объектов
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@massDelete'
+    x-lg-skip-request-generation: true
+    requestBody:
+      $ref: '../index.yaml#/components/requestBodies/MassDeleteBody'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+AccountsSearch:
+  post:
+    tags:
+      - accounts
+    operationId: searchAccounts
+    summary: Поиск статус счетов и кассы, удовлетворяющих фильтру
+    description: Поиск статус счетов и кассы, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@search'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/accounts.yaml#/SearchAccountsRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/accounts.yaml#/SearchAccountsResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+
+PathId:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: integer
+    minimum: 1
+  description: Числовой id
+  example: 1
+
+QueryIncludeAccounts:
+  in: query
+  name: include
+  required: false
+  description: Связи(include) пока что связи нет
+  schema:
+    type: string
