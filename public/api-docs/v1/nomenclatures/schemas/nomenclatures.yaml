@@ -95,30 +95,26 @@ SearchNomenclaturesFilter:
       type: string
       description: Тип объекта
       example: 'son'
-    name_like:
-      type: string
-      description: Название
-      example: 'son'
-    name_llike:
-      type: string
-      description: Название
-      example: 'son'
-    name_rlike:
-      type: string
-      description: Название
-      example: 'son'
-    is_active:
-      type: boolean
-      description: Активность бренда
-      example: true
-    type:
+    obj_id:
       type: integer
       example: 1
-      description: Тип из NomenclatureType
-    description_like:
-      type: string
-      example: some desc
-      description: Описание
+      description: ID объект
+    is_service:
+      type: boolean
+      description: Является ли объект сервис
+      example: true
+    base_price:
+      type: integer
+      example: 10000
+      description: Цена
+    base_price_gte:
+      type: integer
+      example: 10000
+      description: Цена
+    base_price_lte:
+      type: integer
+      example: 10000
+      description: Цена
     created_at_gte:
       type: string
       description: Дата создания от
@@ -145,7 +141,14 @@ SearchNomenclaturesRequest:
   properties:
     sort:
       $ref: '../../common_schemas.yaml#/RequestBodySort'
-      description: name, is_active, seller_id
+      description: |
+        'seller_id',
+        'obj_type',
+        'obj_id',
+        'is_service',
+        'base_price',
+        'created_at',
+        'updated_at',
     include:
       $ref: '../../common_schemas.yaml#/RequestBodyInclude'
       description: Связи (include) пока что связи нет
@@ -153,6 +156,17 @@ SearchNomenclaturesRequest:
       $ref: '../../common_schemas.yaml#/RequestBodyPagination'
     filter:
       $ref: '#/SearchNomenclaturesFilter'
+
+
+SearchOneNomenclaturesRequest:
+  type: object
+  properties:
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи - supply, cardonor_status
+    filter:
+      $ref: '#/SearchNomenclaturesFilter'
+
 
 SearchNomenclaturesResponse:
   type: object

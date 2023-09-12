@@ -18,7 +18,11 @@ return new class extends Migration
             $table->boolean('is_service');
             $table->string('obj_type');
             $table->unsignedBigInteger('obj_id');
+            $table->unsignedBigInteger('seller_id');
             $table->bigInteger('base_price');
+
+            $table->unique(['seller_id', 'obj_id', 'obj_type']);
+
             $table->softDeletes();
             $table->timestamps();
         });

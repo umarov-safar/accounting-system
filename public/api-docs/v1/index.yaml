@@ -21,6 +21,17 @@ paths:
     $ref: './accounts/paths.yaml#/AccountsMassDelete'
   /accounts:search:
     $ref: './accounts/paths.yaml#/AccountsSearch'
+
+  /nomenclatures:
+    $ref: './nomenclatures/paths.yaml#/NomenclaturesCreate'
+  /nomenclatures/{id}:
+    $ref: './nomenclatures/paths.yaml#/NomenclaturesCurrent'
+  /nomenclatures:mass-delete:
+    $ref: './nomenclatures/paths.yaml#/NomenclaturesMassDelete'
+  /nomenclatures:search:
+    $ref: './nomenclatures/paths.yaml#/NomenclaturesSearch'
+  /nomenclatures:search-one:
+    $ref: './nomenclatures/paths.yaml#/NomenclaturesSearchOne'
 components:
   parameters:
     QueryInclude:
@@ -49,6 +60,8 @@ components:
       $ref: './common_schemas.yaml#/PaginationTypeEnum'
     AccountTypeEnum:
       $ref: './accounts/enums/account_type_enum.yaml'
+    ObjectTypeEnum:
+      $ref: './nomenclatures/enums/object_type_enum.yaml'
   responses:
     BadRequest:
       description: Bad Request
