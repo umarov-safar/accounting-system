@@ -3,7 +3,7 @@ AccountReadonlyProperties:
   properties:
     id:
       type: integer
-      description: Идентификатор бренда
+      description: Идентификатор счета/кассы
       example: 274
     created_at:
       description: "Дата создания"
@@ -40,7 +40,7 @@ AccountFillableProperties:
       example: 1
       description: Тип из AccountTypeEnum
     description:
-      type: text
+      type: string
       description: Описание
       example: Some account for someting
 
@@ -50,6 +50,7 @@ AccountFillableRequiredProperties:
     - name
     - is_active
     - seller_id
+    - type
 
 Account:
   allOf:

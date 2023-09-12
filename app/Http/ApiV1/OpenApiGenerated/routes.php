@@ -5,7 +5,13 @@
  * Do NOT edit it manually. Run `php artisan openapi:generate-server`.
  */
 
-use App\Http\ApiV1\Modules\Foos\Controllers\FoosController;
+use App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('examples/{id}', [FoosController::class, 'get'])->name('getExample');
+Route::post('accounts', [AccountsController::class, 'create']);
+Route::get('accounts/{id}', [AccountsController::class, 'get']);
+Route::put('accounts/{id}', [AccountsController::class, 'replace']);
+Route::delete('accounts/{id}', [AccountsController::class, 'delete']);
+Route::patch('accounts/{id}', [AccountsController::class, 'patch']);
+Route::post('accounts:mass-delete', [AccountsController::class, 'massDelete']);
+Route::post('accounts:search', [AccountsController::class, 'search']);
