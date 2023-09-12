@@ -1,0 +1,171 @@
+NomenclatureReadonlyProperties:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор счета/кассы
+      example: 274
+    created_at:
+      description: "Дата создания"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+    updated_at:
+      description: "Дата обновления"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+  required:
+    - id
+    - created_at
+    - updated_at
+
+NomenclatureFillableProperties:
+  type: object
+  properties:
+    seller_id:
+      type: integer
+      example: 1
+      description: ID продавца
+    is_service:
+      type: boolean
+      example: true
+      description: Номенклатура сервис или товар
+    obj_id:
+      type: integer
+      example: 1
+      description: ID объекта
+    obj_type:
+      type: string
+      description: Тип объекта из ObjectTypeEnum
+      example: product
+    base_price:
+      type: integer
+      example: 400200
+NomenclatureFillableRequiredProperties:
+  type: object
+  required:
+    - is_service
+    - seller_id
+    - obj_type
+    - obj_id
+
+Nomenclature:
+  allOf:
+    - $ref: '#/NomenclatureReadonlyProperties'
+    - $ref: '#/NomenclatureFillableProperties'
+    - $ref: '#/NomenclatureFillableRequiredProperties'
+
+CreateNomenclatureRequest:
+  allOf:
+    - $ref: '#/NomenclatureFillableProperties'
+    - $ref: '#/NomenclatureFillableRequiredProperties'
+
+ReplaceNomenclatureRequest:
+  allOf:
+    - $ref: '#/NomenclatureFillableProperties'
+    - $ref: '#/NomenclatureFillableRequiredProperties'
+
+PatchNomenclatureRequest:
+  allOf:
+    - $ref: '#/NomenclatureFillableProperties'
+
+NomenclatureResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/Nomenclature'
+    meta:
+      type: object
+  required:
+    - data
+
+SearchNomenclaturesFilter:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор(ы) бренда
+      example: 3
+    seller_id:
+      type: integer
+      description: Идентификатор(ы) продавцы
+      example: 3
+    obj_type:
+      type: string
+      description: Тип объекта
+      example: 'son'
+    name_like:
+      type: string
+      description: Название
+      example: 'son'
+    name_llike:
+      type: string
+      description: Название
+      example: 'son'
+    name_rlike:
+      type: string
+      description: Название
+      example: 'son'
+    is_active:
+      type: boolean
+      description: Активность бренда
+      example: true
+    type:
+      type: integer
+      example: 1
+      description: Тип из NomenclatureType
+    description_like:
+      type: string
+      example: some desc
+      description: Описание
+    created_at_gte:
+      type: string
+      description: Дата создания от
+      format: date-time
+      example: '2021-12-20T18:00:10.000000Z'
+    created_at_lte:
+      type: string
+      description: Дата создания до
+      format: date-time
+      example: '2022-12-20T18:00:10.000000Z'
+    updated_at_gte:
+      type: string
+      format: date-time
+      description: Дата обновления от
+      example: '2021-07-09T04:25:11.000000Z'
+    updated_at_lte:
+      type: string
+      format: date-time
+      description: Дата обновления до
+      example: '2021-07-03T11:57:28.000000Z'
+
+SearchNomenclaturesRequest:
+  type: object
+  properties:
+    sort:
+      $ref: '../../common_schemas.yaml#/RequestBodySort'
+      description: name, is_active, seller_id
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи (include) пока что связи нет
+    pagination:
+      $ref: '../../common_schemas.yaml#/RequestBodyPagination'
+    filter:
+      $ref: '#/SearchNomenclaturesFilter'
+
+SearchNomenclaturesResponse:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/Nomenclature'
+    meta:
+      type: object
+      properties:
+        pagination:
+          $ref: '../../common_schemas.yaml#/ResponseBodyPagination'
+  required:
+    - data
+    - meta

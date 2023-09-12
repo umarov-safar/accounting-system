@@ -1,0 +1,15 @@
+type: string
+description: |
+  Тип объекта:
+  * product - Товар
+  * service - Услуг
+enum:
+  - product
+  - service
+x-enum-varnames:
+  - PRODUCT # Наличные
+  - SERVICE # Безналичные
+x-enum-descriptions:
+  - Товар
+  - Услуг
+example: product
