@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Domain\Nomenclatures\Models\Factories;
+namespace App\Http\ApiV1\Modules\Nomenclatures\Tests\Factories;
 
-use App\Domain\Nomenclatures\Models\Nomenclature;
 use App\Http\ApiV1\OpenApiGenerated\Enums\ObjectTypeEnum;
-use Ensi\LaravelTestFactories\BaseModelFactory;
+use Ensi\LaravelTestFactories\BaseApiFactory;
 
-class NomenclatureFactory extends BaseModelFactory
+class NomenclatureFactory extends BaseApiFactory
 {
-    protected $model = Nomenclature::class;
-
-    public function definition()
+    public function definition(): array
     {
         return [
             'seller_id' => $this->faker->randomNumber(2, true),
@@ -19,5 +16,10 @@ class NomenclatureFactory extends BaseModelFactory
             'obj_id' => $this->faker->randomNumber(3, true),
             'base_price' => $this->faker->randomNumber(5)
         ];
+    }
+
+    public function make(array $extra = [])
+    {
+        return $this->makeArray($extra);
     }
 }

@@ -141,7 +141,14 @@ SearchNomenclaturesRequest:
   properties:
     sort:
       $ref: '../../common_schemas.yaml#/RequestBodySort'
-      description: name, is_active, seller_id
+      description: |
+        'seller_id',
+        'obj_type',
+        'obj_id',
+        'is_service',
+        'base_price',
+        'created_at',
+        'updated_at',
     include:
       $ref: '../../common_schemas.yaml#/RequestBodyInclude'
       description: Связи (include) пока что связи нет

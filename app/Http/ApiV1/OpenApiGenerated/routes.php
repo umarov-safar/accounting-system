@@ -6,6 +6,7 @@
  */
 
 use App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController;
+use App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('accounts', [AccountsController::class, 'create']);
@@ -15,3 +16,11 @@ Route::delete('accounts/{id}', [AccountsController::class, 'delete']);
 Route::patch('accounts/{id}', [AccountsController::class, 'patch']);
 Route::post('accounts:mass-delete', [AccountsController::class, 'massDelete']);
 Route::post('accounts:search', [AccountsController::class, 'search']);
+Route::post('nomenclatures', [NomenclaturesController::class, 'create']);
+Route::get('nomenclatures/{id}', [NomenclaturesController::class, 'get']);
+Route::put('nomenclatures/{id}', [NomenclaturesController::class, 'replace']);
+Route::delete('nomenclatures/{id}', [NomenclaturesController::class, 'delete']);
+Route::patch('nomenclatures/{id}', [NomenclaturesController::class, 'patch']);
+Route::post('nomenclatures:mass-delete', [NomenclaturesController::class, 'massDelete']);
+Route::post('nomenclatures:search', [NomenclaturesController::class, 'search']);
+Route::post('nomenclatures:search-one', [NomenclaturesController::class, 'searchOne']);
