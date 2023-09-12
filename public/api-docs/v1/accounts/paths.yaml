@@ -146,8 +146,8 @@ AccountsSearch:
     tags:
       - accounts
     operationId: searchAccounts
-    summary: Поиск статус счетов и кассы, удовлетворяющих фильтру
-    description: Поиск статус счетов и кассы, удовлетворяющих фильтру
+    summary: Поиск  счетов и кассы, удовлетворяющих фильтру
+    description: Поиск  счетов и кассы, удовлетворяющих фильтру
     x-lg-handler: 'App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController@search'
     x-lg-skip-request-generation: true
     requestBody:

@@ -1,0 +1,215 @@
+NomenclaturesCreate:
+  post:
+    tags:
+      - nomenclatures
+    operationId: createNomenclature
+    summary: Запрос на создание нового номенклатуры
+    description: Запрос на создание нового номенклатуры
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@create'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/nomenclatures.yaml#/CreateNomenclatureRequest'
+    responses:
+      "201":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/nomenclatures.yaml#/NomenclatureResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+NomenclaturesCurrent:
+  get:
+    tags:
+      - nomenclatures
+    operationId: getNomenclature
+    summary: Запрос номенклатуры по ID
+    description: Запрос номенклатуры по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@get'
+    parameters:
+      - $ref: '#/PathId'
+      - $ref: '#/QueryIncludeNomenclatures'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/nomenclatures.yaml#/NomenclatureResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  put:
+    tags:
+      - nomenclatures
+    operationId: replaceNomenclature
+    summary: Запрос на обновление номенклатуры
+    description: Запрос на обновление номенклатуры
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@replace'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/nomenclatures.yaml#/ReplaceNomenclatureRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/nomenclatures.yaml#/NomenclatureResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  patch:
+    tags:
+      - nomenclatures
+    operationId: patchNomenclature
+    summary: Обновляет отдельные поля номенклатуры
+    description: Обновляет отдельные поля номенклатуры
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@patch'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/nomenclatures.yaml#/PatchNomenclatureRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/nomenclatures.yaml#/NomenclatureResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  delete:
+    tags:
+      - nomenclatures
+    operationId: deleteNomenclature
+    summary: Запрос на удаление номенклатуры по ID
+    description: Запрос на удаление номенклатуры по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@delete'
+    x-lg-skip-request-generation: true
+    parameters:
+      - $ref: '#/PathId'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+NomenclaturesMassDelete:
+  post:
+    tags:
+      - nomenclatures
+    operationId: massDeleteNomenclatures
+    summary: Массовое удаление номенклатуры, только без привязанных объектов
+    description:  Массовое удаление номенклатуры, только без привязанных объектов
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@massDelete'
+    x-lg-skip-request-generation: true
+    requestBody:
+      $ref: '../index.yaml#/components/requestBodies/MassDeleteBody'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+NomenclaturesSearch:
+  post:
+    tags:
+      - nomenclatures
+    operationId: searchNomenclatures
+    summary: Поиск номенклатуры, удовлетворяющих фильтру
+    description: Поиск номенклатуры, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@search'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/nomenclatures.yaml#/SearchNomenclaturesRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/nomenclatures.yaml#/SearchNomenclaturesResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+NomenclaturesSearchOne:
+  post:
+    tags:
+      - nomenclatures
+    operationId: searchOneNomenclatures
+    summary: Поиск номенклатура, удовлетворяющих фильтру
+    description: Поиск номенклатура, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController@searchOne'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/nomenclatures.yaml#/SearchOneNomenclaturesRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/nomenclatures.yaml#/NomenclatureResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+
+PathId:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: integer
+    minimum: 1
+  description: Числовой id
+  example: 1
+
+QueryIncludeNomenclatures:
+  in: query
+  name: include
+  required: false
+  description: Связи(include) пока что связи нет
+  schema:
+    type: string
