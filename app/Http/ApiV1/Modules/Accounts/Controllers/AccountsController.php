@@ -9,9 +9,12 @@ use App\Http\ApiV1\Modules\Accounts\Requests\CreateAccountRequest;
 use App\Http\ApiV1\Modules\Accounts\Requests\PatchAccountRequest;
 use App\Http\ApiV1\Modules\Accounts\Requests\ReplaceAccountRequest;
 use App\Http\ApiV1\Modules\Accounts\Resources\AccountsResource;
+use App\Http\ApiV1\Support\Pagination\PageBuilderFactory;
+use App\Http\ApiV1\Support\Requests\MassDeleteRequest;
 use App\Http\ApiV1\Support\Resources\EmptyResource;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class AccountsController
 {
@@ -36,18 +39,19 @@ class AccountsController
         return new EmptyResource();
     }
 
-    public function patch(int $id, PatchAccountRequest $request, UpdateAccountAction $action): Responsable
+    public function patch(int $id, PatchAccountRequest $request, UpdateAccountAction $action): AccountsResource
     {
         return new AccountsResource($action->execute($id, $request->validated()));
     }
 
-    public function massDelete(Request $request): Responsable
+    public function massDelete(MassDeleteRequest $request, AccountQueries $queries): EmptyResource
     {
-        //
+        $queries->whereIn('id', $request->getIds())?->delete();
+        return new EmptyResource();
     }
 
-    public function search(Request $request): Responsable
+    public function search(PageBuilderFactory $builderFactory, AccountQueries $queries): AnonymousResourceCollection
     {
-        //
+        return AccountsResource::collectPage($builderFactory->fromQuery($queries)->build());
     }
 }
