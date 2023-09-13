@@ -147,7 +147,6 @@ test('POST /api/v1/nomenclatures:mass-delete 200', function () {
         ->assertStatus(200);
 
     $noms->each(fn(Nomenclature $nom) => assertSoftDeleted(Nomenclature::tableName(), ['id' => $nom->id]));
-
 });
 
 test('POST /api/v1/nomenclatures:mass-delete 400', function () {
@@ -163,6 +162,7 @@ test('POST /api/v1/nomenclatures:search 200', function () {
         ->assertJsonCount(10, 'data')
         ->assertJsonPath('data.0.id', $noms->first()->id);
 });
+
 
 
 

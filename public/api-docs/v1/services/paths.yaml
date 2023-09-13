@@ -1,0 +1,242 @@
+ServiceGroupsCreate:
+  post:
+    tags:
+      - service_groups
+    operationId: createServiceGroup
+    summary: Запрос на создание новой группы услуг
+    description: Запрос на создание новой группы услуг
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@create'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/service_groups.yaml#/CreateServiceGroupRequest'
+    responses:
+      "201":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/service_groups.yaml#/ServiceGroupResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServiceGroupsCurrent:
+  get:
+    tags:
+      - service_groups
+    operationId: getServiceGroup
+    summary: Получение группы услуги по ID
+    description: Получение группы услуги по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@get'
+    parameters:
+      - $ref: '#/PathId'
+      - $ref: '#/QueryIncludeServiceGroups'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/service_groups.yaml#/ServiceGroupResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  put:
+    tags:
+      - service_groups
+    operationId: replaceServiceGroup
+    summary: Запрос на обновление группы услуг
+    description: Запрос на обновление группы услуг
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@replace'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/service_groups.yaml#/ReplaceServiceGroupRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/service_groups.yaml#/ServiceGroupResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  patch:
+    tags:
+      - service_groups
+    operationId: patchServiceGroup
+    summary: Обновляет отдельные поля группы услуг
+    description: Обновляет отдельные поля группы услуг
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@patch'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/service_groups.yaml#/PatchServiceGroupRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/service_groups.yaml#/ServiceGroupResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  delete:
+    tags:
+      - service_groups
+    operationId: deleteServiceGroup
+    summary: Запрос на удаление группы услуг по ID
+    description: Запрос на удаление группы услуг по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@delete'
+    x-lg-skip-request-generation: true
+    parameters:
+      - $ref: '#/PathId'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServiceGroupsMassDelete:
+  post:
+    tags:
+      - service_groups
+    operationId: massDeleteServiceGroups
+    summary: Массовое удаление группы услуги, только без привязанных объектов
+    description:  Массовое удаление  группы услуги, только без привязанных объектов
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@massDelete'
+    x-lg-skip-request-generation: true
+    requestBody:
+      $ref: '../index.yaml#/components/requestBodies/MassDeleteBody'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServiceGroupsSearch:
+  post:
+    tags:
+      - service_groups
+    operationId: searchServiceGroups
+    summary: Поиск  группы услуг, удовлетворяющих фильтру
+    description: Поиск  группы услуги, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@search'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/service_groups.yaml#/SearchServiceGroupsRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/service_groups.yaml#/SearchServiceGroupsResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServiceGroupsTree:
+  post:
+    tags:
+      - service_groups
+    operationId: searchServiceGroupsTree
+    summary: Группы услуги дерева
+    description: Группы услуги дерева
+    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@getTree'
+    x-lg-skip-request-generation: true
+#    requestBody:
+#      required: true
+#      content:
+#        application/json:
+#          schema:
+#            $ref: './schemas/service_groups.yaml#/SearchServiceGroupsRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/service_groups.yaml#/ServiceGroupsTreeResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+#ServiceGroupsSearchOne:
+#  post:
+#    tags:
+#      - service_groups
+#    operationId: searchOneServiceGroups
+#    summary: Поиск номенклатура, удовлетворяющих фильтру
+#    description: Поиск номенклатура, удовлетворяющих фильтру
+#    x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@searchOne'
+#    x-lg-skip-request-generation: true
+#    requestBody:
+#      required: true
+#      content:
+#        application/json:
+#          schema:
+#            $ref: './schemas/service_groups.yaml#/SearchOneServiceGroupsRequest'
+#    responses:
+#      "200":
+#        description: Выполнено успешно
+#        content:
+#          application/json:
+#            schema:
+#              $ref: './schemas/service_groups.yaml#/ServiceGroupResponse'
+#      "400":
+#        $ref: "../index.yaml#/components/responses/BadRequest"
+#      "500":
+#        $ref: '../index.yaml#/components/responses/ServerError'
+
+
+PathId:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: integer
+    minimum: 1
+  description: Числовой id
+  example: 1
+
+QueryIncludeServiceGroups:
+  in: query
+  name: include
+  required: false
+  description: Связи(include) services
+  schema:
+    type: string
