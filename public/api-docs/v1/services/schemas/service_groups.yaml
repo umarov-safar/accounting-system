@@ -1,0 +1,245 @@
+ServiceGroupReadonlyProperties:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор
+      example: 274
+    created_at:
+      description: "Дата создания"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+    updated_at:
+      description: "Дата обновления"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+  required:
+    - id
+    - created_at
+    - updated_at
+
+ServiceGroupFillableProperties:
+  type: object
+  properties:
+    seller_id:
+      type: integer
+      example: 331
+      description: ID продавца
+    name:
+      type: string
+      example: Отменено
+      description: Название
+    parent_id:
+      type: integer
+      example: 1
+      nullable: true
+      description: Родительная группа
+    sort:
+      type: integer
+      example: 1
+      description: Сортировка
+    description:
+      type: string
+      description: Описание
+      example: Some  for someting
+
+ServiceGroupFillableRequiredProperties:
+  type: object
+  required:
+    - name
+    - seller_id
+
+ServiceGroupInclude:
+  type: object
+  properties:
+    children:
+      type: array
+      nullable: true
+      items:
+        allOf:
+          - $ref: '#/ServiceGroupReadonlyProperties'
+          - $ref: '#/ServiceGroupFillableProperties'
+          - $ref: '#/ServiceGroupFillableRequiredProperties'
+
+ServiceGroup:
+  allOf:
+    - $ref: '#/ServiceGroupReadonlyProperties'
+    - $ref: '#/ServiceGroupFillableProperties'
+    - $ref: '#/ServiceGroupFillableRequiredProperties'
+    - $ref: '#/ServiceGroupInclude'
+
+CreateServiceGroupRequest:
+  allOf:
+    - $ref: '#/ServiceGroupFillableProperties'
+    - $ref: '#/ServiceGroupFillableRequiredProperties'
+
+ReplaceServiceGroupRequest:
+  allOf:
+    - $ref: '#/ServiceGroupFillableProperties'
+    - $ref: '#/ServiceGroupFillableRequiredProperties'
+
+PatchServiceGroupRequest:
+  allOf:
+    - $ref: '#/ServiceGroupFillableProperties'
+
+ServiceGroupResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/ServiceGroup'
+    meta:
+      type: object
+  required:
+    - data
+
+SearchServiceGroupsFilter:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор(ы)
+      example: 3
+    seller_id:
+      type: integer
+      description: Идентификатор(ы) продавцы
+      example: 3
+    name:
+      type: string
+      description: Название
+      example: 'son'
+    name_like:
+      type: string
+      description: Название
+      example: 'son'
+    name_llike:
+      type: string
+      description: Название
+      example: 'son'
+    name_rlike:
+      type: string
+      description: Название
+      example: 'son'
+    parent_id:
+      type: integer
+      description: Родительная группа
+      example: true
+    description_like:
+      type: string
+      example: some desc
+      description: Описание
+    created_at_gte:
+      type: string
+      description: Дата создания от
+      format: date-time
+      example: '2021-12-20T18:00:10.000000Z'
+    created_at_lte:
+      type: string
+      description: Дата создания до
+      format: date-time
+      example: '2022-12-20T18:00:10.000000Z'
+    updated_at_gte:
+      type: string
+      format: date-time
+      description: Дата обновления от
+      example: '2021-07-09T04:25:11.000000Z'
+    updated_at_lte:
+      type: string
+      format: date-time
+      description: Дата обновления до
+      example: '2021-07-03T11:57:28.000000Z'
+
+SearchServiceGroupsRequest:
+  type: object
+  properties:
+    sort:
+      $ref: '../../common_schemas.yaml#/RequestBodySort'
+      description: |
+        'id',
+        'created_at',
+        'updated_at',
+        'seller_id',
+        'name',
+        'parent_id',
+        'sort'
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи (include) пока что связи нет
+    pagination:
+      $ref: '../../common_schemas.yaml#/RequestBodyPagination'
+    filter:
+      $ref: '#/SearchServiceGroupsFilter'
+
+SearchOneServiceGroupsRequest:
+  type: object
+  properties:
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи -
+    filter:
+      $ref: '#/SearchServiceGroupsFilter'
+
+SearchServiceGroupsResponse:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/ServiceGroup'
+    meta:
+      type: object
+      properties:
+        pagination:
+          $ref: '../../common_schemas.yaml#/ResponseBodyPagination'
+  required:
+    - data
+    - meta
+
+
+######################################
+
+ServiceGroupIncludeTree:
+  type: object
+  properties:
+    children:
+      type: array
+      items:
+        allOf:
+          - $ref: '#/ServiceGroupTree'
+
+
+ServiceGroupTree:
+  allOf:
+    - type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        seller_id:
+          type: integer
+          example: 2
+        name:
+          type: string
+          example: Service Group 1
+        description:
+          type: string
+          example: Description
+    - $ref: '#/ServiceGroupFillableRequiredProperties'
+    - $ref: '#/ServiceGroupIncludeTree'
+
+
+
+ServiceGroupsTreeResponse:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/ServiceGroupTree'
+    meta:
+      type: object
+
+  required:
+    - data
+    - meta

@@ -32,6 +32,18 @@ paths:
     $ref: './nomenclatures/paths.yaml#/NomenclaturesSearch'
   /nomenclatures:search-one:
     $ref: './nomenclatures/paths.yaml#/NomenclaturesSearchOne'
+
+  /service-groups:
+    $ref: './services/paths.yaml#/ServiceGroupsCreate'
+  /service-groups/{id}:
+    $ref: './services/paths.yaml#/ServiceGroupsCurrent'
+  /service-groups:mass-delete:
+    $ref: './services/paths.yaml#/ServiceGroupsMassDelete'
+  /service-groups:search:
+    $ref: './services/paths.yaml#/ServiceGroupsSearch'
+  /service-groups:tree:
+    $ref: './services/paths.yaml#/ServiceGroupsTree'
+
 components:
   parameters:
     QueryInclude:

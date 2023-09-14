@@ -7,6 +7,7 @@
 
 use App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController;
 use App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController;
+use App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('accounts', [AccountsController::class, 'create']);
@@ -24,3 +25,11 @@ Route::patch('nomenclatures/{id}', [NomenclaturesController::class, 'patch']);
 Route::post('nomenclatures:mass-delete', [NomenclaturesController::class, 'massDelete']);
 Route::post('nomenclatures:search', [NomenclaturesController::class, 'search']);
 Route::post('nomenclatures:search-one', [NomenclaturesController::class, 'searchOne']);
+Route::post('service-groups', [ServiceGroupsController::class, 'create']);
+Route::get('service-groups/{id}', [ServiceGroupsController::class, 'get']);
+Route::put('service-groups/{id}', [ServiceGroupsController::class, 'replace']);
+Route::delete('service-groups/{id}', [ServiceGroupsController::class, 'delete']);
+Route::patch('service-groups/{id}', [ServiceGroupsController::class, 'patch']);
+Route::post('service-groups:mass-delete', [ServiceGroupsController::class, 'massDelete']);
+Route::post('service-groups:search', [ServiceGroupsController::class, 'search']);
+Route::post('service-groups:tree', [ServiceGroupsController::class, 'getTree']);
