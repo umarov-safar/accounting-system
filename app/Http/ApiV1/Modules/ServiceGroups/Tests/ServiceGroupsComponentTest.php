@@ -142,8 +142,29 @@ test('POST /api/v1/service-groups:search 200', function () {
 });
 
 test('POST /api/v1/service-groups:tree 200', function () {
-    $serGps = ServiceGroup::factory()->count(10)->create();
+
+    $root = $serviceGroup = ServiceGroup::factory()->create(['parent_id' => null]);
+    foreach (range(0, 2) as $k) {
+        $serviceGroup = ServiceGroup::factory()->create(['parent_id' => $serviceGroup->id]);
+    }
+
     postJson('/api/v1/service-groups:tree')
-        ->assertStatus(200);
+        ->assertStatus(200)
+        ->assertJsonPath('data.0.children.0.parent_id', $root->id)
+        ->assertJsonStructure([
+            'data' => [
+                [
+                    'children' => [
+                        [
+                            'children' => [
+                                [
+                                    'children' => []
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]);
 });
 

@@ -19,13 +19,14 @@ return new class extends Migration
             $table->unsignedBigInteger('seller_id');
             $table->text('description')->nullable();
 
-            $table->foreignId('parent_id')
-                ->nullable()
+            $table->integer('sort')->default(100);
+
+            \Kalnoy\Nestedset\NestedSet::columns($table);
+
+            $table->foreign('parent_id')
                 ->references('id')
                 ->on('service_groups')
                 ->cascadeOnDelete();
-
-            $table->integer('sort')->default(100);
 
             $table->softDeletes();
             $table->timestamps();

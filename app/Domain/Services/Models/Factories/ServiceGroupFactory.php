@@ -15,7 +15,7 @@ class ServiceGroupFactory extends BaseModelFactory
             'seller_id' => $this->faker->randomNumber(2, true),
             'name' => $this->faker->sentence(2),
             'sort' => $this->faker->randomNumber(),
-            'parent_id' => $this->faker->boolean ? ServiceGroup::factory()->create()->id : null,
+//            'parent_id' => $this->faker->boolean ? ServiceGroup::factory()->create()->id : null,
             'description' => $this->faker->text
         ];
     }

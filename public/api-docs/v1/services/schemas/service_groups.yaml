@@ -171,6 +171,7 @@ SearchServiceGroupsRequest:
     filter:
       $ref: '#/SearchServiceGroupsFilter'
 
+
 SearchOneServiceGroupsRequest:
   type: object
   properties:
@@ -198,6 +199,33 @@ SearchServiceGroupsResponse:
 
 
 ######################################
+TreeServiceGroupsFilter:
+  type: object
+  properties:
+    root_id:
+      type: integer
+      description: Идентификатор parent_id
+      example: 3
+    seller_id:
+      type: integer
+      description: Идентификатор(ы) продавцы
+      example: 3
+    name:
+      type: string
+      description: Название
+      example: 'son'
+    name_like:
+      type: string
+      description: Название
+      example: 'son'
+    name_llike:
+      type: string
+      description: Название
+      example: 'son'
+    name_rlike:
+      type: string
+      description: Название
+      example: 'son'
 
 ServiceGroupIncludeTree:
   type: object
@@ -208,6 +236,11 @@ ServiceGroupIncludeTree:
         allOf:
           - $ref: '#/ServiceGroupTree'
 
+SearchTreeServiceGroupsRequest:
+  type: object
+  properties:
+    filter:
+      $ref: '#/TreeServiceGroupsFilter'
 
 ServiceGroupTree:
   allOf:
@@ -225,6 +258,10 @@ ServiceGroupTree:
         description:
           type: string
           example: Description
+        parent_id:
+          type: integer
+          example: 2
+          nullable: true
     - $ref: '#/ServiceGroupFillableRequiredProperties'
     - $ref: '#/ServiceGroupIncludeTree'
 
@@ -239,7 +276,7 @@ ServiceGroupsTreeResponse:
         $ref: '#/ServiceGroupTree'
     meta:
       type: object
-
+      nullable: true
+      required: false
   required:
     - data
-    - meta

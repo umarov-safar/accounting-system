@@ -63,8 +63,8 @@ class ServiceGroupsController
         return ServiceGroupsResource::collectPage($builderFactory->fromQuery($queries)->build());
     }
 
-    public function getTree(ServiceGroupsTreeQueries $queries): AnonymousResourceCollection
+    public function getTree(ServiceGroupsTreeQueries $queries): ServiceGroupsTreeResource
     {
-        return ServiceGroupsTreeResource::collection($queries->get());
+        return (new ServiceGroupsTreeResource($queries->get()));
     }
 }

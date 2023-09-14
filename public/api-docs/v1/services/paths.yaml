@@ -177,12 +177,12 @@ ServiceGroupsTree:
     description: Группы услуги дерева
     x-lg-handler: 'App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController@getTree'
     x-lg-skip-request-generation: true
-#    requestBody:
-#      required: true
-#      content:
-#        application/json:
-#          schema:
-#            $ref: './schemas/service_groups.yaml#/SearchServiceGroupsRequest'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/service_groups.yaml#/SearchTreeServiceGroupsRequest'
     responses:
       "200":
         description: Выполнено успешно

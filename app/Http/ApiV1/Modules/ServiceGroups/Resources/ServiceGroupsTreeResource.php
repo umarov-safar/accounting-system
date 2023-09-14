@@ -27,6 +27,7 @@ class ServiceGroupsTreeResource extends ResourceCollection
             'name' => $serviceGroup->name,
             'seller_id' => $serviceGroup->seller_id,
             'description' => $serviceGroup->description,
+            'parent_id' => $serviceGroup->parent_id,
             'children' => $this->when(
                 $serviceGroup->relationLoaded('children'),
                 fn () => $this->mapServiceGroups($serviceGroup->children),
