@@ -165,7 +165,6 @@ test('POST /api/v1/nomenclatures:search 200', function () {
 
 
 
-
 test('POST /api/v1/nomenclatures:search-one 200', function () {
     $noms = Nomenclature::factory()->count(3)->create();
 

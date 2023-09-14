@@ -1,4 +1,4 @@
-ServiceGroupReadonlyProperties:
+ServiceReadonlyProperties:
   type: object
   properties:
     id:
@@ -20,7 +20,7 @@ ServiceGroupReadonlyProperties:
     - created_at
     - updated_at
 
-ServiceGroupFillableProperties:
+ServiceFillableProperties:
   type: object
   properties:
     seller_id:
@@ -29,72 +29,68 @@ ServiceGroupFillableProperties:
       description: ID продавца
     name:
       type: string
-      example: Test group
+      example: Test
       description: Название
-    parent_id:
+    service_group_id:
       type: integer
       example: 1
       nullable: true
-      description: Родительная группа
-    sort:
+      description: ID группа
+    base_price:
       type: integer
-      example: 1
-      description: Сортировка
+      example: 21500
+      description: Цена
     description:
       type: string
       description: Описание
-      example: Some  for someting
+      example: Something for something
 
-ServiceGroupFillableRequiredProperties:
+ServiceFillableRequiredProperties:
   type: object
   required:
     - name
     - seller_id
+    - service_group_id
 
-ServiceGroupInclude:
+ServiceInclude:
   type: object
   properties:
-    children:
-      type: array
-      nullable: true
-      items:
-        allOf:
-          - $ref: '#/ServiceGroupReadonlyProperties'
-          - $ref: '#/ServiceGroupFillableProperties'
-          - $ref: '#/ServiceGroupFillableRequiredProperties'
+    service_group:
+      $ref: './service_groups.yaml#/ServiceGroup'
 
-ServiceGroup:
+
+Service:
   allOf:
-    - $ref: '#/ServiceGroupReadonlyProperties'
-    - $ref: '#/ServiceGroupFillableProperties'
-    - $ref: '#/ServiceGroupFillableRequiredProperties'
-    - $ref: '#/ServiceGroupInclude'
+    - $ref: '#/ServiceReadonlyProperties'
+    - $ref: '#/ServiceFillableProperties'
+    - $ref: '#/ServiceFillableRequiredProperties'
+    - $ref: '#/ServiceInclude'
 
-CreateServiceGroupRequest:
+CreateServiceRequest:
   allOf:
-    - $ref: '#/ServiceGroupFillableProperties'
-    - $ref: '#/ServiceGroupFillableRequiredProperties'
+    - $ref: '#/ServiceFillableProperties'
+    - $ref: '#/ServiceFillableRequiredProperties'
 
-ReplaceServiceGroupRequest:
+ReplaceServiceRequest:
   allOf:
-    - $ref: '#/ServiceGroupFillableProperties'
-    - $ref: '#/ServiceGroupFillableRequiredProperties'
+    - $ref: '#/ServiceFillableProperties'
+    - $ref: '#/ServiceFillableRequiredProperties'
 
-PatchServiceGroupRequest:
+PatchServiceRequest:
   allOf:
-    - $ref: '#/ServiceGroupFillableProperties'
+    - $ref: '#/ServiceFillableProperties'
 
-ServiceGroupResponse:
+ServiceResponse:
   type: object
   properties:
     data:
-      $ref: '#/ServiceGroup'
+      $ref: '#/Service'
     meta:
       type: object
   required:
     - data
 
-SearchServiceGroupsFilter:
+SearchServicesFilter:
   type: object
   properties:
     id:
@@ -121,14 +117,18 @@ SearchServiceGroupsFilter:
       type: string
       description: Название
       example: 'son'
-    parent_id:
+    service_group_id:
       type: integer
-      description: Родительная группа
+      description: ID группы
       example: true
     description_like:
       type: string
       example: some desc
       description: Описание
+    base_price:
+      type: integer
+      example: 300200
+      description: Цена
     created_at_gte:
       type: string
       description: Дата создания от
@@ -150,7 +150,7 @@ SearchServiceGroupsFilter:
       description: Дата обновления до
       example: '2021-07-03T11:57:28.000000Z'
 
-SearchServiceGroupsRequest:
+SearchServicesRequest:
   type: object
   properties:
     sort:
@@ -160,33 +160,32 @@ SearchServiceGroupsRequest:
         'created_at',
         'updated_at',
         'seller_id',
+        'base_price',
         'name',
-        'parent_id',
-        'sort'
     include:
       $ref: '../../common_schemas.yaml#/RequestBodyInclude'
-      description: Связи (include) services пока что связи нет
+      description: Связи (include) service_group
     pagination:
       $ref: '../../common_schemas.yaml#/RequestBodyPagination'
     filter:
-      $ref: '#/SearchServiceGroupsFilter'
+      $ref: '#/SearchServicesFilter'
 
-SearchOneServiceGroupsRequest:
+SearchOneServicesRequest:
   type: object
   properties:
     include:
       $ref: '../../common_schemas.yaml#/RequestBodyInclude'
       description: Связи -
     filter:
-      $ref: '#/SearchServiceGroupsFilter'
+      $ref: '#/SearchServicesFilter'
 
-SearchServiceGroupsResponse:
+SearchServicesResponse:
   type: object
   properties:
     data:
       type: array
       items:
-        $ref: '#/ServiceGroup'
+        $ref: '#/Service'
     meta:
       type: object
       properties:
@@ -196,50 +195,3 @@ SearchServiceGroupsResponse:
     - data
     - meta
 
-
-######################################
-
-ServiceGroupIncludeTree:
-  type: object
-  properties:
-    children:
-      type: array
-      items:
-        allOf:
-          - $ref: '#/ServiceGroupTree'
-
-
-ServiceGroupTree:
-  allOf:
-    - type: object
-      properties:
-        id:
-          type: integer
-          example: 1
-        seller_id:
-          type: integer
-          example: 2
-        name:
-          type: string
-          example: Service Group 1
-        description:
-          type: string
-          example: Description
-    - $ref: '#/ServiceGroupFillableRequiredProperties'
-    - $ref: '#/ServiceGroupIncludeTree'
-
-
-
-ServiceGroupsTreeResponse:
-  type: object
-  properties:
-    data:
-      type: array
-      items:
-        $ref: '#/ServiceGroupTree'
-    meta:
-      type: object
-
-  required:
-    - data
-    - meta

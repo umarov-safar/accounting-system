@@ -44,6 +44,17 @@ paths:
   /service-groups:tree:
     $ref: './services/paths.yaml#/ServiceGroupsTree'
 
+  /services:
+    $ref: './services/paths.yaml#/ServicesCreate'
+  /services/{id}:
+    $ref: './services/paths.yaml#/ServicesCurrent'
+  /service:mass-delete:
+    $ref: './services/paths.yaml#/ServicesMassDelete'
+  /services:search:
+    $ref: './services/paths.yaml#/ServicesSearch'
+  /services:search-one:
+    $ref: './services/paths.yaml#/ServicesSearchOne'
+
 components:
   parameters:
     QueryInclude:
