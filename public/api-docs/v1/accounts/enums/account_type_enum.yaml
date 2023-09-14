@@ -1,0 +1,15 @@
+type: integer
+description: |
+  Тип счета и кассы:
+  * 1 - Наличные
+  * 2 - Безналичные
+enum:
+  - 1
+  - 2
+x-enum-varnames:
+  - CASH # Наличные
+  - NON_CASH # Безналичные
+x-enum-descriptions:
+  - Наличные
+  - Безналичные
+example: 1
