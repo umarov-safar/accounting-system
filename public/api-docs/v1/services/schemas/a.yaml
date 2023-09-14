@@ -1,0 +1,196 @@
+ServicesCreate:
+  post:
+    tags:
+      - services
+    operationId: createService
+    summary: Запрос на создание услуги
+    description: Запрос на создание услуги
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@create'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/services.yaml#/CreateServiceRequest'
+    responses:
+      "201":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/services.yaml#/ServiceResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServicesCurrent:
+  get:
+    tags:
+      - services
+    operationId: getService
+    summary: Получение услуги по ID
+    description: Получение услуги по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@get'
+    parameters:
+      - $ref: '#/PathId'
+      - $ref: '#/QueryIncludeServices'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/services.yaml#/ServiceResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  put:
+    tags:
+      - services
+    operationId: replaceService
+    summary: Запрос на обновление услуги
+    description: Запрос на обновление услуги
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@replace'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/services.yaml#/ReplaceServiceRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/services.yaml#/ServiceResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  patch:
+    tags:
+      - services
+    operationId: patchService
+    summary: Обновляет отдельные поля услуги
+    description: Обновляет отдельные поля услуги
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@patch'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/services.yaml#/PatchServiceRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/services.yaml#/ServiceResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  delete:
+    tags:
+      - services
+    operationId: deleteService
+    summary: Запрос на удаление услуги по ID
+    description: Запрос на удаление услуги по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@delete'
+    x-lg-skip-request-generation: true
+    parameters:
+      - $ref: '#/PathId'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServicesMassDelete:
+  post:
+    tags:
+      - services
+    operationId: massDeleteServices
+    summary: Массовое удаление услуги, только без привязанных объектов
+    description:  Массовое удаление  услуги, только без привязанных объектов
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@massDelete'
+    x-lg-skip-request-generation: true
+    requestBody:
+      $ref: '../index.yaml#/components/requestBodies/MassDeleteBody'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServicesSearch:
+  post:
+    tags:
+      - services
+    operationId: searchServices
+    summary: Поиск  услуги, удовлетворяющих фильтру
+    description: Поиск  услуги, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@search'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/services.yaml#/SearchServicesRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/services.yaml#/SearchServicesResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ServicesSearchOne:
+  post:
+    tags:
+      - services
+    operationId: searchOneServices
+    summary: Поиск номенклатура, удовлетворяющих фильтру
+    description: Поиск номенклатура, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\Services\Controllers\ServicesController@searchOne'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/services.yaml#/SearchOneServicesRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/services.yaml#/ServiceResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'

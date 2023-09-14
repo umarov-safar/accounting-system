@@ -31,6 +31,7 @@ class ServiceGroupsQueries extends QueryBuilder
             AllowedFilter::exact('id'),
             AllowedFilter::exact('seller_id'),
             AllowedFilter::exact('parent_id'),
+            AllowedFilter::partial('description_like', 'description'),
             ...StringFilter::make('name')->exact()->contain()->startWith()->endWith(),
             ...DateFilter::make('created_at')->gte()->lte(),
             ...DateFilter::make('updated_at')->gte()->lte()
