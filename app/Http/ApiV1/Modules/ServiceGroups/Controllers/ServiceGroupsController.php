@@ -51,8 +51,8 @@ class ServiceGroupsController
 
     public function massDelete(MassDeleteRequest $request, ServiceGroupsQueries $queries): Responsable
     {
-        $queries->whereIn('id', $request->getIds())?->each(function (ServiceGroup $nomenclature) {
-            $nomenclature->canDelete()->delete();
+        $queries->whereIn('id', $request->getIds())?->each(function (ServiceGroup $serviceGroup) {
+            $serviceGroup->canDelete()->delete();
         });
 
         return new EmptyResource();

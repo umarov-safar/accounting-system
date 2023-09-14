@@ -2,10 +2,11 @@
 
 namespace App\Http\ApiV1\Modules\Services\Resources;
 
+use App\Domain\Services\Models\Service;
 use App\Http\ApiV1\Support\Resources\BaseJsonResource;
 
 /**
- * @mixin todo
+ * @mixin Service
  */
 class ServicesResource extends BaseJsonResource
 {

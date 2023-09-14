@@ -2,8 +2,10 @@
 
 namespace App\Domain\Services\Models;
 
+use App\Domain\Services\Models\Factories\ServiceFactory;
 use App\Domain\Support\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 /**
  * @property string $name
@@ -28,8 +30,8 @@ class Service extends Model
         'seller_id',
         'name',
         'description',
-        'parent_id',
-        'sort',
+        'service_group_id',
+        'base_price',
     ];
 
     /*
@@ -40,10 +42,10 @@ class Service extends Model
 
     public static function factory()
     {
-        return ServiceGroupFactory::new();
+        return ServiceFactory::new();
     }
 
-    public function canDelete(): self
+    public function canDelete(): self|AccessDeniedException
     {
         // Тут пишите условие если условия правилная то можно удалить модель
         if ( true ) {
