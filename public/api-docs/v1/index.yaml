@@ -48,7 +48,7 @@ paths:
     $ref: './services/paths.yaml#/ServicesCreate'
   /services/{id}:
     $ref: './services/paths.yaml#/ServicesCurrent'
-  /service:mass-delete:
+  /services:mass-delete:
     $ref: './services/paths.yaml#/ServicesMassDelete'
   /services:search:
     $ref: './services/paths.yaml#/ServicesSearch'

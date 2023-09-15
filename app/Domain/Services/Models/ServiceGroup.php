@@ -4,6 +4,7 @@ namespace App\Domain\Services\Models;
 
 use App\Domain\Services\Models\Factories\ServiceGroupFactory;
 use App\Domain\Support\Models\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Kalnoy\Nestedset\NodeTrait;
 
@@ -17,9 +18,11 @@ use Kalnoy\Nestedset\NodeTrait;
 
 class ServiceGroup extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, NodeTrait;
 
     protected $fillable = self::FILLABLE;
+
+    protected $hidden = ['_lft', '_rgt'];
 
     /*
     |--------------------------------------------------------------------------
@@ -55,6 +58,10 @@ class ServiceGroup extends Model
         throw new AccessDeniedException('Нельзя удалить связный модель');
     }
 
+    public function scopeForParent(Builder $query, int $parentId): Builder
+    {
+        return $query->where($this->getParentIdName(), $parentId);
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS

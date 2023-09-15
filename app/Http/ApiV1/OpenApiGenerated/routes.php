@@ -8,6 +8,7 @@
 use App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController;
 use App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController;
 use App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController;
+use App\Http\ApiV1\Modules\Services\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('accounts', [AccountsController::class, 'create']);
@@ -33,3 +34,11 @@ Route::patch('service-groups/{id}', [ServiceGroupsController::class, 'patch']);
 Route::post('service-groups:mass-delete', [ServiceGroupsController::class, 'massDelete']);
 Route::post('service-groups:search', [ServiceGroupsController::class, 'search']);
 Route::post('service-groups:tree', [ServiceGroupsController::class, 'getTree']);
+Route::post('services', [ServicesController::class, 'create']);
+Route::get('services/{id}', [ServicesController::class, 'get']);
+Route::put('services/{id}', [ServicesController::class, 'replace']);
+Route::delete('services/{id}', [ServicesController::class, 'delete']);
+Route::patch('services/{id}', [ServicesController::class, 'patch']);
+Route::post('services:mass-delete', [ServicesController::class, 'massDelete']);
+Route::post('services:search', [ServicesController::class, 'search']);
+Route::post('services:search-one', [ServicesController::class, 'searchOne']);
