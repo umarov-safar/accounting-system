@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nomenclatures', function (Blueprint $table) {
+        Schema::table('nomenclatures', function (Blueprint $table) {
             $table->boolean('is_new')->default(false);
             $table->unsignedBigInteger('cardonor_id')->nullable();
         });
