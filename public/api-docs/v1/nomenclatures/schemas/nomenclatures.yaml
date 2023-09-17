@@ -42,6 +42,15 @@ NomenclatureFillableProperties:
     base_price:
       type: integer
       example: 400200
+    is_new:
+      type: boolean
+      example: true
+      description: Новый товар
+    cardonor_id:
+      type: integer
+      example: 123
+      description: ID донора
+
 NomenclatureFillableRequiredProperties:
   type: object
   required:

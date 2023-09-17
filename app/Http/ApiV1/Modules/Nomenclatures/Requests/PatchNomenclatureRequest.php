@@ -16,6 +16,8 @@ class PatchNomenclatureRequest extends BaseFormRequest
             'obj_type' => ['sometimes', 'string', Rule::enum(ObjectTypeEnum::class)],
             'obj_id' => ['sometimes', 'integer'],
             'is_service' => ['sometimes', 'boolean'],
+            'is_new' => ['sometimes', 'nullable', 'boolean'],
+            'cardonor_id' => ['sometimes', 'nullable', 'integer'],
             'seller_id' => ['sometimes', 'integer',
                 Rule::unique('nomenclatures')->where(function (Builder $query) {
                     return $query->where('obj_type', $this->obj_type)

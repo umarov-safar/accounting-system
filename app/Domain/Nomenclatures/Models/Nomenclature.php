@@ -13,6 +13,10 @@ class Nomenclature extends Model
 
     protected $fillable = self::FILLLABLE;
 
+    protected $attributes = [
+        'is_new' => false
+    ];
+
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -23,9 +27,10 @@ class Nomenclature extends Model
         'is_service',
         'obj_type',
         'obj_id',
-        'base_price'
+        'base_price',
+        'is_new',
+        'cardonor_id'
     ];
-
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
