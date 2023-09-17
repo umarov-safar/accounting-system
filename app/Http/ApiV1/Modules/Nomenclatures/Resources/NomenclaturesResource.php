@@ -21,6 +21,8 @@ class NomenclaturesResource extends BaseJsonResource
             'obj_id' => $this->obj_id,
             'obj_type' => $this->obj_type,
             'base_price' => $this->base_price,
+	    'is_new' => $this->is_new,
+            'cardonor_id' => $this->cardonor_id
         ];
     }
 }

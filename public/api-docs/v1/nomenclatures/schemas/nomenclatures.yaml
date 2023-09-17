@@ -46,10 +46,12 @@ NomenclatureFillableProperties:
       type: boolean
       example: true
       description: Новый товар
+      nullable: true  
     cardonor_id:
       type: integer
       example: 123
       description: ID донора
+      nullable: true
 
 NomenclatureFillableRequiredProperties:
   type: object
