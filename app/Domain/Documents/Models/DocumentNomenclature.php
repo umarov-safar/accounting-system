@@ -1,46 +1,46 @@
 <?php
 
-namespace App\Domain\Nomenclatures\Models;
+namespace App\Domain\Documents\Models;
 
-use App\Domain\Documents\Models\DocumentNomenclature;
-use App\Domain\Nomenclatures\Models\Factories\NomenclatureFactory;
+use App\Domain\Documents\Models\Factories\DocumentNomenclatureFactory;
+use App\Domain\Nomenclatures\Models\Nomenclature;
 use App\Domain\Support\Models\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 
-class Nomenclature extends Model
+/**
+ * @property $document_id
+ * @property $nomenclature_id
+ * @property $quantity
+ * @property $cost_price
+ * @property $base_price
+ * @property $discount
+ * @property $overheads
+ */
+class DocumentNomenclature extends Model
 {
-    use SoftDeletes;
 
-    protected $fillable = self::FILLLABLE;
+   protected $fillable = self::FILLLABLE;
 
-    protected $attributes = [
-        'is_new' => false
-    ];
-
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
     const FILLLABLE = [
-        'seller_id',
-        'is_service',
-        'obj_type',
-        'obj_id',
+        'document_id',
+        'nomenclature_id',
+        'quantity',
+        'cost_price',
         'base_price',
-        'is_new',
-        'cardonor_id'
+        'discount',
+        'overheads',
     ];
+
     /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
+       |--------------------------------------------------------------------------
+       | FUNCTIONS
+       |--------------------------------------------------------------------------
+       */
 
     public static function factory()
     {
-        return NomenclatureFactory::new();
+        return DocumentNomenclatureFactory::new();
     }
 
     public function canDelete(): self
@@ -58,11 +58,15 @@ class Nomenclature extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function documents()
+    public function document(): BelongsTo
     {
-        return $this->hasMany(DocumentNomenclature::class);
+        return $this->belongsTo(Document::class);
     }
 
+    public function nomenclature(): BelongsTo
+    {
+        return $this->belongsTo(Nomenclature::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
@@ -84,4 +88,14 @@ class Nomenclature extends Model
     setXXXAttribute($value)
     преобразователи
     */
+
+
+
+
+
+
+
+
+
+
 }

@@ -1,22 +1,32 @@
 <?php
 
-namespace App\Domain\Nomenclatures\Models;
+namespace App\Domain\Documents\Models;
 
-use App\Domain\Documents\Models\DocumentNomenclature;
-use App\Domain\Nomenclatures\Models\Factories\NomenclatureFactory;
+use App\Domain\Documents\Models\Factories\DocumentFactory;
 use App\Domain\Support\Models\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 
-class Nomenclature extends Model
+/**
+ * @property $id
+ * @property $seller_id
+ * @property $document_type_id
+ * @property $status // Enum 1-draft, 2-fix, 3-cancel
+ * @property $document_date
+ * @property $company_id
+ * @property $contractor_id
+ * @property $store_id // откуда
+ * @property $store_to_id // куда
+ * @property $summa
+ * @property $discount
+ * @property $overheads
+ * @property $note
+ */
+class Document extends Model
 {
-    use SoftDeletes;
-
-    protected $fillable = self::FILLLABLE;
-
-    protected $attributes = [
-        'is_new' => false
-    ];
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -25,12 +35,18 @@ class Nomenclature extends Model
     */
     const FILLLABLE = [
         'seller_id',
-        'is_service',
-        'obj_type',
-        'obj_id',
-        'base_price',
-        'is_new',
-        'cardonor_id'
+        'document_type_id',
+        'status',
+        'document_date',
+        'company_id',
+        'contractor_id',
+        'store_id',
+        'store_to_id',
+        'summa',
+        'discount',
+        'overheads',
+        'note',
+        'payment_end_date',
     ];
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +56,7 @@ class Nomenclature extends Model
 
     public static function factory()
     {
-        return NomenclatureFactory::new();
+        return DocumentFactory::new();
     }
 
     public function canDelete(): self
@@ -58,7 +74,7 @@ class Nomenclature extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function documents()
+    public function nomenclatures()
     {
         return $this->hasMany(DocumentNomenclature::class);
     }
