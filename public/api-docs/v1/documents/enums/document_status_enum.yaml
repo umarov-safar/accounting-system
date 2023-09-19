@@ -1,0 +1,19 @@
+type: integer
+description: |
+  Статус документа:
+  * 1 - draft
+  * 2 - fix
+  * 3 - cancel
+enum:
+  - 1
+  - 2
+  - 3
+x-enum-varnames:
+  - DRAFT # Редактировать
+  - FIX # Зафиксировать
+  - CANCEL # Отменить
+x-enum-descriptions:
+  - Редактировать
+  - Зафиксировать
+  - Отменить
+example: 1

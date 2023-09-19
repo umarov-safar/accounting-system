@@ -1,0 +1,245 @@
+ReceiptDocumentReadonlyProperties:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор
+      example: 274
+    created_at:
+      description: "Дата создания"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+    updated_at:
+      description: "Дата обновления"
+      format: date-time
+      type: string
+      example: "2021-07-03T11:57:28.000000Z"
+  required:
+    - id
+    - created_at
+    - updated_at
+
+ReceiptDocumentFillableProperties:
+  type: object
+  properties:
+    seller_id:
+      type: integer
+      example: 331
+      description: ID продавца
+    document_type_id:
+      type: integer
+      description: Тип документа
+      example: 1
+      nullable: false
+    status:
+      type: integer
+      description: Статус документа из DocumentStatusEnum
+      example: 1
+      nullable: false
+    document_date:
+      type: string
+      format: date
+      description: Дата создание документа
+      example: 2023-09-18
+      nullable: true
+    company_id:
+      type: integer
+      description: ID company
+      example: 40
+      nullable: true
+    store_id:
+      type: integer
+      description: ID склада
+      example: 21
+      nullable: true
+    summa:
+      type: integer
+      description: Сумма документа
+      example: 10020
+      nullable: true
+    discount:
+      type: integer
+      description: Скидка
+      example: 10
+      nullable: true
+    overheads:
+      type: integer
+      description: Сумма поверхность
+      example: 121
+      nullable: true
+    note:
+      type: string
+      description: Заметка в док
+      example: Some note
+      nullable: true
+
+ReceiptDocumentFillableRequiredProperties:
+  type: object
+  required:
+    - document_type_id
+    - status
+    - seller_id
+
+ReceiptDocumentInclude:
+  type: object
+
+
+
+ReceiptDocument:
+  allOf:
+    - $ref: '#/ReceiptDocumentReadonlyProperties'
+    - $ref: '#/ReceiptDocumentFillableProperties'
+    - $ref: '#/ReceiptDocumentFillableRequiredProperties'
+    - $ref: '#/ReceiptDocumentInclude'
+
+CreateReceiptDocumentRequest:
+  allOf:
+    - $ref: '#/ReceiptDocumentFillableProperties'
+    - $ref: '#/ReceiptDocumentFillableRequiredProperties'
+
+ReplaceReceiptDocumentRequest:
+  allOf:
+    - $ref: '#/ReceiptDocumentFillableProperties'
+    - $ref: '#/ReceiptDocumentFillableRequiredProperties'
+
+PatchReceiptDocumentRequest:
+  allOf:
+    - $ref: '#/ReceiptDocumentFillableProperties'
+
+ReceiptDocumentResponse:
+  type: object
+  properties:
+    data:
+      $ref: '#/ReceiptDocument'
+    meta:
+      type: object
+  required:
+    - data
+
+SearchReceiptDocumentsFilter:
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Идентификатор(ы)
+      example: 3
+    seller_id:
+      type: integer
+      example: 331
+      description: ID продавца
+    document_type_id:
+      type: integer
+      description: Тип документа
+      example: 1
+    status:
+      type: integer
+      description: Статус документа из DocumentStatusEnum
+      example: 1
+    document_date_gte:
+      type: string
+      format: date
+      description: Дата создание документа
+      example: 2023-09-18
+    document_date_lte:
+      type: string
+      format: date
+      description: Дата создание документа
+      example: 2023-09-18
+    company_id:
+      type: integer
+      description: ID company
+      example: 40
+    store_id:
+      type: integer
+      description: ID склада
+      example: 21
+    summa:
+      type: integer
+      description: Сумма документа
+      example: 10020
+    summa_lte:
+      type: integer
+      description: Сумма документа
+      example: 10020
+    summa_gte:
+      type: integer
+      description: Сумма документа
+      example: 10020
+    discount:
+      type: integer
+      description: Скидка
+      example: 10
+    overheads:
+      type: integer
+      description: Сумма поверхность
+      example: 121
+    created_at_gte:
+      type: string
+      description: Дата создания от
+      format: date-time
+      example: '2021-12-20T18:00:10.000000Z'
+    created_at_lte:
+      type: string
+      description: Дата создания до
+      format: date-time
+      example: '2022-12-20T18:00:10.000000Z'
+    updated_at_gte:
+      type: string
+      format: date-time
+      description: Дата обновления от
+      example: '2021-07-09T04:25:11.000000Z'
+    updated_at_lte:
+      type: string
+      format: date-time
+      description: Дата обновления до
+      example: '2021-07-03T11:57:28.000000Z'
+
+SearchReceiptDocumentsRequest:
+  type: object
+  properties:
+    sort:
+      $ref: '../../common_schemas.yaml#/RequestBodySort'
+      description: |
+        seller_id,
+        document_type_id,
+        status,
+        document_date,
+        company_id,
+        store_id,
+        summa,
+        discount,
+        overheads,
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи (include) document_nomenclatures, document_nomenclatures.nomenclature
+    pagination:
+      $ref: '../../common_schemas.yaml#/RequestBodyPagination'
+    filter:
+      $ref: '#/SearchReceiptDocumentsFilter'
+
+SearchOneReceiptDocumentsRequest:
+  type: object
+  properties:
+    include:
+      $ref: '../../common_schemas.yaml#/RequestBodyInclude'
+      description: Связи -
+    filter:
+      $ref: '#/SearchReceiptDocumentsFilter'
+
+SearchReceiptDocumentsResponse:
+  type: object
+  properties:
+    data:
+      type: array
+      items:
+        $ref: '#/ReceiptDocument'
+    meta:
+      type: object
+      properties:
+        pagination:
+          $ref: '../../common_schemas.yaml#/ResponseBodyPagination'
+  required:
+    - data
+    - meta
+

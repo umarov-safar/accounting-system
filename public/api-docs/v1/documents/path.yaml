@@ -1,0 +1,283 @@
+ReceiptDocumentsCreate:
+  post:
+    tags:
+      - receipt-documents
+    operationId: createReceiptDocument
+    summary: Запрос на создание док. оприходование
+    description: Запрос на создание док. оприходование
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@create'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/receipt-documents.yaml#/CreateReceiptDocumentRequest'
+    responses:
+      "201":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/receipt-documents.yaml#/ReceiptDocumentResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ReceiptDocumentsCurrent:
+  get:
+    tags:
+      - receipt-documents
+    operationId: getReceiptDocument
+    summary: Получение док. оприходование по ID
+    description: Получение док. оприходование по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@get'
+    parameters:
+      - $ref: '#/PathId'
+      - $ref: '#/QueryIncludeReceiptDocuments'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/receipt-documents.yaml#/ReceiptDocumentResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  put:
+    tags:
+      - receipt-documents
+    operationId: replaceReceiptDocument
+    summary: Запрос на обновление док. оприходование
+    description: Запрос на обновление док. оприходование
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@replace'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/receipt-documents.yaml#/ReplaceReceiptDocumentRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/receipt-documents.yaml#/ReceiptDocumentResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  patch:
+    tags:
+      - receipt-documents
+    operationId: patchReceiptDocument
+    summary: Обновляет отдельные поля док. оприходование
+    description: Обновляет отдельные поля док. оприходование
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@patch'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/receipt-documents.yaml#/PatchReceiptDocumentRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/receipt-documents.yaml#/ReceiptDocumentResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  delete:
+    tags:
+      - receipt-documents
+    operationId: deleteReceiptDocument
+    summary: Запрос на удаление док. оприходование по ID
+    description: Запрос на удаление док. оприходование по ID
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@delete'
+    x-lg-skip-request-generation: true
+    parameters:
+      - $ref: '#/PathId'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ReceiptDocumentsMassDelete:
+  post:
+    tags:
+      - receipt-documents
+    operationId: massDeleteReceiptDocuments
+    summary: Массовое удаление док. оприходование, только без привязанных объектов
+    description:  Массовое удаление  док. оприходование, только без привязанных объектов
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@massDelete'
+    x-lg-skip-request-generation: true
+    requestBody:
+      $ref: '../index.yaml#/components/requestBodies/MassDeleteBody'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ReceiptDocumentsSearch:
+  post:
+    tags:
+      - receipt-documents
+    operationId: searchReceiptDocuments
+    summary: Поиск  док. оприходование, удовлетворяющих фильтру
+    description: Поиск  док. оприходование, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@search'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/receipt-documents.yaml#/SearchReceiptDocumentsRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/receipt-documents.yaml#/SearchReceiptDocumentsResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ReceiptDocumentsSearchOne:
+  post:
+    tags:
+      - receipt-documents
+    operationId: searchOneReceiptDocuments
+    summary: Поиск док. оприходовании, удовлетворяющих фильтру
+    description: Поиск док. оприходовании, удовлетворяющих фильтру
+    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@searchOne'
+    x-lg-skip-request-generation: true
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/receipt-documents.yaml#/SearchOneReceiptDocumentsRequest'
+    responses:
+      "200":
+        description: Выполнено успешно
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/receipt-documents.yaml#/ReceiptDocumentResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+ReceiptDocumentSetFix:
+    post:
+      tags:
+        - receipt-documents
+      operationId: setStatusToFix
+      summary: Зафиксировать документ
+      description:  Массовое удаление  док. оприходование, только без привязанных объектов
+      x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@setStatusToFix'
+      x-lg-skip-request-generation: true
+      parameters:
+        - $ref: '#/PathId'
+      responses:
+        "200":
+          $ref: '../index.yaml#/components/schemas/EmptyDataResponse'
+        "404":
+          $ref: "../index.yaml#/components/responses/NotFound"
+        "400":
+          $ref: "../index.yaml#/components/responses/BadRequest"
+        "500":
+          $ref: '../index.yaml#/components/responses/ServerError'
+ReceiptDocumentSetCancel:
+    post:
+      tags:
+        - receipt-documents
+      operationId: setStatusToCancel
+      summary: Отменить документ
+      description:  Отменить документ
+      x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@setStatusToCancel'
+      x-lg-skip-request-generation: true
+      parameters:
+        - $ref: '#/PathId'
+      responses:
+        "200":
+          $ref: '../index.yaml#/components/responses/DeleteResponse'
+        "400":
+          $ref: "../index.yaml#/components/responses/BadRequest"
+        "404":
+          $ref: "../index.yaml#/components/responses/NotFound"
+        "500":
+          $ref: '../index.yaml#/components/responses/ServerError'
+ReceiptDocumentSetDraft:
+    post:
+      tags:
+        - receipt-documents
+      operationId: setStatusToDraft
+      summary: Статус на редактирование
+      description:  Статус на редактирование
+      x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@setStatusToDraft'
+      x-lg-skip-request-generation: true
+      parameters:
+        - $ref: '#/PathId'
+      responses:
+        "200":
+          $ref: '../index.yaml#/components/responses/DeleteResponse'
+        "400":
+          $ref: "../index.yaml#/components/responses/BadRequest"
+        "404":
+          $ref: "../index.yaml#/components/responses/NotFound"
+        "500":
+          $ref: '../index.yaml#/components/responses/ServerError'
+
+PathId:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: integer
+    minimum: 1
+  description: Числовой id
+  example: 1
+
+QueryIncludeReceiptDocument:
+  in: query
+  name: include
+  required: false
+  description: Связи(include) nomenclatures
+  schema:
+    type: string
+
+QueryIncludeReceiptDocuments:
+  in: query
+  name: include
+  required: false
+  description: Связи(include) nomenclatures
+  schema:
+    type: string

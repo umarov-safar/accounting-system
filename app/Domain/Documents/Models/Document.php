@@ -4,6 +4,7 @@ namespace App\Domain\Documents\Models;
 
 use App\Domain\Documents\Models\Factories\DocumentFactory;
 use App\Domain\Support\Models\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 /**
@@ -21,18 +22,14 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
  * @property $overheads
  * @property $note
  */
-class Document extends Model
+abstract class Document extends Model
 {
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-    }
-
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
+
     const FILLLABLE = [
         'seller_id',
         'document_type_id',
@@ -61,7 +58,7 @@ class Document extends Model
 
     public function canDelete(): self
     {
-        // Тут пишите условие если условия правилная то можно удалить модель
+        // Тут пишите условие если условия правильная то можно удалить модель
         if ( true ) {
             return $this;
         }
@@ -74,7 +71,7 @@ class Document extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function nomenclatures()
+    public function nomenclatureDocuments(): HasMany
     {
         return $this->hasMany(DocumentNomenclature::class);
     }

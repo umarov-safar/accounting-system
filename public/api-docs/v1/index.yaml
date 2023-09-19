@@ -55,6 +55,20 @@ paths:
   /services:search-one:
     $ref: './services/paths.yaml#/ServicesSearchOne'
 
+  /receipt-documents:
+    $ref: './documents/path.yaml#/ReceiptDocumentsCreate'
+  /receipt-documents/{id}:
+    $ref: './documents/path.yaml#/ReceiptDocumentsCurrent'
+  /receipt-documents/{id}:set-fix:
+    $ref: './documents/path.yaml#/ReceiptDocumentSetFix'
+  /receipt-documents/{id}:set-cancel:
+    $ref: './documents/path.yaml#/ReceiptDocumentSetCancel'
+  /receipt-documents/{id}:set-draft:
+    $ref: './documents/path.yaml#/ReceiptDocumentSetDraft'
+  /receipt-documents:search:
+    $ref: './documents/path.yaml#/ReceiptDocumentsSearch'
+  /receipt-documents:search-one:
+    $ref: './documents/path.yaml#/ReceiptDocumentsSearchOne'
 components:
   parameters:
     QueryInclude:
@@ -85,6 +99,8 @@ components:
       $ref: './accounts/enums/account_type_enum.yaml'
     ObjectTypeEnum:
       $ref: './nomenclatures/enums/object_type_enum.yaml'
+    DocumentStatusEnum:
+      $ref: './documents/enums/document_status_enum.yaml'
   responses:
     BadRequest:
       description: Bad Request

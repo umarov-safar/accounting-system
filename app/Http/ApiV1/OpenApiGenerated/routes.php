@@ -7,6 +7,7 @@
 
 use App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController;
 use App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController;
+use App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController;
 use App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController;
 use App\Http\ApiV1\Modules\Services\Controllers\ServicesController;
 use Illuminate\Support\Facades\Route;
@@ -42,3 +43,13 @@ Route::patch('services/{id}', [ServicesController::class, 'patch']);
 Route::post('services:mass-delete', [ServicesController::class, 'massDelete']);
 Route::post('services:search', [ServicesController::class, 'search']);
 Route::post('services:search-one', [ServicesController::class, 'searchOne']);
+Route::post('receipt-documents', [ReceiptDocumentsController::class, 'create']);
+Route::get('receipt-documents/{id}', [ReceiptDocumentsController::class, 'get']);
+Route::put('receipt-documents/{id}', [ReceiptDocumentsController::class, 'replace']);
+Route::delete('receipt-documents/{id}', [ReceiptDocumentsController::class, 'delete']);
+Route::patch('receipt-documents/{id}', [ReceiptDocumentsController::class, 'patch']);
+Route::post('receipt-documents/{id}:set-fix', [ReceiptDocumentsController::class, 'setStatusToFix']);
+Route::post('receipt-documents/{id}:set-cancel', [ReceiptDocumentsController::class, 'setStatusToCancel']);
+Route::post('receipt-documents/{id}:set-draft', [ReceiptDocumentsController::class, 'setStatusToDraft']);
+Route::post('receipt-documents:search', [ReceiptDocumentsController::class, 'search']);
+Route::post('receipt-documents:search-one', [ReceiptDocumentsController::class, 'searchOne']);
