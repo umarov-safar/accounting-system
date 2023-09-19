@@ -30,6 +30,23 @@ MultipartFileUploadRequest:
       format: binary
       description: Загружаемый файл
 
+DocumentTypeEnum:
+  type: object
+  properties:
+    id:
+      type: integer
+      example: 2
+      description: Id тип документа
+    target:
+      type: integer
+      example: -1
+      description: Списать(-1) или добавлять(1)
+    title:
+      type: string
+      description: Название
+      example: Продажа
+
+
 
 PaginationTypeCursorEnum:
   type: string

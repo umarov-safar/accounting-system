@@ -69,6 +69,13 @@ paths:
     $ref: './documents/path.yaml#/ReceiptDocumentsSearch'
   /receipt-documents:search-one:
     $ref: './documents/path.yaml#/ReceiptDocumentsSearchOne'
+
+  /document-types:store:
+    $ref: './documents/path.yaml#/DocumentTypeStore'
+  /document-types:finance:
+    $ref: './documents/path.yaml#/DocumentTypeFinance'
+
+
 components:
   parameters:
     QueryInclude:
@@ -101,6 +108,10 @@ components:
       $ref: './nomenclatures/enums/object_type_enum.yaml'
     DocumentStatusEnum:
       $ref: './documents/enums/document_status_enum.yaml'
+    DocumentStoreTypeIdEnum:
+      $ref: './documents/enums/document_store_type_id_enum.yaml'
+    DocumentFinanceTypeIdEnum:
+      $ref: './documents/enums/document_finance_type_id_enum.yaml'
   responses:
     BadRequest:
       description: Bad Request

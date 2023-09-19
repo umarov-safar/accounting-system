@@ -256,6 +256,62 @@ ReceiptDocumentSetDraft:
         "500":
           $ref: '../index.yaml#/components/responses/ServerError'
 
+
+DocumentTypeStore:
+  get:
+    tags:
+      - commons
+    operationId: storeTypeDocs
+    summary: Получение список тип док. для складов
+    description: Получение список тип док. для складов
+    x-lg-handler: 'App\Http\ApiV1\Modules\Documents\Controllers\DocumentTypesController@storeTypeDocs'
+    x-lg-skip-request-generation: true
+    responses:
+      "200":
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    $ref: '../common_schemas.yaml#/DocumentTypeEnum'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: "../index.yaml#/components/responses/NotFound"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+DocumentTypeFinance:
+  get:
+    tags:
+      - commons
+    operationId: financeTypeDocs
+    summary: Получение список тип док. для финансовых учета
+    description: Получение список тип док. для финансовых учета
+    x-lg-handler: 'App\Http\ApiV1\Modules\Documents\Controllers\DocumentTypesController@financeTypeDocs'
+    x-lg-skip-request-generation: true
+    responses:
+      "200":
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    $ref: '../common_schemas.yaml#/DocumentTypeEnum'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "404":
+        $ref: "../index.yaml#/components/responses/NotFound"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+
+
 PathId:
   in: path
   name: id
