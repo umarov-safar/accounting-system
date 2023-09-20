@@ -14,6 +14,7 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
  * @property $status // Enum 1-draft, 2-fix, 3-cancel
  * @property $document_date
  * @property $company_id
+ * @property $company_to_id
  * @property $contractor_id
  * @property $store_id // откуда
  * @property $store_to_id // куда
@@ -24,27 +25,32 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
  */
 abstract class Document extends Model
 {
+    protected $table = 'documents';
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
-
-    const FILLLABLE = [
-        'seller_id',
-        'document_type_id',
-        'status',
-        'document_date',
-        'company_id',
-        'contractor_id',
-        'store_id',
-        'store_to_id',
-        'summa',
-        'discount',
-        'overheads',
-        'note',
-        'payment_end_date',
-    ];
+//
+//    protected $fillable = self::FILLABLE;
+//
+//    const FILLABLE = [
+//        'seller_id',
+//        'document_type_id',
+//        'status',
+//        'document_date',
+//        'company_id',
+//        'contractor_id',
+//        'store_id',
+//        'store_to_id',
+//        'summa',
+//        'discount',
+//        'overheads',
+//        'note',
+//        'payment_end_date',
+//        'company_to_id',
+//        'parent_id'
+//    ];
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

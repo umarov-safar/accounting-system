@@ -73,6 +73,14 @@ ReceiptDocumentFillableProperties:
       description: Заметка в док
       example: Some note
       nullable: true
+    company_to_id:
+      type: integer
+      example: 3
+      description: Компания в которую перемещается номенклатура
+    parent_id:
+      type: integer
+      example: 10
+      description: Документ основание
 
 ReceiptDocumentFillableRequiredProperties:
   type: object

@@ -2,7 +2,6 @@
 
 namespace App\Domain\Documents\Models;
 
-
 use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentFinanceTypeIdEnum;
 use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStoreTypeIdEnum;
 

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('document_id');
             $table->foreign('document_id')
                 ->references('id')
-                ->on(Document::tableName());
+                ->on('documents');
 
             $table->unsignedBigInteger('nomenclature_id');
             $table->foreign('nomenclature_id')

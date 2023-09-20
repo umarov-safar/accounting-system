@@ -3,8 +3,8 @@ info:
   title: Accounting
   contact:
     name: API Support
-    url: https://ensi.tech/contacts
-    email: mail@greensight.ru
+    url: https://eniak.ru
+    email:
   version: 1.0.0
   description: Accounting
 servers:
