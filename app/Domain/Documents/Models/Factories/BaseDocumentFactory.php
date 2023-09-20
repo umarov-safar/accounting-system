@@ -3,10 +3,12 @@
 namespace App\Domain\Documents\Models\Factories;
 
 use App\Domain\Documents\Models\ReceiptDocument;
+use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentFinanceTypeIdEnum;
 use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStatusEnum;
+use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStoreTypeIdEnum;
 use Ensi\LaravelTestFactories\BaseModelFactory;
 
-class BaseDocumentFactory extends BaseModelFactory
+abstract class BaseDocumentFactory extends BaseModelFactory
 {
     protected $model = ReceiptDocument::class;
 
@@ -14,7 +16,7 @@ class BaseDocumentFactory extends BaseModelFactory
     {
         return [
             'seller_id' => $this->faker->randomNumber(3),
-            'document_type_id' => $this->faker->randomNumber(3),
+            'document_type_id' => $this->faker->randomEnum(DocumentStoreTypeIdEnum::cases()),
             'status' => $this->faker->randomEnum(DocumentStatusEnum::cases()),
             'document_date' => $this->faker->date,
             'company_id' => $this->faker->randomNumber(2),

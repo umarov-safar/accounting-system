@@ -3,6 +3,8 @@
 namespace App\Http\ApiV1\Modules\ReceiptDocuments\Controllers;
 
 use App\Domain\Documents\Models\Actions\Receipts\CreateReceiptDocumentAction;
+use App\Domain\Documents\Models\Actions\Receipts\UpdateReceiptDocumentAction;
+use App\Http\ApiV1\Modules\ReceiptDocuments\Queries\ReceiptDocumentQueries;
 use App\Http\ApiV1\Modules\ReceiptDocuments\Requests\CreateReceiptDocumentRequest;
 use App\Http\ApiV1\Modules\ReceiptDocuments\Requests\PatchReceiptDocumentRequest;
 use App\Http\ApiV1\Modules\ReceiptDocuments\Requests\ReplaceReceiptDocumentRequest;
@@ -17,14 +19,14 @@ class ReceiptDocumentsController
         return new ReceiptDocumentsResource($action->execute($request->validated()));
     }
 
-    public function get(int $id, ReceiptDocumentsQueries $queries): Responsable
+    public function get(int $id, ReceiptDocumentQueries $queries): Responsable
     {
-        //
+        return new ReceiptDocumentsResource($queries->findOrFail($id));
     }
 
-    public function replace(int $id, ReplaceReceiptDocumentRequest $request): Responsable
+    public function replace(int $id, ReplaceReceiptDocumentRequest $request, UpdateReceiptDocumentAction $action): Responsable
     {
-        //
+        return new ReceiptDocumentsResource($action->execute($id, $request->validated()));
     }
 
     public function delete(int $id, Request $request): Responsable

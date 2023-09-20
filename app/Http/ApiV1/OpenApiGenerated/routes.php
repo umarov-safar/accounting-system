@@ -6,6 +6,7 @@
  */
 
 use App\Http\ApiV1\Modules\Accounts\Controllers\AccountsController;
+use App\Http\ApiV1\Modules\Documents\Controllers\DocumentTypesController;
 use App\Http\ApiV1\Modules\Nomenclatures\Controllers\NomenclaturesController;
 use App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController;
 use App\Http\ApiV1\Modules\ServiceGroups\Controllers\ServiceGroupsController;
@@ -53,3 +54,5 @@ Route::post('receipt-documents/{id}:set-cancel', [ReceiptDocumentsController::cl
 Route::post('receipt-documents/{id}:set-draft', [ReceiptDocumentsController::class, 'setStatusToDraft']);
 Route::post('receipt-documents:search', [ReceiptDocumentsController::class, 'search']);
 Route::post('receipt-documents:search-one', [ReceiptDocumentsController::class, 'searchOne']);
+Route::get('document-types:store', [DocumentTypesController::class, 'storeTypeDocs']);
+Route::get('document-types:finance', [DocumentTypesController::class, 'financeTypeDocs']);

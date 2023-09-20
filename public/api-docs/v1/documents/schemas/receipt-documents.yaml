@@ -77,10 +77,12 @@ ReceiptDocumentFillableProperties:
       type: integer
       example: 3
       description: Компания в которую перемещается номенклатура
+      nullable: true
     parent_id:
       type: integer
       example: 10
       description: Документ основание
+      nullable: true
 
 ReceiptDocumentFillableRequiredProperties:
   type: object

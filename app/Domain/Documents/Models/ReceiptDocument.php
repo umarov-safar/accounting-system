@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Domain\Documents\Models;
-
+use Illuminate\Database\Eloquent\Builder;
 use App\Domain\Documents\Models\Factories\ReceiptDocumentFactory;
+use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStoreTypeIdEnum;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 class ReceiptDocument extends Document
@@ -26,6 +27,7 @@ class ReceiptDocument extends Document
         'parent_id'
     ];
 
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
@@ -44,6 +46,16 @@ class ReceiptDocument extends Document
             return $this;
         }
         throw new AccessDeniedException('Нельзя удалить связный модель');
+    }
+
+
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeDocumentTypeReceipt(Builder $query)
+    {
+        $query->where('document_type_id', DocumentStoreTypeIdEnum::RECEIPT->value);
     }
 
     /*

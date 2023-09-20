@@ -9,28 +9,28 @@ namespace App\Http\ApiV1\OpenApiGenerated\Enums;
 
 /**
  * Тип документа:
- * * 1 - Оплата покупателя
- * * 2 - Оплата поставщику
- * * 3 - Внесение средства
- * * 4 - Изъятие средства
- * * 5 - Возврат поставщика
- * * 6 - Возврат покупателю
- * * 7 - Перемещение
+ * * 201 - Оплата покупателя
+ * * 202 - Оплата поставщику
+ * * 203 - Внесение средства
+ * * 204 - Изъятие средства
+ * * 205 - Возврат поставщика
+ * * 206 - Возврат покупателю
+ * * 207 - Перемещение
  */
 enum DocumentFinanceTypeIdEnum: int
 {
     /** Покупка */
-    case CUSTOMER_PAYMENT = 1;
+    case CUSTOMER_PAYMENT = 201;
     /** Продажа */
-    case SUPPLIER_PAYMENT = 2;
+    case SUPPLIER_PAYMENT = 202;
     /** Оприходование */
-    case DEPOSIT = 3;
+    case DEPOSIT = 203;
     /** Списание */
-    case WITHDRAWAL = 4;
+    case WITHDRAWAL = 204;
     /** Возврат от покупателя */
-    case REFUND_CUSTOMER = 5;
+    case REFUND_CUSTOMER = 205;
     /** Возврат от поставщика */
-    case REFUND_SUPPLIER = 6;
+    case REFUND_SUPPLIER = 206;
     /** Перемещение */
-    case MOVING = 7;
+    case MOVING = 207;
 }

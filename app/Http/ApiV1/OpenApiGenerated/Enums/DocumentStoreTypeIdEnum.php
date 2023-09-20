@@ -9,28 +9,28 @@ namespace App\Http\ApiV1\OpenApiGenerated\Enums;
 
 /**
  * Тип документа:
- * * 1 - Покупка
- * * 2 - Продажа
- * * 3 - Оприходование
- * * 4 - Списание
- * * 5 - Возврат от покупателя
- * * 6 - Возврат от поставщика
- * * 7 - Перемещение
+ * * 101 - Покупка
+ * * 102 - Продажа
+ * * 103 - Оприходование
+ * * 104 - Списание
+ * * 105 - Возврат от покупателя
+ * * 106 - Возврат от поставщика
+ * * 107 - Перемещение
  */
 enum DocumentStoreTypeIdEnum: int
 {
     /** Покупка */
-    case PURCHASE = 1;
+    case PURCHASE = 101;
     /** Продажа */
-    case SALE = 2;
+    case SALE = 102;
     /** Оприходование */
-    case RECEIPT = 3;
+    case RECEIPT = 103;
     /** Списание */
-    case WRITE_OFF = 4;
+    case WRITE_OFF = 104;
     /** Возврат от покупателя */
-    case REFUND_FROM_CUSTOMER = 5;
+    case REFUND_FROM_CUSTOMER = 105;
     /** Возврат от поставщика */
-    case REFUND_FROM_SUPPLIER = 6;
+    case REFUND_FROM_SUPPLIER = 106;
     /** Перемещение */
-    case MOVING = 7;
+    case MOVING = 107;
 }

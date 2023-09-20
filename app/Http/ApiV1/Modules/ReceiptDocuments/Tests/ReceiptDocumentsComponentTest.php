@@ -29,16 +29,19 @@ test('POST /api/v1/receipt-documents 201', function () {
 
 });
 
-//test('POST /api/v1/receipt-documents 400', function () {
-//    postJson('/api/v1/receipt-documents')
-//        ->assertStatus(400);
-//});
-//
-//test('GET /api/v1/receipt-documents/{id} 200', function () {
-//    getJson('/api/v1/receipt-documents/{id}')
-//        ->assertStatus(200);
-//});
-//
+test('POST /api/v1/receipt-documents 400', function () {
+    $request = ReceiptDocumentsFactory::new()->except(['seller_id'])->make();
+    $this->skipNextOpenApiRequestValidation();
+    postJson('/api/v1/receipt-documents', $request)
+        ->assertStatus(400);
+});
+
+test('GET /api/v1/receipt-documents/{id} 200', function () {
+    $model = ReceiptDocument::factory()->create();
+    getJson("/api/v1/receipt-documents/$model->id")->dd()
+        ->assertStatus(200);
+});
+
 //test('GET /api/v1/receipt-documents/{id} 404', function () {
 //    getJson('/api/v1/receipt-documents/{id}')
 //        ->assertStatus(404);
