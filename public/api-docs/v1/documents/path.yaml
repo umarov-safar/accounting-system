@@ -102,25 +102,25 @@ ReceiptDocumentsCurrent:
         $ref: '../index.yaml#/components/responses/NotFound'
       "500":
         $ref: '../index.yaml#/components/responses/ServerError'
-  delete:
-    tags:
-      - receipt-documents
-    operationId: deleteReceiptDocument
-    summary: Запрос на удаление док. оприходование по ID
-    description: Запрос на удаление док. оприходование по ID
-    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@delete'
-    x-lg-skip-request-generation: true
-    parameters:
-      - $ref: '#/PathId'
-    responses:
-      "200":
-        $ref: '../index.yaml#/components/responses/DeleteResponse'
-      "400":
-        $ref: "../index.yaml#/components/responses/BadRequest"
-      "404":
-        $ref: '../index.yaml#/components/responses/NotFound'
-      "500":
-        $ref: '../index.yaml#/components/responses/ServerError'
+#  delete:
+#    tags:
+#      - receipt-documents
+#    operationId: deleteReceiptDocument
+#    summary: Запрос на удаление док. оприходование по ID
+#    description: Запрос на удаление док. оприходование по ID
+#    x-lg-handler: 'App\Http\ApiV1\Modules\ReceiptDocuments\Controllers\ReceiptDocumentsController@delete'
+#    x-lg-skip-request-generation: true
+#    parameters:
+#      - $ref: '#/PathId'
+#    responses:
+#      "200":
+#        $ref: '../index.yaml#/components/responses/DeleteResponse'
+#      "400":
+#        $ref: "../index.yaml#/components/responses/BadRequest"
+#      "404":
+#        $ref: '../index.yaml#/components/responses/NotFound'
+#      "500":
+#        $ref: '../index.yaml#/components/responses/ServerError'
 
 ReceiptDocumentsMassDelete:
   post:
@@ -208,7 +208,7 @@ ReceiptDocumentSetFix:
         - $ref: '#/PathId'
       responses:
         "200":
-          $ref: '../index.yaml#/components/schemas/EmptyDataResponse'
+          $ref: '../index.yaml#/components/responses/EmptyDataResponse'
         "404":
           $ref: "../index.yaml#/components/responses/NotFound"
         "400":

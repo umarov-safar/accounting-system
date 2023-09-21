@@ -90,7 +90,7 @@ components:
           schema:
             $ref: './common_schemas.yaml#/RequestBodyMassOperation'
   schemas:
-    EmptyDataResponse:
+    EmptyResponse:
       type: object
       properties:
         data:
@@ -136,4 +136,10 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/EmptyDataResponse'
+            $ref: '#/components/schemas/EmptyResponse'
+    EmptyDataResponse:
+      description: Успешно выполнено
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EmptyResponse'

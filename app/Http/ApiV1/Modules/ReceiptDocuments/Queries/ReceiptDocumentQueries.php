@@ -9,10 +9,5 @@ class ReceiptDocumentQueries extends BaseDocumentQueries
     public function __construct()
     {
         parent::__construct(resolve(ReceiptDocument::class));
-
-        /**
-         * @see ReceiptDocument::scopeDocumentTypeReceipt()
-         */
-        $this->documentTypeReceipt();
     }
 }

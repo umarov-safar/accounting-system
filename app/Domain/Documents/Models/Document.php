@@ -2,9 +2,12 @@
 
 namespace App\Domain\Documents\Models;
 
+use App\Domain\Documents\Models\Accesses\AccessibleDocumentMethods;
 use App\Domain\Documents\Models\Factories\DocumentFactory;
 use App\Domain\Support\Models\Model;
+use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStatusEnum;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 /**
@@ -25,7 +28,10 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
  */
 abstract class Document extends Model
 {
+    use SoftDeletes, AccessibleDocumentMethods;
+
     protected $table = 'documents';
+
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -62,25 +68,13 @@ abstract class Document extends Model
         return DocumentFactory::new();
     }
 
-    public function canDelete(): self
-    {
-        // Тут пишите условие если условия правильная то можно удалить модель
-        if ( true ) {
-            return $this;
-        }
-        throw new AccessDeniedException('Нельзя удалить связный модель');
-    }
-
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
 
-    public function nomenclatureDocuments(): HasMany
-    {
-        return $this->hasMany(DocumentNomenclature::class);
-    }
+    abstract function nomenclatureDocuments(): HasMany;
 
     /*
     |--------------------------------------------------------------------------

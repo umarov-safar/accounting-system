@@ -21,7 +21,7 @@ class CreateReceiptDocumentRequest extends BaseFormRequest
             'company_id' => ['nullable', 'integer'],
             'document_date' => ['nullable', 'date'],
             'status' => ['required', 'integer', Rule::enum(DocumentStatusEnum::class)],
-            'document_type_id' => ['required',  'integer', Rule::enum(DocumentStoreTypeIdEnum::class)],
+//            'document_type_id' => ['required',  'integer', Rule::enum(DocumentStoreTypeIdEnum::class)],
             'seller_id' => ['required', 'integer'],
             'company_to_id' => ['nullable', 'integer'],
             'parent_id' => ['nullable', 'integer', Rule::exists(ReceiptDocument::tableName(), 'id')]

@@ -28,6 +28,8 @@ return new class extends Migration
             $table->integer('overheads')->nullable();
             $table->text('note')->nullable();
             $table->dateTime('payment_end_date')->nullable();
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

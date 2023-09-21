@@ -14,7 +14,6 @@ abstract class BaseDocumentFactory extends BaseApiFactory
     {
         return [
             'seller_id' => $this->faker->randomNumber(3),
-            'document_type_id' => $this->faker->randomEnum(DocumentStoreTypeIdEnum::cases()),
             'status' => $this->faker->randomEnum(DocumentStatusEnum::cases()),
             'document_date' => $this->faker->date,
             'company_id' => $this->faker->randomNumber(2),
@@ -26,7 +25,7 @@ abstract class BaseDocumentFactory extends BaseApiFactory
             'overheads' => $this->faker->randomNumber(4),
             'note' => $this->faker->sentence(4),
             'payment_end_date' => $this->faker->date,
-            'parent_id' => ReceiptDocument::factory()->create()->id,
+            'parent_id' => $this->faker->boolean ? ReceiptDocument::factory()->create()->id : null,
             'contractor_id' => $this->faker->randomDigitNotNull(),
         ];
     }

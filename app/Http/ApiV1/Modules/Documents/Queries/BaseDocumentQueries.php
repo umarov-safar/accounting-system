@@ -41,7 +41,7 @@ abstract class BaseDocumentQueries extends QueryBuilder
 //                'contractor_id',
                 AllowedFilter::exact('store_id'),
 //                'store_to_id',
-                ...NumericFilter::make('summa')->gte()->lte()->exact(),
+                ...NumericFilter::make('summa')->exact()->gte()->lte(),
                 ...NumericFilter::make('discount')->exact()->gte()->lte(),
                 ...NumericFilter::make('overheads')->exact()->gte()->lte(),
 //                'payment_end_date',

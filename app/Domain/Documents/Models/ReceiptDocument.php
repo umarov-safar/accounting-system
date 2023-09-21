@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Domain\Documents\Models;
+use App\Domain\Documents\Models\Scopes\DocumentTypeScope;
+use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStatusEnum;
 use Illuminate\Database\Eloquent\Builder;
 use App\Domain\Documents\Models\Factories\ReceiptDocumentFactory;
 use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStoreTypeIdEnum;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 class ReceiptDocument extends Document
@@ -27,6 +30,16 @@ class ReceiptDocument extends Document
         'parent_id'
     ];
 
+    protected $casts = [
+        'document_type_id' => DocumentStoreTypeIdEnum::class,
+        'status' => DocumentStatusEnum::class
+    ];
+
+
+    protected $attributes = [
+        'document_type_id' => DocumentStoreTypeIdEnum::RECEIPT,
+        'summa' => 'integer'
+    ];
 
     /*
     |--------------------------------------------------------------------------
@@ -39,37 +52,25 @@ class ReceiptDocument extends Document
         return ReceiptDocumentFactory::new();
     }
 
-    public function canDelete(): self
-    {
-        // Тут пишите условие если условия правильная то можно удалить модель
-        if ( true ) {
-            return $this;
-        }
-        throw new AccessDeniedException('Нельзя удалить связный модель');
-    }
-
-
-    /**
-     * @param Builder $query
-     * @return Builder
-     */
-    public function scopeDocumentTypeReceipt(Builder $query)
-    {
-        $query->where('document_type_id', DocumentStoreTypeIdEnum::RECEIPT->value);
-    }
-
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function nomenclatureDocuments(): HasMany
+    {
+        return $this->hasMany(DocumentNomenclature::class)
+            ->where('document_type_id', DocumentStoreTypeIdEnum::RECEIPT);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
     |--------------------------------------------------------------------------
     */
-
+    protected static function booted()
+    {
+        static::addGlobalScope(new DocumentTypeScope(DocumentStoreTypeIdEnum::RECEIPT));
+    }
     /*
     |--------------------------------------------------------------------------
     | ACCESSORS
