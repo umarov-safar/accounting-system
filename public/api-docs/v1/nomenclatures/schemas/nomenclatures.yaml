@@ -52,6 +52,21 @@ NomenclatureFillableProperties:
       example: 123
       description: ID донора
       nullable: true
+    quantity_fix:
+      type: integer
+      example: 10
+      description: Фиксированное количество
+      nullable: true
+    quantity_no_fix:
+      type: integer
+      example: 11
+      description: Не фиксированное кол
+      nullable: true
+    parent_id:
+      type: integer
+      example: 1
+      description: документ-номенклатура основание
+      nullable: true
 
 NomenclatureFillableRequiredProperties:
   type: object

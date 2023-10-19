@@ -2,16 +2,16 @@
 
 namespace App\Http\ApiV1\Modules\Nomenclatures\Resources;
 
+use App\Domain\Nomenclatures\Models\Nomenclature;
 use App\Http\ApiV1\Support\Resources\BaseJsonResource;
 
 /**
- * @mixin todo
+ * @mixin Nomenclature
  */
 class NomenclaturesResource extends BaseJsonResource
 {
     public function toArray($request): array
     {
-        // todo
         return [
             'id' => $this->id,
             'created_at' => $this->created_at,
@@ -21,8 +21,12 @@ class NomenclaturesResource extends BaseJsonResource
             'obj_id' => $this->obj_id,
             'obj_type' => $this->obj_type,
             'base_price' => $this->base_price,
-	    'is_new' => $this->is_new,
-            'cardonor_id' => $this->cardonor_id
+	        'is_new' => $this->is_new,
+            'cardonor_id' => $this->cardonor_id,
+            'quantity_fix' => $this->quantity_fix,
+            'quantity_no_fix' => $this->quantity_no_fix,
+            'parent_id' => $this->parent_id,
+
         ];
     }
 }

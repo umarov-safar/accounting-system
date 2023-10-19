@@ -30,6 +30,9 @@ class DocumentNomenclature extends Model
         'base_price',
         'discount',
         'overheads',
+        'quantity_fix',
+        'quantity_no_fix',
+        'parent_id',
     ];
 
     /*

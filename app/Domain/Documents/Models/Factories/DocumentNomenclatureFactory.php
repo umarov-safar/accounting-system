@@ -21,6 +21,8 @@ class DocumentNomenclatureFactory extends BaseModelFactory
             'base_price' => $this->faker->randomNumber(3),
             'discount' => $this->faker->randomNumber(2),
             'overheads' => $this->faker->randomNumber(2),
+            'quantity_fix' => $this->faker->nullable()->randomNumber(2),
+            'quantity_no_fix' => $this->faker->nullable()->randomNumber(2),
         ];
     }
 }

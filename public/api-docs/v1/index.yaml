@@ -75,6 +75,8 @@ paths:
   /document-types:finance:
     $ref: './documents/path.yaml#/DocumentTypeFinance'
 
+  /document-nomenclatures:
+    $ref:
 
 components:
   parameters:

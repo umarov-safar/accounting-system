@@ -16,7 +16,9 @@ class NomenclatureFactory extends BaseApiFactory
             'obj_id' => $this->faker->randomNumber(3, true),
             'base_price' => $this->faker->randomNumber(5),
             'is_new' => $this->faker->boolean(),
-            'cardonor_id' => $this->faker->nullable()->randomNumber(2)
+            'cardonor_id' => $this->faker->nullable()->randomNumber(2),
+            'quantity_fix' => $this->faker->nullable()->randomNumber(2),
+            'quantity_no_fix' => $this->faker->nullable()->randomNumber(2),
         ];
     }
 

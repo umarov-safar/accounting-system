@@ -3,11 +3,11 @@
 namespace App\Domain\Documents\Models\Actions\Receipts;
 
 
-use _PHPStan_53d0d2174\Symfony\Component\Finder\Exception\AccessDeniedException;
 use App\Domain\Documents\Models\ReceiptDocument;
 use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStatusEnum;
 use App\Http\ApiV1\OpenApiGenerated\Enums\DocumentStoreTypeIdEnum;
 use Illuminate\Support\Arr;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 
 class UpdateReceiptDocumentAction
 {
