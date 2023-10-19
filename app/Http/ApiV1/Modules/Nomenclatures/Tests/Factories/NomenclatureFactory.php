@@ -17,8 +17,7 @@ class NomenclatureFactory extends BaseApiFactory
             'base_price' => $this->faker->randomNumber(5),
             'is_new' => $this->faker->boolean(),
             'cardonor_id' => $this->faker->nullable()->randomNumber(2),
-            'quantity_fix' => $this->faker->nullable()->randomNumber(2),
-            'quantity_no_fix' => $this->faker->nullable()->randomNumber(2),
+            'zippy_nomenclature_id' => $this->faker->randomNumber()
         ];
     }
 

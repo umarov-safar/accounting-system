@@ -17,6 +17,7 @@ class PatchNomenclatureRequest extends BaseFormRequest
             'obj_id' => ['sometimes', 'integer'],
             'is_service' => ['sometimes', 'boolean'],
             'is_new' => ['sometimes', 'nullable', 'boolean'],
+            'zippy_nomenclature_id' => ['nullable', 'integer'],
             'cardonor_id' => ['sometimes', 'nullable', 'integer'],
             'seller_id' => ['sometimes', 'integer',
                 Rule::unique('nomenclatures')->where(function (Builder $query) {

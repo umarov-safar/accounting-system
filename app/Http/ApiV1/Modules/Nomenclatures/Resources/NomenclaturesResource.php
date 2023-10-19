@@ -26,7 +26,7 @@ class NomenclaturesResource extends BaseJsonResource
             'quantity_fix' => $this->quantity_fix,
             'quantity_no_fix' => $this->quantity_no_fix,
             'parent_id' => $this->parent_id,
-
+            'zippy_nomenclature_id' => $this->zippy_nomenclature_id,
         ];
     }
 }

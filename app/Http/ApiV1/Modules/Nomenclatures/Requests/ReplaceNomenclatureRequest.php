@@ -17,6 +17,7 @@ class ReplaceNomenclatureRequest extends BaseFormRequest
             'obj_id' => ['required', 'integer'],
             'is_service' => ['required', 'boolean'],
             'is_new' => ['nullable', 'boolean'],
+            'zippy_nomenclature_id' => ['nullable', 'integer'],
             'cardonor_id' => ['nullable', 'integer'],
             'seller_id' => ['required', 'integer',
                 Rule::unique('nomenclatures')->where(function (Builder $query) {

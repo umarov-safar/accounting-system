@@ -17,6 +17,7 @@ class CreateNomenclatureRequest extends BaseFormRequest
             'obj_id' => ['required', 'integer'],
             'is_new' => ['nullable', 'boolean'],
             'cardonor_id' => ['nullable', 'integer'],
+            'zippy_nomenclature_id' => ['nullable', 'integer'],
             'is_service' => ['required', 'boolean'],
             'seller_id' => ['required', 'integer', Rule::unique('nomenclatures')->where(function (Builder $query) {
                 return $query->where('obj_type', $this->obj_type)

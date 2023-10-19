@@ -30,7 +30,8 @@ class Nomenclature extends Model
         'obj_id',
         'base_price',
         'is_new',
-        'cardonor_id'
+        'cardonor_id',
+        'zippy_nomenclature_id'
     ];
     /*
     |--------------------------------------------------------------------------
