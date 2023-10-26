@@ -19,7 +19,8 @@ class NomenclatureFactory extends BaseModelFactory
             'obj_id' => $this->faker->randomNumber(3, true),
             'base_price' => $this->faker->randomNumber(5),
             'is_new' => $this->faker->boolean(),
-            'cardonor_id' => $this->faker->nullable()->randomNumber(2)
+            'cardonor_id' => $this->faker->nullable()->randomNumber(2),
+            'zippy_nomenclature_id' => $this->faker->randomNumber()
         ];
     }
 }

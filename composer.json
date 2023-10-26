@@ -8,6 +8,7 @@
         "php": "^8.1",
         "ackintosh/ganesha": "^3.1",
         "doctrine/dbal": "^3.1",
+        "eijen/zstore-api": "dev-main",
         "ensi/guzzle-multibyte": "^0.1.0",
         "ensi/laravel-auditing": "^0.3.5",
         "ensi/laravel-ensi-filesystem": "^0.3.0",
@@ -74,6 +75,10 @@
         {
             "type": "vcs",
             "url": "https://gitlab.com/greensight/ensi/packages/openapi-server-generator-templates.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://gitlab.eniak.ru/eijen-v3/packages/clients/zstore-api.git"
         }
     ],
     "scripts": {

@@ -6,6 +6,7 @@ use Ackintosh\Ganesha;
 use Ackintosh\Ganesha\Builder;
 use Ackintosh\Ganesha\GuzzleMiddleware;
 use Ackintosh\Ganesha\Storage\Adapter\Apcu as ApcuAdapter;
+use App\Clients\ZstoreApiServiceProvider;
 use Ensi\GuzzleMultibyte\BodySummarizer;
 use Ensi\LaravelInitialEventPropagation\PropagateInitialEventLaravelGuzzleMiddleware;
 use Ensi\LaravelMetrics\Guzzle\GuzzleMiddleware as MetricsMiddleware;
@@ -27,13 +28,13 @@ class OpenApiClientsServiceProvider extends ServiceProvider
     {
         $handler = $this->configureHandler();
 
-        //   $this->registerService(
-        //       handler: $handler,
-        //       domain: 'customers',
-        //       serviceName: 'customer-auth',
-        //       configurationClassName: CustomerAuthClientProvider::$configuration,
-        //       apisClassNames: CustomerAuthClientProvider::$apis
-        //   );
+           $this->registerService(
+               handler: $handler,
+               domain: 'zstore',
+               serviceName: 'zstore-api',
+               configurationClassName: ZstoreApiServiceProvider::$configuration,
+               apisClassNames: ZstoreApiServiceProvider::$apis
+           );
     }
 
     private function configureHandler(): HandlerStack

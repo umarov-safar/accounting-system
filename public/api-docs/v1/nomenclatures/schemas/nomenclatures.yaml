@@ -67,6 +67,11 @@ NomenclatureFillableProperties:
       example: 1
       description: документ-номенклатура основание
       nullable: true
+    zippy_nomenclature_id:
+      type: integer
+      example: 102
+      description: ID номенклатуры из сервиса zippy
+      nullable: true
 
 NomenclatureFillableRequiredProperties:
   type: object
