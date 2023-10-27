@@ -21,6 +21,7 @@ class AccountsResource extends BaseJsonResource
             'is_active' => $this->is_active,
             'type' => $this->type,
             'description' => $this->description,
+            'zippy_account_id' => $this->zippy_account_id
         ];
     }
 }

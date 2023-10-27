@@ -1,7 +1,9 @@
 <?php
 
 use App\Domain\Accounts\Models\Account;
+use App\Domain\Accounts\Observer\AccountObserver;
 use App\Http\ApiV1\Modules\Accounts\Tests\Factories\AccountFactory;
+use App\Http\ApiV1\Modules\Accounts\Tests\Factories\MockAccountObserver;
 use App\Http\ApiV1\OpenApiGenerated\Enums\AccountTypeEnum;
 use App\Http\ApiV1\Support\Tests\ApiV1ComponentTestCase;
 
@@ -18,7 +20,13 @@ use function PHPUnit\Framework\assertTrue;
 uses(ApiV1ComponentTestCase::class);
 uses()->group('component');
 
+beforeEach(function () {
+    /** @var ApiV1ComponentTestCase $this */
+
+});
+
 test('POST /api/v1/accounts 201', function () {
+
     $request = AccountFactory::new()->make();
     postJson('/api/v1/accounts', $request)
         ->assertStatus(201)
