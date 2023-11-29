@@ -14,6 +14,7 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
  * @property AccountTypeEnum $type
  * @property boolean $is_active
  * @property string $description
+ * @property $zippy_account_id
  */
 class Account extends Model
 {
@@ -31,7 +32,8 @@ class Account extends Model
         'name',
         'is_active',
         'type',
-        'description'
+        'description',
+        'zippy_account_id'
     ];
 
     /*

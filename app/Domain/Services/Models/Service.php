@@ -13,6 +13,7 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
  * @property int $service_group_id
  * @property null|string $description
  * @property int $base_price
+ * @property int $zippy_service_id
  */
 class Service extends Model
 {

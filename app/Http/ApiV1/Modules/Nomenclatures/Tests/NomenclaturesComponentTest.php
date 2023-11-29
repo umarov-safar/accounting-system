@@ -4,6 +4,8 @@ use App\Domain\Nomenclatures\Models\Nomenclature;
 use App\Http\ApiV1\Modules\Nomenclatures\Tests\Factories\NomenclatureFactory;
 use App\Http\ApiV1\Support\Tests\ApiV1ComponentTestCase;
 
+use Eijen\Zstore\Api\NomenclaturesApi;
+use Eijen\Zstore\Model\NomenclatureResponse;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertSoftDeleted;
 use function Pest\Laravel\deleteJson;
@@ -17,6 +19,14 @@ uses()->group('component');
 
 test('POST /api/v1/nomenclatures 201', function () {
     $request = NomenclatureFactory::new()->make();
+
+    /** @var  ApiV1ComponentTestCase $this */
+    $this->mock(NomenclaturesApi::class)
+        ->shouldReceive('createNomenclature')
+        ->andReturn(new NomenclatureResponse([
+            'data' => new \Eijen\Zstore\Model\Nomenclature(['item_id' => $request['zippy_nomenclature_id']])
+        ]));
+
     postJson('/api/v1/nomenclatures', $request)
         ->assertStatus(201)
         ->assertJsonFragment($request);

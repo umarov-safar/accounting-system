@@ -22,7 +22,8 @@ class ServicesResource extends BaseJsonResource
             'service_group_id' => $this->service_group_id,
             'base_price' => $this->base_price,
             'description' => $this->description,
-            'service_group' => $this->service_group,
+            'zippy_service_id' => $this->zippy_service_id,
+            'service_group' => $this->whenLoaded('service_group'),
         ];
     }
 }
